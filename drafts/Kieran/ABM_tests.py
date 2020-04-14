@@ -71,7 +71,7 @@ def H_matrix(self, NLeave, NEnter, y):
 Network = pd.read_csv("../../data/ABM/ABM_Network_details.csv") # PATH TO BE CORRECTED TO CORRECTLY REFERENCE CSVs!!!
 
 Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
-
+m = Network.shape[0]
 Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
 Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
 
