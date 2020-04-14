@@ -4,13 +4,18 @@ import numpy as np
 import pandas as pd
 
 class Generator:
-    def __init__(self, node_name:str, index:int, type, Pmax=None, Pmin=None):
+    def __init__(self, name:str, node_name:str, index:int, type, Pmax=None, Pmin=None, marginal_cost=None):
+        self.name = name
         self.node_name = node_name
         self.index = index
         self.type = type
         self.Pmax = Pmax
         self.Pmin = Pmin
         self.q, self.a, self.k = None, None, None
+        if type == "dummy":
+            self.a = marginal_cost
+            self.k, self.q = 0, 0
+
 
 
     def fit_curve(self, bid_curves_data, input_data=None):

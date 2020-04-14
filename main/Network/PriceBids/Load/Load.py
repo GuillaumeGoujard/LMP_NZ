@@ -4,10 +4,13 @@ import numpy as np
 import pandas as pd
 
 class Load:
-    def __init__(self, node_name:str, index:int):
+    def __init__(self, name:str, node_name:str, index:int, type:str, constant_demand=None):
+        self.name = name
         self.node_name = node_name
         self.index = index
         self.load_data = None
+        if type == "dummy":
+            self.d = constant_demand
 
     def add_load_data(self, load_data: pd.DataFrame):
         """
@@ -25,6 +28,5 @@ class Load:
         :param daterange: list of range of dates
         :return:
         """
-        d = None
-        return d
+        return self.d
 
