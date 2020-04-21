@@ -1,3 +1,5 @@
+import pandas as pd
+
 Simp_nodes = pd.read_csv('data/ABM/ABM_Simplified_network.csv')
 Simp_nodes = Simp_nodes.rename(columns={'Swem Node': "Simp_node", ' NZEM Substations that act as Grid Exit Points': 'Orig_node'})
 Simp_nodes_dict = {
