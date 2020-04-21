@@ -184,7 +184,7 @@ if __name__ == '__main__':
                      "BB1":1,
                      "BB2":1,
                  }
-    top = Topology(test_node)
+    top = Topology(f_names_2_nodes = test_node)
 
     """
     Test 2
