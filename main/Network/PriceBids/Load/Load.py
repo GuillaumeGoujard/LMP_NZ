@@ -1,7 +1,11 @@
-from datetime import datetime as datetime
-from typing import List, Tuple
+import numpy as np
+import pickle
+
 import numpy as np
 import pandas as pd
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(dir_path))))
 
 class Load:
     def __init__(self, name:str, node_name:str, index:int, type:str, constant_demand=None):
@@ -12,21 +16,63 @@ class Load:
         if type == "dummy":
             self.d = constant_demand
 
-    def add_load_data(self, load_data: pd.DataFrame):
+    def add_load_data(self, load_data: pd.DataFrame, from_nodes_to_subnodes, Existing_sub_nodes):
         """
 
         :param load_data: dataframe with timestamp !
         :return:
         """
-        self.load_data = load_data
+        nodal_loads = pd.DataFrame()
+        if self.node_name not in from_nodes_to_subnodes:
+            return None
+        list_of_subnodes = from_nodes_to_subnodes[self.node_name]
+        save_column = None
+        for n in list_of_subnodes:
+            if n in Existing_sub_nodes:
+                nodal_data = load_data[load_data["Region ID"] == n]
+                save_column = nodal_data[["day", "Trading period"]]
+                nodal_loads = pd.concat([nodal_loads, nodal_data['Demand (GWh)']], axis=1)
+        if save_column is None:
+            return False
+        nodal_loads = pd.concat([save_column, nodal_loads.sum(axis=1)], axis=1)
+        nodal_loads.columns = ["day", "period", "load"]
+        self.load_data = nodal_loads
         return True
 
 
-    def return_d(self, daterange: List[datetime]) -> np.array:
+    def return_d(self, day, period) -> np.array:
         """
 
         :param daterange: list of range of dates
         :return:
         """
-        return self.d
+        if self.load_data is None:
+            return 0
+        return self.load_data[(self.load_data["day"] == 1) & (self.load_data["period"] == 1)]["load"].values[0]
+
+
+def get_historical_loads():
+    historical_loads = pd.read_csv(root + "/data/loads/Grid_demand_trends_20200421102501.csv")
+    historical_loads["date"] = pd.to_datetime(historical_loads["Period start"], format="%d/%m/%Y %H:%M:%S")
+    historical_loads["day"] = historical_loads["date"].apply(lambda s: s.day)
+    historical_loads = historical_loads[['date', 'day', 'Trading period', 'Region ID', 'Demand (GWh)']]
+    historical_loads.index = historical_loads['date']
+    return historical_loads
+
+def get_nodes_to_subnodes():
+    Simp_nodes = pd.read_csv(root + '/data/ABM/ABM_Simplified_network.csv')
+    Simp_nodes = Simp_nodes.rename(
+        columns={'Swem Node': "Simp_node", ' NZEM Substations that act as Grid Exit Points': 'Orig_node'})
+    Simp_nodes_dict = {
+        key: Simp_nodes[Simp_nodes.Simp_node == key].Orig_node.values[0].split()
+        for key in Simp_nodes.Simp_node.values
+    }
+
+    return Simp_nodes_dict
+
+
+def get_existing_subnodes():
+    with open(root + "/data/ABM/sub_nodes.txt", "rb") as fp:  # Unpickling
+        b = pickle.load(fp)
+    return b
 

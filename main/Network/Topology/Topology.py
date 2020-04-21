@@ -1,13 +1,15 @@
-from datetime import datetime as datetime
-from typing import List, Tuple, Dict
+import os
+from typing import Tuple
+
 import numpy as np
 import pandas as pd
+
 from main.Network.PriceBids.Generator.Generator import Generator
 from main.Network.PriceBids.Load.Load import Load
-import os
+
 dir_path = os.path.dirname(os.path.realpath(__file__))
 root = os.path.dirname(os.path.dirname(os.path.dirname(dir_path)))
-
+import main.Network.PriceBids.Load.Load as ld
 
 
 class Topology:
@@ -33,7 +35,7 @@ class Topology:
             omega_NZ = 50*(2*np.pi)
             z = Network['Resistance (Ohms)'] + 1j*Network["Reactance (Ohms)"]*omega_NZ
             y = 1/z
-            y = y.imag
+            y = np.imag(y)
             self.H = H_matrix(self.I, y)
             self.h = pd.concat([Network["Capacity(MW)"], Network["Capacity(MW)"]]).values
         else:
@@ -206,6 +208,13 @@ if __name__ == '__main__':
     """
     Create loads on each nodes 
     """
+    Existing_sub_nodes = ld.get_existing_subnodes()
+    historical_loads = ld.get_historical_loads()
+    Simp_nodes_dict = ld.get_nodes_to_subnodes()
+    nodes_to_index = pd.read_csv(root + '/data/ABM/ABM_Nodes.csv')
     for i, node in enumerate(AMB_network.names_2_nodes.keys()):
         print("Load added at node : " + node)
-        AMB_network.add_load(Load(name=str(i), node_name=node, index=i, type="dummy", constant_demand=1))
+        index = nodes_to_index[nodes_to_index["Node names"] == node]["Node index"].values[0]
+        load = Load(node, node, index, type="real_load")
+        load.add_load_data(historical_loads, Simp_nodes_dict, Existing_sub_nodes)
+        AMB_network.add_load(load)
