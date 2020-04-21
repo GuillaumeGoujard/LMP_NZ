@@ -4,9 +4,6 @@ import pickle
 import numpy as np
 import pandas as pd
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
-root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(dir_path))))
-
 class Load:
     def __init__(self, name:str, node_name:str, index:int, type:str, constant_demand=None):
         self.name = name
@@ -52,7 +49,7 @@ class Load:
 
 
 def get_historical_loads():
-    historical_loads = pd.read_csv(root + "/data/loads/Grid_demand_trends_20200421102501.csv")
+    historical_loads = pd.read_csv("data/loads/Grid_demand_trends_20200421102501.csv")
     historical_loads["date"] = pd.to_datetime(historical_loads["Period start"], format="%d/%m/%Y %H:%M:%S")
     historical_loads["day"] = historical_loads["date"].apply(lambda s: s.day)
     historical_loads = historical_loads[['date', 'day', 'Trading period', 'Region ID', 'Demand (GWh)']]
@@ -60,7 +57,7 @@ def get_historical_loads():
     return historical_loads
 
 def get_nodes_to_subnodes():
-    Simp_nodes = pd.read_csv(root + '/data/ABM/ABM_Simplified_network.csv')
+    Simp_nodes = pd.read_csv('data/ABM/ABM_Simplified_network.csv')
     Simp_nodes = Simp_nodes.rename(
         columns={'Swem Node': "Simp_node", ' NZEM Substations that act as Grid Exit Points': 'Orig_node'})
     Simp_nodes_dict = {
@@ -72,7 +69,7 @@ def get_nodes_to_subnodes():
 
 
 def get_existing_subnodes():
-    with open(root + "/data/ABM/sub_nodes.txt", "rb") as fp:  # Unpickling
+    with open('data/ABM/sub_nodes.txt', "rb") as fp:  # Unpickling
         b = pickle.load(fp)
     return b
 

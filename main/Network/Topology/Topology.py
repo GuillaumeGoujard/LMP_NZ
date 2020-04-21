@@ -1,4 +1,3 @@
-import os
 from typing import Tuple
 
 import numpy as np
@@ -7,8 +6,6 @@ import pandas as pd
 from main.Network.PriceBids.Generator.Generator import Generator
 from main.Network.PriceBids.Load.Load import Load
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
-root = os.path.dirname(os.path.dirname(os.path.dirname(dir_path)))
 import main.Network.PriceBids.Load.Load as ld
 
 
@@ -22,8 +19,7 @@ class Topology:
     """
     def __init__(self, f_names_2_nodes=None, network=None):
         if network is "ABM":
-            path = root + "/data/ABM/ABM_Network_details.csv"
-            Network = pd.read_csv(path)
+            Network = pd.read_csv('data/ABM/ABM_Network_details.csv')
             Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
             m = Network.shape[0]
             Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
@@ -211,7 +207,7 @@ if __name__ == '__main__':
     Existing_sub_nodes = ld.get_existing_subnodes()
     historical_loads = ld.get_historical_loads()
     Simp_nodes_dict = ld.get_nodes_to_subnodes()
-    nodes_to_index = pd.read_csv(root + '/data/ABM/ABM_Nodes.csv')
+    nodes_to_index = pd.read_csv('data/ABM/ABM_Nodes.csv')
     for i, node in enumerate(AMB_network.names_2_nodes.keys()):
         print("Load added at node : " + node)
         index = nodes_to_index[nodes_to_index["Node names"] == node]["Node index"].values[0]
