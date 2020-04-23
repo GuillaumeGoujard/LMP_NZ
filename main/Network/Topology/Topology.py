@@ -8,7 +8,6 @@ from main.Network.PriceBids.Load.Load import Load
 
 import main.Network.PriceBids.Load.Load as ld
 
-
 class Topology:
     """
     For the three dictionnaries : nodes, generators, loads they are linking the index (int) of the node to the name (str)
@@ -18,6 +17,22 @@ class Topology:
     f_names_to_nodes
     """
     def __init__(self, f_names_2_nodes=None, network=None):
+        if network is "One node":
+            self.names_2_nodes = f_names_2_nodes
+            self.nodes_2_names = generate_nodes_2_names(f_names_2_nodes)
+            self.A = None
+            self.H = None
+            self.I = None
+            self.h = None
+
+        if network is "North-South node":
+            self.names_2_nodes = f_names_2_nodes
+            self.nodes_2_names = generate_nodes_2_names(f_names_2_nodes)
+            self.A = None
+            self.H = None
+            self.I = None
+            self.h = None
+
         if network is "ABM":
             Network = pd.read_csv('data/ABM/ABM_Network_details.csv')
             Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
@@ -28,6 +43,7 @@ class Topology:
             self.nodes_2_names = generate_nodes_2_names(self.names_2_nodes )
             self.I = create_incidence(Network.NLeave, Network.NEnter)
             self.A = create_adjacency(Network.NLeave, Network.NEnter)
+
             omega_NZ = 50*(2*np.pi)
             z = Network['Resistance (Ohms)'] + 1j*Network["Reactance (Ohms)"]*omega_NZ
             y = 1/z
