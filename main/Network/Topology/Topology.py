@@ -16,8 +16,17 @@ class Topology:
     f_nodes_2_names takes the index of the dict and outputs a list of name of nodes
     f_names_to_nodes
     """
-    def __init__(self, f_names_2_nodes=None, network=None):
+    def __init__(self, f_names_2_nodes=None, network=''):
+        if f_names_2_nodes is None:
+            f_names_2_nodes = dict()
+
         if network is "One node":
+            f_names_2_nodes = {"NDE": 0}
+            Nodes = np.array(['NDE'])
+
+            # There are no lines in this model
+            m = 0
+
             self.names_2_nodes = f_names_2_nodes
             self.nodes_2_names = generate_nodes_2_names(f_names_2_nodes)
             self.A = None
@@ -25,13 +34,35 @@ class Topology:
             self.I = None
             self.h = None
 
-        if network is "North-South node":
+        if network is 'North-South node':
+            Nodes = np.array(['NTH','STH'])
+
+            # Creating the network
+            Network = pd.DataFrame()
+            Network['LEAVE'] = ['NTH','STH']
+            Network['ENTER'] = ['STH','NTH']
+            m = Network.shape[0]
+            Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
+            Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
+
+            Network['Resistance (Ohms)'] = [0.000098,0.000098]
+            Network["Reactance (Ohms)"] = [0.01,0.01]
+            Network["Capacity(MW)"] = [700,700]
+
+            # Preliminary characteristics
+            f_names_2_nodes = dict([[node, j] for j, node in enumerate(Nodes)])
             self.names_2_nodes = f_names_2_nodes
-            self.nodes_2_names = generate_nodes_2_names(f_names_2_nodes)
-            self.A = None
-            self.H = None
-            self.I = None
-            self.h = None
+            self.nodes_2_names = generate_nodes_2_names(self.names_2_nodes)
+            self.I = create_incidence(Network.NLeave, Network.NEnter)
+            self.A = create_adjacency(Network.NLeave, Network.NEnter)
+
+            # Line characteristics
+            omega_NZ = 50 * (2 * np.pi)
+            z = Network['Resistance (Ohms)'] + 1j * Network["Reactance (Ohms)"] * omega_NZ
+            y = 1 / z
+            y = np.imag(y)
+            self.H = H_matrix(self.I, y)
+            self.h = pd.concat([Network["Capacity(MW)"], Network["Capacity(MW)"]]).values
 
         if network is "ABM":
             Network = pd.read_csv('data/ABM/ABM_Network_details.csv')
@@ -39,8 +70,9 @@ class Topology:
             m = Network.shape[0]
             Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
             Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
+
             self.names_2_nodes = dict([[node, j] for j, node in enumerate(Nodes)])
-            self.nodes_2_names = generate_nodes_2_names(self.names_2_nodes )
+            self.nodes_2_names = generate_nodes_2_names(self.names_2_nodes)
             self.I = create_incidence(Network.NLeave, Network.NEnter)
             self.A = create_adjacency(Network.NLeave, Network.NEnter)
 
@@ -52,7 +84,7 @@ class Topology:
             self.h = pd.concat([Network["Capacity(MW)"], Network["Capacity(MW)"]]).values
         else:
             self.names_2_nodes = f_names_2_nodes
-            self.nodes_2_names = generate_nodes_2_names(f_names_2_nodes)
+            self.nodes_2_names = generate_nodes_2_names(f_names_2_nodes) if f_names_2_nodes is not None else 0
             self.A = None
             self.H = None
             self.I = None
@@ -63,6 +95,7 @@ class Topology:
         self.generators = dict([[node, []] for node in self.nodes_2_names.keys()])
         self.loads = dict([[node, []] for node in self.nodes_2_names.keys()])
         self.number_generators = 0
+        self.P = dict()
 
 
     def add_generator(self, generator: Generator):
@@ -76,7 +109,7 @@ class Topology:
     def add_load(self, load: Load):
         node = self.names_2_nodes[load.node_name]
         self.loads[node].append(load)
-        return self.generators
+        return self.loads
 
     def create_Mn(self) -> np.array:
         Mn = np.zeros((self.number_nodes, self.number_generators))
@@ -91,16 +124,19 @@ class Topology:
         return self.H, self.h
 
     def create_Ag_qg(self) -> Tuple[np.array, np.array]:
-        Ag, qg = None, None
+        Ag = np.concatenate((np.eye(self.number_generators),-np.eye(self.number_generators))
+                            ,axis = 0)
+        qg = np.concatenate((self.Pmin, self.Pmax), axis = 0)
         return Ag, qg
 
+
+################## Test code ##################
 
 def generate_nodes_2_names(f_names_2_nodes):
     output = dict([[k, []] for k in set(f_names_2_nodes.values())])
     for v in f_names_2_nodes.keys():
         output[f_names_2_nodes[v]].append(v)
     return output
-
 
 def create_adjacency(NLeave, NEnter):
     m = NLeave.shape[0]
@@ -112,7 +148,6 @@ def create_adjacency(NLeave, NEnter):
         A[NEnter[l], NLeave[l]] = 1
 
     return A
-
 
 def create_incidence(NLeave, NEnter):
     m = NLeave.size
@@ -132,7 +167,6 @@ def create_incidence(NLeave, NEnter):
                 M[i, l] = -1
 
     return M
-
 
 def H_matrix(I, y):
     '''
@@ -185,11 +219,12 @@ def H_matrix(I, y):
 
     return H
 
+def Aq_matrix()
 
 
 if __name__ == '__main__':
     """
-    Test 1
+    Test : Custom network creation
     """
     test_node = {
                      "AA1":0,
@@ -201,7 +236,17 @@ if __name__ == '__main__':
     top = Topology(f_names_2_nodes = test_node)
 
     """
-    Test 2
+    Test : One Node network
+    """
+    OneNode_network = Topology(network="One node")
+
+    """
+    Test : Two Node network
+    """
+    TwoNode_network = Topology(network='North-South node')
+
+    """
+    Test : AMB Network
     """
     AMB_network = Topology(network="ABM")
 

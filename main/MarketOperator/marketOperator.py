@@ -7,6 +7,10 @@ from main.Network.PriceBids.Load.Load import Load
 import os
 from cvxpy import *
 
+from main.Network.Topology.Topology import Topology
+from main.Network.PriceBids.Load.Load import Load
+from main.Network.PriceBids.Generator.Generator import Generator
+
 class marketOperator:
     def __init__(self, network):
         if network is "One node":
@@ -32,7 +36,6 @@ class marketOperator:
             self.Offers = None
             self.Topology = None
             self.LMP = None
-
 
         else:
             self.name = None
