@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="">
+    <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="- Attribute creation functions in Topology.py&#10;-">
+      <change afterPath="$PROJECT_DIR$/main/MarketOperator/marketOperator_tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/Network/PriceBids/Battery/Battery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/Network/PriceBids/Battery/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/Network/Topology/Topology_tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/MarketOperator/marketOperator.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MarketOperator/marketOperator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Network/Topology/Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/Topology.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,63 +42,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/Network/PriceBids/Battery" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\main\Network\PriceBids\Battery" />
+      <recent name="$PROJECT_DIR$/main/Network/PriceBids/Load" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\data\ABM" />
       <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\drafts\Kieran" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/main/Network/PriceBids/Load" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.Topology">
-    <configuration name="ABM_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LMP_NZ" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drafts/Kieran/ABM_tests.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Load" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LMP_NZ" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.marketOperator_tests">
     <configuration name="MILP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -134,6 +98,24 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Topology_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LMP_NZ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Network/Topology/Topology_tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="marketOperator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,20 +137,38 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="marketOperator_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LMP_NZ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/MarketOperator/marketOperator_tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Topology" />
-      <item itemvalue="Python.ABM_tests" />
-      <item itemvalue="Python.Load" />
       <item itemvalue="Python.marketOperator" />
       <item itemvalue="Python.MILP" />
+      <item itemvalue="Python.Topology_tests" />
+      <item itemvalue="Python.marketOperator_tests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.marketOperator_tests" />
+        <item itemvalue="Python.Topology_tests" />
         <item itemvalue="Python.Topology" />
         <item itemvalue="Python.MILP" />
         <item itemvalue="Python.marketOperator" />
-        <item itemvalue="Python.ABM_tests" />
-        <item itemvalue="Python.Load" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587648826999</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="- Additional characteristics in marketOperator.py and Topology.py">
+      <created>1587655236758</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587655236758</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -260,13 +267,15 @@
     <MESSAGE value="small change for Simp_nodes_dict.py (added library)" />
     <MESSAGE value="Rectifications on data retrieval" />
     <MESSAGE value="- Added &quot;One node&quot; and &quot;North-South node&quot; skeleton in Topology.py&#10;- Added some more skeleton in marketOperator.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added &quot;One node&quot; and &quot;North-South node&quot; skeleton in Topology.py&#10;- Added some more skeleton in marketOperator.py" />
+    <MESSAGE value="- Additional characteristics in marketOperator.py and Topology.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Additional characteristics in marketOperator.py and Topology.py" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587649113329">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587726427825">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587649113329" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587726427824" />
     <state x="-1255" y="-240" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1587423549463">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
@@ -276,10 +285,11 @@
     </state>
     <state x="-1272" y="-158" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587476655109" />
     <state x="506" y="284" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960@0.0.1500.960" timestamp="1586655872928" />
-    <state x="-942" y="-391" key="CommitChangelistDialog2" timestamp="1587648825849">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state x="561" y="69" key="CommitChangelistDialog2" timestamp="1587719745618">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="-942" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587648825849" />
+    <state x="-942" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587655235386" />
+    <state x="561" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587719745618" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1586654657154" />
     <state x="144" y="85" width="1200" height="794" key="DiffContextDialog" timestamp="1586655915044">
@@ -291,22 +301,26 @@
     </state>
     <state x="-1240" y="-210" key="FileChooserDialogImpl/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587422763824" />
     <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1586645662516" />
-    <state width="727" height="273" key="GridCell.Tab.0.bottom" timestamp="1587602707717">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state width="566" height="247" key="GridCell.Tab.0.bottom" timestamp="1587723749776">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="727" height="273" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587602707717" />
-    <state width="727" height="273" key="GridCell.Tab.0.center" timestamp="1587602707717">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state width="566" height="247" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
+    <state width="566" height="247" key="GridCell.Tab.0.center" timestamp="1587723749776">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="727" height="273" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587602707717" />
-    <state width="727" height="273" key="GridCell.Tab.0.left" timestamp="1587602707717">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state width="566" height="247" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
+    <state width="566" height="247" key="GridCell.Tab.0.left" timestamp="1587723749776">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="727" height="273" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587602707717" />
-    <state width="727" height="273" key="GridCell.Tab.0.right" timestamp="1587602707717">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state width="566" height="247" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
+    <state width="566" height="247" key="GridCell.Tab.0.right" timestamp="1587723749776">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="727" height="273" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587602707717" />
+    <state width="566" height="247" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
     <state x="-1597" y="-332" key="SettingsEditor" timestamp="1587653286813">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
@@ -317,16 +331,16 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827460919" />
-    <state x="-1481" y="-234" key="Vcs.Push.Dialog.v2" timestamp="1587648834378">
+    <state x="-1481" y="-234" key="Vcs.Push.Dialog.v2" timestamp="1587655238787">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
-    <state x="-1481" y="-234" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587648834378" />
+    <state x="-1481" y="-234" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587655238787" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827599970" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1586642787510" />
-    <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog" timestamp="1587648160411">
+    <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog" timestamp="1587716876183">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
-    <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587648160411" />
+    <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587716876183" />
     <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587564236086" />
     <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586879540903" />
     <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960@0.0.1500.960" timestamp="1586643050763" />

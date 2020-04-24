@@ -20,21 +20,16 @@ class Topology:
         if f_names_2_nodes is None:
             f_names_2_nodes = dict()
 
-        if network is "One node":
+        if network is "ONDE":
             f_names_2_nodes = {"NDE": 0}
-            Nodes = np.array(['NDE'])
-
-            # There are no lines in this model
-            m = 0
-
             self.names_2_nodes = f_names_2_nodes
             self.nodes_2_names = generate_nodes_2_names(f_names_2_nodes)
             self.A = None
-            self.H = None
             self.I = None
+            self.H = None
             self.h = None
 
-        if network is 'North-South node':
+        elif network is "NSNDE":
             Nodes = np.array(['NTH','STH'])
 
             # Creating the network
@@ -60,11 +55,11 @@ class Topology:
             omega_NZ = 50 * (2 * np.pi)
             z = Network['Resistance (Ohms)'] + 1j * Network["Reactance (Ohms)"] * omega_NZ
             y = 1 / z
-            y = np.imag(y)
-            self.H = H_matrix(self.I, y)
+            self.y = np.imag(y)
+            self.H = create_H(self.I, self.y)
             self.h = pd.concat([Network["Capacity(MW)"], Network["Capacity(MW)"]]).values
 
-        if network is "ABM":
+        elif network is "ABM":
             Network = pd.read_csv('data/ABM/ABM_Network_details.csv')
             Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
             m = Network.shape[0]
@@ -75,28 +70,48 @@ class Topology:
             self.nodes_2_names = generate_nodes_2_names(self.names_2_nodes)
             self.I = create_incidence(Network.NLeave, Network.NEnter)
             self.A = create_adjacency(Network.NLeave, Network.NEnter)
+            self.test = 0
 
             omega_NZ = 50*(2*np.pi)
             z = Network['Resistance (Ohms)'] + 1j*Network["Reactance (Ohms)"]*omega_NZ
             y = 1/z
-            y = np.imag(y)
-            self.H = H_matrix(self.I, y)
+            self.y = np.imag(y)
+            self.H = create_H(self.I, self.y)
             self.h = pd.concat([Network["Capacity(MW)"], Network["Capacity(MW)"]]).values
+
         else:
             self.names_2_nodes = f_names_2_nodes
             self.nodes_2_names = generate_nodes_2_names(f_names_2_nodes) if f_names_2_nodes is not None else 0
             self.A = None
-            self.H = None
             self.I = None
+            self.H = None
             self.h = None
 
-        self.number_nodes = self.A.shape[0] if self.A is not None else 0
-        self.Mn = None
-        self.generators = dict([[node, []] for node in self.nodes_2_names.keys()])
+        self.number_nodes = self.nodes_2_names.keys().__len__()
         self.loads = dict([[node, []] for node in self.nodes_2_names.keys()])
-        self.number_generators = 0
-        self.P = dict()
 
+        self.number_generators = 0
+        self.generators = dict([[node, []] for node in self.nodes_2_names.keys()])
+
+        self.Pmin = None
+        self.Pmax = None
+        self.Mn = None
+        self.Qt = None
+        self.at = None
+        self.Ag = None
+        self.qg = None
+        self.Au = None
+        self.xt = None
+        self.ct = None
+
+    ## Methods
+
+    # Adding elements
+    def add_node(self, node_name):
+        return
+
+    def add_lines(self, Leave_node_name, Enter_node_name):
+        return
 
     def add_generator(self, generator: Generator):
         node = self.names_2_nodes[generator.node_name]
@@ -111,6 +126,10 @@ class Topology:
         self.loads[node].append(load)
         return self.loads
 
+    def add_battery(self):
+        return
+
+    # Creating elements
     def create_Mn(self) -> np.array:
         Mn = np.zeros((self.number_nodes, self.number_generators))
         for k in self.generators.keys():
@@ -119,18 +138,35 @@ class Topology:
         self.Mn = Mn
         return self.Mn
 
-    def create_H_h(self, input_line_data: pd.DataFrame) -> np.array:
-
+    def create_H_h(self) -> np.array:
+        self.H = create_H(self.I, self.y)
+        self.h = 0 # to change for something more general
         return self.H, self.h
 
+    def create_Pmin_Pmax(self):
+        self.Pmin = np.array([[g.Pmin for g in list(get_all_values(self.generators))]]).T
+        self.Pmax = np.array([[g.Pmax for g in list(get_all_values(self.generators))]]).T
+        return self.Pmin, self.Pmax
+
     def create_Ag_qg(self) -> Tuple[np.array, np.array]:
-        Ag = np.concatenate((np.eye(self.number_generators),-np.eye(self.number_generators))
+        self.Ag = np.concatenate((np.eye(self.number_generators),-np.eye(self.number_generators))
                             ,axis = 0)
-        qg = np.concatenate((self.Pmin, self.Pmax), axis = 0)
-        return Ag, qg
+        self.qg = np.concatenate((self.Pmin, self.Pmax), axis = 0)
+        return self.Ag, self.qg
+
+    def create_Qt_at(self):
+        self.Qt = np.diag([g.q for g in list(get_all_values(self.generators))])
+        self.at = np.array([[g.a for g in list(get_all_values(self.generators))]]).T
+        return self.Qt, self.at
+
+    def create_Au_xt_ct(self):
+        self.Au = np.array([[0]])
+        self.xt = np.array([[0]])
+        self.ct = np.array([[0]])
+        return self.Au, self.xt, self.ct
 
 
-################## Test code ##################
+        # Other functions
 
 def generate_nodes_2_names(f_names_2_nodes):
     output = dict([[k, []] for k in set(f_names_2_nodes.values())])
@@ -168,7 +204,7 @@ def create_incidence(NLeave, NEnter):
 
     return M
 
-def H_matrix(I, y):
+def create_H(I, y):
     '''
     Shift Factor matrix
 
@@ -219,8 +255,22 @@ def H_matrix(I, y):
 
     return H
 
-def Aq_matrix()
+def Aq_matrix():
+    return
 
+
+def get_all_values(d):
+    if isinstance(d, dict):
+        for v in d.values():
+            yield from get_all_values(v)
+    elif isinstance(d, list):
+        for v in d:
+            yield from get_all_values(v)
+    else:
+        yield d
+
+
+################## Test code ##################
 
 if __name__ == '__main__':
     """
@@ -270,8 +320,21 @@ if __name__ == '__main__':
     Simp_nodes_dict = ld.get_nodes_to_subnodes()
     nodes_to_index = pd.read_csv('data/ABM/ABM_Nodes.csv')
     for i, node in enumerate(AMB_network.names_2_nodes.keys()):
-        print("Load added at node : " + node)
+        # print("Load added at node : " + node)
         index = nodes_to_index[nodes_to_index["Node names"] == node]["Node index"].values[0]
         load = Load(node, node, index, type="real_load")
         load.add_load_data(historical_loads, Simp_nodes_dict, Existing_sub_nodes)
         AMB_network.add_load(load)
+
+    """
+    Add topology specific characteristics
+    """
+    AMB_network.create_Pmin_Pmax()
+    AMB_network.create_Qt_at()
+
+
+
+
+
+
+
