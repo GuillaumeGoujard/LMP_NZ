@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="- Attribute creation functions in Topology.py&#10;-">
-      <change afterPath="$PROJECT_DIR$/main/MarketOperator/marketOperator_tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/Network/PriceBids/Battery/Battery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/Network/PriceBids/Battery/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/Network/Topology/Topology_tests.py" afterDir="false" />
+    <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/MarketOperator/marketOperator.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MarketOperator/marketOperator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/MarketOperator/marketOperator_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MarketOperator/marketOperator_tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Network/Topology/Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/Topology.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -249,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587655236758</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- Further work on marketOperator.py with needs to change characteristics for &#10;- Added Battery.py class (just for the sake of it, not necessarily used)">
+      <created>1587737113902</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587737113902</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -268,7 +270,8 @@
     <MESSAGE value="Rectifications on data retrieval" />
     <MESSAGE value="- Added &quot;One node&quot; and &quot;North-South node&quot; skeleton in Topology.py&#10;- Added some more skeleton in marketOperator.py" />
     <MESSAGE value="- Additional characteristics in marketOperator.py and Topology.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Additional characteristics in marketOperator.py and Topology.py" />
+    <MESSAGE value="- Further work on marketOperator.py with needs to change characteristics for &#10;- Added Battery.py class (just for the sake of it, not necessarily used)" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Further work on marketOperator.py with needs to change characteristics for &#10;- Added Battery.py class (just for the sake of it, not necessarily used)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587726427825">
@@ -285,11 +288,11 @@
     </state>
     <state x="-1272" y="-158" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587476655109" />
     <state x="506" y="284" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960@0.0.1500.960" timestamp="1586655872928" />
-    <state x="561" y="69" key="CommitChangelistDialog2" timestamp="1587719745618">
+    <state x="561" y="69" key="CommitChangelistDialog2" timestamp="1587737112192">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-942" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587655235386" />
-    <state x="561" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587719745618" />
+    <state x="561" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587737112192" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1586654657154" />
     <state x="144" y="85" width="1200" height="794" key="DiffContextDialog" timestamp="1586655915044">
@@ -331,10 +334,11 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827460919" />
-    <state x="-1481" y="-234" key="Vcs.Push.Dialog.v2" timestamp="1587655238787">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1587737118202">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1481" y="-234" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587655238787" />
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587737118202" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827599970" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1586642787510" />
     <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog" timestamp="1587716876183">

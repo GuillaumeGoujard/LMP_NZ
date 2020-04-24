@@ -151,7 +151,7 @@ class Topology:
     def create_Ag_qg(self) -> Tuple[np.array, np.array]:
         self.Ag = np.concatenate((np.eye(self.number_generators),-np.eye(self.number_generators))
                             ,axis = 0)
-        self.qg = np.concatenate((self.Pmin, self.Pmax), axis = 0)
+        self.qg = np.concatenate((self.Pmax, -self.Pmin), axis = 0)
         return self.Ag, self.qg
 
     def create_Qt_at(self):
