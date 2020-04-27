@@ -10,6 +10,7 @@ class Load:
         self.node_name = node_name
         self.index = index
         self.load_data = None
+        self.d = None
         if type == "dummy":
             self.d = constant_demand
 
