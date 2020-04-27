@@ -307,102 +307,135 @@ def optimal_batter_progr(b, P_max, d):
     print("For LMP : {}".format(LMPs))
     return model
 
-def optimal_battery_dispatch():
+
+
+def optimal_batter_progr_in_f_time(b, P_max, d):
     L = 10000
+    # d=6
+    print("bids = ", b)
+    print("Pmax = ", P_max)
+    print("Demand = ", d)
+    # print("Price and quantity for battery :", c_u, q_u)
 
-    model = pyo.ConcreteModel(name="with battery")
+    Horizon_T = 2
+    d = np.array([6]*Horizon_T)
 
+    z_min = 1
+    z_max = 5
+    A = np.zeros((Horizon_T*2,Horizon_T))
+    for t in range(Horizon_T):
+        A[2*t,t] = 1
+        A[2 * t +1, t] = -1
+    z_bar = np.array([z_max, -z_min]*Horizon_T)
+
+    E = np.zeros((Horizon_T, Horizon_T))
+    for t in range(1, Horizon_T):
+        E[t,t] = 1
+        E[t, t-1] = -1
+
+    I_tilde = np.eye(Horizon_T)
+    I_tilde[Horizon_T-1, Horizon_T-1] = 0
+
+
+    model = pyo.ConcreteModel(name="feasibility_analysis")
     model.productors_index = range(len(b))
-    model.q = pyo.Var(model.productors_index, domain=pyo.Reals)
-    # model.c_u = pyo.Var(domain=pyo.NonNegativeReals)
-    model.u = pyo.Var(domain=pyo.NonNegativeReals)
+    model.prod_times_index = pyo.Set(initialize=list((i,j) for i in range(len(b)) for j in range(Horizon_T)))
 
-    model.lambda_ = pyo.Var([0], domain=pyo.Reals)
-    model.sigma = pyo.Var(model.productors_index, domain=pyo.NonNegativeReals)
-    model.sigma_u = pyo.Var(domain=pyo.NonNegativeReals)
-    model.mu = pyo.Var(model.productors_index, domain=pyo.NonPositiveReals)
-    model.mu_u = pyo.Var( domain=pyo.NonPositiveReals)
+    model.time_index = range(Horizon_T)
+    model.g_t = pyo.Var(model.prod_times_index, domain=pyo.NonNegativeReals)
 
-    model.r_sigma_g = pyo.Var(model.productors_index, domain=pyo.Binary)
-    model.r_sigma_u = pyo.Var(domain=pyo.Binary)
-    model.r_q = pyo.Var(model.productors_index, domain=pyo.Binary)
-    model.r_u = pyo.Var(domain=pyo.Binary)
+    model.z = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
+    model.u = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
+    model.q_u = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
+    model.c_u = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
 
+    model.lambda_ = pyo.Var(model.time_index, domain=pyo.Reals)
+    model.sigma = pyo.Var(model.prod_times_index, domain=pyo.NonNegativeReals)
+    model.mu = pyo.Var(model.prod_times_index, domain=pyo.NonPositiveReals)
+    model.sigma_u = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
+    model.mu_u = pyo.Var(model.time_index, domain=pyo.NonPositiveReals)
 
-    # obj_func = lambda model: -((pyo.summation(b, model.q) + pyo.summation(np.array([d]), model.lambda_) + P_max@model.sigma))
-    obj_func = lambda model: 1
+    model.r_sigma_g = pyo.Var(model.prod_times_index, domain=pyo.Binary)
+    model.r_g_t = pyo.Var(model.prod_times_index, domain=pyo.Binary)
+    model.r_sigma_g_u = pyo.Var(model.time_index, domain=pyo.Binary)
+    model.r_g_t_u = pyo.Var(model.time_index, domain=pyo.Binary)
 
-    d=1
-    def equality(model):
-        return pyo.summation(model.q) + model.u - d == 0
-
-    def prod_constraint(model, i):
-        return model.q[i] <= P_max[i]
-
-    def pos_prod_constraint(model, i):
-        return model.q[i] >= 0
-
-    def battery_constraint(model):
-        return model.u <= q_u
-
-    def constraint2(model, i):
-        return b[i] + model.lambda_[0] + model.sigma[i] + model.mu[i] == 0
-
-    def constraint3(model):
-        return c_u + model.lambda_[0] + model.sigma_u + model.mu_u == 0
-
-    def sigma_g_cstr1(model, i):
-        return model.sigma[i] <= (1- model.r_sigma_g[i])*L
-
-    def sigma_g_cstr2(model, i):
-        return model.q[i] - P_max[i] >= model.r_sigma_g[i]*L
-
-    def sigma_u_cstr1(model):
-        return model.sigma_u <= (1 - model.r_sigma_u) * L
-
-    def sigma_u_cstr2(model):
-        return model.u - q_u >= model.r_sigma_u * L
-
-    def sigma_cstrmu_q(model,i):
-        return model.q[i] <= model.r_q[i] * L
-
-    def sigma_cstrmu(model,i):
-        return model.mu[i] >= (1-model.r_q[i]) * L
-
-    def sigma_cstrmu_qu(model):
-        return model.u <= model.r_u * L
-
-    def sigma_cstrmu_u(model, i):
-        return model.mu_u >= (1 - model.r_u) * L
-
-
-    model.balance_constraint = pyo.Constraint(rule=equality)
-    model.production_constraint = pyo.Constraint(model.productors_index, rule=prod_constraint)
-    model.constraint2 = pyo.Constraint(model.productors_index, rule=constraint2)
-    model.constraint3 = pyo.Constraint(rule=constraint3)
-    model.sigma_g_cstr1 = pyo.Constraint(model.productors_index, rule=sigma_g_cstr1)
-    model.sigma_g_cstr2 = pyo.Constraint(model.productors_index, rule=sigma_g_cstr2)
-    model.sigma_g_cstru = pyo.Constraint(model.productors_index, rule=sigma_cstrmu_qu)
-    model.sigma_g_cstrqu = pyo.Constraint(model.productors_index, rule=sigma_cstrmu_u)
-    # model.sigma_u_cstr1 = pyo.Constraint(rule=sigma_u_cstr1)
-    # model.sigma_u_cstr2 = pyo.Constraint(rule=sigma_u_cstr2)
-    model.battery = pyo.Constraint(rule=battery_constraint)
-
+    def obj_func(model):
+        S = 0
+        for t in range(Horizon_T):
+            for i in range(len(b)):
+                S += -(b[i]*model.g_t[i,t] + d[t]*model.lambda_[t] + P_max[i]*model.sigma[i,t])
+        return S
     model.obj = pyo.Objective(rule=obj_func)
+
+    # obj_func = lambda model: -((pyo.summation(b, model.g_t) + pyo.summation(np.array([d]), model.lambda_) + P_max@model.sigma))
+
+    def equality(model, i, t):
+        return sum(model.g_t[:,t]) - d[t] + model.u[t] == 0
+    model.balance_constraint = pyo.Constraint(model.prod_times_index, rule=equality)
+
+    def at_least_u(model, t):
+        return model.u[t] >= 0.1
+    model.at_least_u = pyo.Constraint(model.time_index, rule=at_least_u)
+
+    def prod_constraint(model, i, t):
+        return model.g_t[i,t] <= P_max[i]
+    def prod_constraint_u(model, t):
+        return model.u[t] <= model.q_u[t]
+    model.bid_prod = pyo.Constraint(model.prod_times_index, rule=prod_constraint)
+    model.bid_prod_u = pyo.Constraint(model.time_index, rule=prod_constraint_u)
+
+    def constraint2(model, i, t):
+        l = model.lambda_[0]
+        return b[i] - l + model.sigma[i,t] + model.mu[i,t] == 0
+    def constraint2_u(model, t):
+        l = model.lambda_[0]
+        return model.c_u[t] - l + model.sigma_u[t] + model.mu_u[t] == 0
+    model.dual_balance_constraint = pyo.Constraint(model.prod_times_index, rule=constraint2)
+    model.dual_balance_constraint_u = pyo.Constraint(model.time_index, rule=constraint2_u)
+
+    def sigma_g_cstr1(model, i, t):
+        return model.sigma[i,t] <= (1 - model.r_sigma_g[i,t]) * L
+    def sigma_g_cstr2(model, i, t):
+        return P_max[i] - model.g_t[i,t] <= model.r_sigma_g[i,t] * L
+    def sigma_g_cstr1_u(model, t):
+        return model.sigma_u[t] <= (1 - model.r_sigma_g_u[t]) * L
+    def sigma_g_cstr2_u(model):
+        return model.q_u[t] - model.u[t] <= model.r_sigma_g_u[t] * L
+    model.slack_bid1 = pyo.Constraint(model.prod_times_index, rule=sigma_g_cstr1)
+    model.slack_bid2 = pyo.Constraint(model.prod_times_index, rule=sigma_g_cstr2)
+    model.slack_bid1_u = pyo.Constraint(model.time_index,rule=sigma_g_cstr1_u)
+    model.slack_bid2_u = pyo.Constraint(model.time_index,rule=sigma_g_cstr2_u)
+
+    def sigma_cstrmu_q(model, i, t):
+        return model.g_t[i, t] <= model.r_g_t[i,t] * L
+    def sigma_cstrmu(model, i, t):
+        return -model.mu[i, t] <= (1 - model.r_g_t[i,t]) * L
+    def sigma_cstrmu_qu(model, t):
+        return model.u[t] <= model.r_g_t_u[t] * L
+    def sigma_cstrmu_u(model, t):
+        return -model.mu_u[t] <= (1 - model.r_g_t_u[t]) * L
+    model.slack_pos1 = pyo.Constraint(model.prod_times_index, rule=sigma_cstrmu_q)
+    model.slack_pos2 = pyo.Constraint(model.prod_times_index, rule=sigma_cstrmu)
+    model.slack_pos1_u = pyo.Constraint(model.time_index, rule=sigma_cstrmu_qu)
+    model.slack_pos2_u = pyo.Constraint(model.time_index, rule=sigma_cstrmu_u)
+
+    def battery_states_limits(model):
+        return A@model.z <= z_bar
+    def battery_states_update(model):
+        return E@model.z + I_tilde@model.u == 0
 
     model.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT_EXPORT)
 
     solver = pyo.SolverFactory('gurobi')
     res = solver.solve(model)
 
-    results = [pyo.value(model.q[i]) for i in model.productors_index]
+    results = [pyo.value(model.g_t[i]) for i in model.productors_index]
     LMPs = [pyo.value(model.lambda_[0])]
-    print("Value of u = {} for a cost of {}".format(pyo.value(model.u), pyo.value(model.c_u)))
+    print("Value of u = {}, for a cost of {} and quantity of {}".format(pyo.value(model.u), pyo.value(model.c_u), pyo.value(model.q_u)))
     print("Dispatch is {} ".format(results))
     print("For LMP : {}".format(LMPs))
-
-    pyo.value(model.lambda_)
-
+    return model
 
 
 
@@ -493,3 +526,101 @@ if __name__ == '__main__':
     Plot results
     """
     plot_results_1_node(clearing_price, b, a, P_max, batteries=(c_u, q_u))
+
+
+
+# def optimal_battery_dispatch():
+#     L = 10000
+#
+#     model = pyo.ConcreteModel(name="with battery")
+#
+#     model.productors_index = range(len(b))
+#     model.q = pyo.Var(model.productors_index, domain=pyo.Reals)
+#     # model.c_u = pyo.Var(domain=pyo.NonNegativeReals)
+#     model.u = pyo.Var(domain=pyo.NonNegativeReals)
+#
+#     model.lambda_ = pyo.Var([0], domain=pyo.Reals)
+#     model.sigma = pyo.Var(model.productors_index, domain=pyo.NonNegativeReals)
+#     model.sigma_u = pyo.Var(domain=pyo.NonNegativeReals)
+#     model.mu = pyo.Var(model.productors_index, domain=pyo.NonPositiveReals)
+#     model.mu_u = pyo.Var( domain=pyo.NonPositiveReals)
+#
+#     model.r_sigma_g = pyo.Var(model.productors_index, domain=pyo.Binary)
+#     model.r_sigma_u = pyo.Var(domain=pyo.Binary)
+#     model.r_q = pyo.Var(model.productors_index, domain=pyo.Binary)
+#     model.r_u = pyo.Var(domain=pyo.Binary)
+#
+#
+#     # obj_func = lambda model: -((pyo.summation(b, model.q) + pyo.summation(np.array([d]), model.lambda_) + P_max@model.sigma))
+#     obj_func = lambda model: 1
+#
+#     d=1
+#     def equality(model):
+#         return pyo.summation(model.q) + model.u - d == 0
+#
+#     def prod_constraint(model, i):
+#         return model.q[i] <= P_max[i]
+#
+#     def pos_prod_constraint(model, i):
+#         return model.q[i] >= 0
+#
+#     def battery_constraint(model):
+#         return model.u <= q_u
+#
+#     def constraint2(model, i):
+#         return b[i] + model.lambda_[0] + model.sigma[i] + model.mu[i] == 0
+#
+#     def constraint3(model):
+#         return c_u + model.lambda_[0] + model.sigma_u + model.mu_u == 0
+#
+#     def sigma_g_cstr1(model, i):
+#         return model.sigma[i] <= (1- model.r_sigma_g[i])*L
+#
+#     def sigma_g_cstr2(model, i):
+#         return model.q[i] - P_max[i] >= model.r_sigma_g[i]*L
+#
+#     def sigma_u_cstr1(model):
+#         return model.sigma_u <= (1 - model.r_sigma_u) * L
+#
+#     def sigma_u_cstr2(model):
+#         return model.u - q_u >= model.r_sigma_u * L
+#
+#     def sigma_cstrmu_q(model,i):
+#         return model.q[i] <= model.r_q[i] * L
+#
+#     def sigma_cstrmu(model,i):
+#         return model.mu[i] >= (1-model.r_q[i]) * L
+#
+#     def sigma_cstrmu_qu(model):
+#         return model.u <= model.r_u * L
+#
+#     def sigma_cstrmu_u(model, i):
+#         return model.mu_u >= (1 - model.r_u) * L
+#
+#
+#     model.balance_constraint = pyo.Constraint(rule=equality)
+#     model.production_constraint = pyo.Constraint(model.productors_index, rule=prod_constraint)
+#     model.constraint2 = pyo.Constraint(model.productors_index, rule=constraint2)
+#     model.constraint3 = pyo.Constraint(rule=constraint3)
+#     model.sigma_g_cstr1 = pyo.Constraint(model.productors_index, rule=sigma_g_cstr1)
+#     model.sigma_g_cstr2 = pyo.Constraint(model.productors_index, rule=sigma_g_cstr2)
+#     model.sigma_g_cstru = pyo.Constraint(model.productors_index, rule=sigma_cstrmu_qu)
+#     model.sigma_g_cstrqu = pyo.Constraint(model.productors_index, rule=sigma_cstrmu_u)
+#     # model.sigma_u_cstr1 = pyo.Constraint(rule=sigma_u_cstr1)
+#     # model.sigma_u_cstr2 = pyo.Constraint(rule=sigma_u_cstr2)
+#     model.battery = pyo.Constraint(rule=battery_constraint)
+#
+#     model.obj = pyo.Objective(rule=obj_func)
+#
+#     model.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT_EXPORT)
+#
+#     solver = pyo.SolverFactory('gurobi')
+#     res = solver.solve(model)
+#
+#     results = [pyo.value(model.q[i]) for i in model.productors_index]
+#     LMPs = [pyo.value(model.lambda_[0])]
+#     print("Value of u = {} for a cost of {}".format(pyo.value(model.u), pyo.value(model.c_u)))
+#     print("Dispatch is {} ".format(results))
+#     print("For LMP : {}".format(LMPs))
+#
+#     pyo.value(model.lambda_)

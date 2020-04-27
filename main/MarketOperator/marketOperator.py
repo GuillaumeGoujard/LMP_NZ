@@ -1,15 +1,8 @@
-from datetime import datetime as datetime
-from typing import List, Tuple, Dict
 import numpy as np
-import pandas as pd
-from main.Network.PriceBids.Generator.Generator import Generator
-from main.Network.PriceBids.Load.Load import Load
-import os
 from cvxpy import *
 
 from main.Network.Topology.Topology import Topology
-from main.Network.PriceBids.Load.Load import Load
-from main.Network.PriceBids.Generator.Generator import Generator
+
 
 class marketOperator:
     def __init__(self, network = ""):
@@ -30,7 +23,7 @@ class marketOperator:
             self.type = None
             self.Bids = None
             self.Offers = None
-            self.Topology = Topology(network = 'North-South node')
+            self.Topology = Topology(network='North-South node')
             self.LMP = None
 
         if network is "ABM":

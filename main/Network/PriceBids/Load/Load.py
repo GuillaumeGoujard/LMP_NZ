@@ -1,8 +1,8 @@
-import numpy as np
 import pickle
 
 import numpy as np
 import pandas as pd
+
 
 class Load:
     def __init__(self, name:str, node_name:str, index:int, type:str, constant_demand=None):
@@ -24,11 +24,10 @@ class Load:
         if self.node_name not in from_nodes_to_subnodes:
             return None
         list_of_subnodes = from_nodes_to_subnodes[self.node_name]
-        save_column = None
+        save_column = load_data[["day", "Trading period"]].drop_duplicates()
         for n in list_of_subnodes:
             if n in Existing_sub_nodes:
                 nodal_data = load_data[load_data["Region ID"] == n]
-                save_column = nodal_data[["day", "Trading period"]]
                 nodal_loads = pd.concat([nodal_loads, nodal_data['Demand (GWh)']], axis=1)
         if save_column is None:
             return False
@@ -46,7 +45,7 @@ class Load:
         """
         if self.load_data is None:
             return 0
-        return self.load_data[(self.load_data["day"] == 1) & (self.load_data["period"] == 1)]["load"].values[0]
+        return self.load_data[(self.load_data["day"] == day) & (self.load_data["period"] == period)]["load"].values[0]
 
 
 def get_historical_loads():

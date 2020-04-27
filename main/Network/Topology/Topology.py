@@ -3,10 +3,10 @@ from typing import Tuple
 import numpy as np
 import pandas as pd
 
+import main.Network.PriceBids.Load.Load as ld
 from main.Network.PriceBids.Generator.Generator import Generator
 from main.Network.PriceBids.Load.Load import Load
 
-import main.Network.PriceBids.Load.Load as ld
 
 class Topology:
     """
@@ -313,11 +313,13 @@ if __name__ == '__main__':
     AMB_network.add_generator(k)
 
     """
-    Create loads on each nodes 
+    Create loads on each node
     """
     Existing_sub_nodes = ld.get_existing_subnodes()
     historical_loads = ld.get_historical_loads()
     Simp_nodes_dict = ld.get_nodes_to_subnodes()
+    Simp_nodes_dict["MAN"] = ["MAN2201"]
+    Existing_sub_nodes.append("MAN2201")
     nodes_to_index = pd.read_csv('data/ABM/ABM_Nodes.csv')
     for i, node in enumerate(AMB_network.names_2_nodes.keys()):
         # print("Load added at node : " + node)
@@ -325,6 +327,13 @@ if __name__ == '__main__':
         load = Load(node, node, index, type="real_load")
         load.add_load_data(historical_loads, Simp_nodes_dict, Existing_sub_nodes)
         AMB_network.add_load(load)
+
+    """
+    get d_t for day 12 and trading period 1
+    """
+    d = []
+    for node in AMB_network.loads.keys():
+        d.append(AMB_network.loads[node][0].return_d(12,1))
 
     """
     Add topology specific characteristics

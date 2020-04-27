@@ -1,0 +1,64 @@
+# Proposition of slides for CE 295 presentation
+
+- If (R) : robust presentation : to do imperatively, can be done with today's content
+- Otherwise, if we have more time
+
+## PART I : Introductory topics
+    @ Slide (R) :
+        + Title : "Give or Take : Hornsdale Battery"
+        + Pictures : graph pricetaker assumption / pictures of batteries / maybe headlines
+        + Comment : Introduction with elevator pitch :  they were not price takers !
+    @ Slide (R) :
+        + Title : "Introduction : Where, How and How much"
+        + Text : one short paragraph with our goal : "Devise an optimization framework to yield optimal location,
+                capacity and bidding price for a battery pack over a nodal wholesale market"
+        + Comment :  Short and punchy : link with the class : market + optimization
+    @ Slide (R) :
+        + Title : "Opening example : One node, One trading period, Unlimited Energy"
+        + Graphs : Moura's aggregating supply + my 2 working examples
+        + Equation : LMP = average price + congestion price
+        + Comment : If bid 0 (self schedule) => prices fall !, Bid to LMP ? ... => Not that simple !
+    @ Slide (R) :
+        + Title : "5 Challenges"
+        + Table : 2 columns (Challenge / Solution or Assumption), 5 rows :
+                - Endogenous LMPs : Non-linear objective function / Assumption : MPEC
+                - Uncertainty over bids / Assumption : perfect info
+                - Uncertainty over NET demand / Assumption : perfect info
+                - Spatial heterogenity / ED with DC power flow
+                - Temporal "hetereogenity ?" / Battery State of charge
+
+
+
+## PART II : Our model
+    @ Slide (R) :
+        + Title : "Optimization variables"
+    @ Slide (R) :
+        + Title : "Spatial and Temporal complexity"
+    @ Slide (R) :
+        + Title : "Light Optimization program"
+    @ Slide :
+        + Title : "Graphical objective function linearization"
+    @ Slide (R) :
+        + Title : "Final MILP"
+    @ Slide (R) :
+        + Title : "Simulating bids"
+
+
+## PART III : Our Results
+    @ Slide (R) :
+        + Title : "Why New Zealand ?"
+    @ Slide (R) :
+        + Title : "From 300 Nodes to 19"
+    @ Slide (R) :
+        + Title : "Results over September 2019"
+
+
+## PART IV : Conclusions and opening
+    @ Slide (R) :
+        + Title : "Conclusion"
+    @ Slide (R) :
+        + Title : "Special thanks"
+        + Comment : Bertrand and Mathilde
+    @ Slide (R) :
+        + Title : "References"
+        + Comment : ...
