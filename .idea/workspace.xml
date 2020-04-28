@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="">
+    <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="- Further work on marketOperator.py with needs to change characteristics for &#10;- Added Battery.py class (just for the sake of it, not necessarily used)">
+      <change afterPath="$PROJECT_DIR$/data/generators/20190901_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190903_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190904_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190905_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190906_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190907_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time_space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/clean_program.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main/MarketOperator/marketOperator_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/MarketOperator/marketOperator_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Network/Topology/Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/Topology.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/source/Aurecon-Hornsdale-Power-Reserve-Impact-Study-2018.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/source/HPRpic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/source/PriceTakerAssumption.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/source/plotCe295/plot1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/source/plotCe295/plot2.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +59,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\main\Network\PriceBids\Battery" />
-      <recent name="$PROJECT_DIR$/main/Network/PriceBids/Load" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\data\ABM" />
       <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\drafts\Kieran" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\main\Network\PriceBids\Battery" />
+      <recent name="$PROJECT_DIR$/main/Network/PriceBids/Load" />
     </key>
   </component>
   <component name="RunManager" selected="Python.marketOperator_tests">
@@ -78,6 +94,9 @@
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -97,6 +116,9 @@
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -136,6 +158,9 @@
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -260,6 +285,62 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:G:/My Drive/Berkeley/Courses/Spring 2020/295/Project/LMP_NZ/main/Network/Topology" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Adding H matrix creation" />
@@ -288,21 +369,22 @@
     </state>
     <state x="-1272" y="-158" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587476655109" />
     <state x="506" y="284" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960@0.0.1500.960" timestamp="1586655872928" />
-    <state x="561" y="69" key="CommitChangelistDialog2" timestamp="1587737112192">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state x="-1056" y="-391" key="CommitChangelistDialog2" timestamp="1588093217852">
+      <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
-    <state x="-942" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587655235386" />
+    <state x="-1056" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588093217852" />
     <state x="561" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587737112192" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1586654657154" />
-    <state x="144" y="85" width="1200" height="794" key="DiffContextDialog" timestamp="1586655915044">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="144" y="85" width="1200" height="794" key="DiffContextDialog/0.0.1500.960@0.0.1500.960" timestamp="1586655915044" />
-    <state x="-1240" y="-210" key="FileChooserDialogImpl" timestamp="1587422763824">
+    <state x="-1736" y="-374" width="1536" height="861" key="DiffContextDialog" timestamp="1588092212419">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
-    <state x="-1240" y="-210" key="FileChooserDialogImpl/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587422763824" />
+    <state x="-1736" y="-374" width="1536" height="861" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092212419" />
+    <state x="144" y="85" width="1200" height="794" key="DiffContextDialog/0.0.1500.960@0.0.1500.960" timestamp="1586655915044" />
+    <state x="-1240" y="-210" key="FileChooserDialogImpl" timestamp="1588092444716">
+      <screen x="-1920" y="-466" width="1920" height="1040" />
+    </state>
+    <state x="-1240" y="-210" key="FileChooserDialogImpl/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092444716" />
     <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1586645662516" />
     <state width="566" height="247" key="GridCell.Tab.0.bottom" timestamp="1587723749776">
       <screen x="0" y="0" width="1500" height="960" />
@@ -324,6 +406,10 @@
     </state>
     <state width="727" height="273" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587602707717" />
     <state width="566" height="247" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
+    <state x="-1222" y="-224" key="RollbackChangesDialog" timestamp="1588092213702">
+      <screen x="-1920" y="-466" width="1920" height="1040" />
+    </state>
+    <state x="-1222" y="-224" key="RollbackChangesDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092213702" />
     <state x="-1597" y="-332" key="SettingsEditor" timestamp="1587653286813">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
@@ -334,6 +420,10 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827460919" />
+    <state x="-1114" y="-30" key="VCS.ChangelistChooser" timestamp="1588091861306">
+      <screen x="-1920" y="-466" width="1920" height="1040" />
+    </state>
+    <state x="-1114" y="-30" key="VCS.ChangelistChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588091861306" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1587737118202">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -341,6 +431,10 @@
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587737118202" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827599970" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1586642787510" />
+    <state x="-1813" y="298" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588093666344">
+      <screen x="-1920" y="-466" width="1920" height="1040" />
+    </state>
+    <state x="-1813" y="298" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588093666344" />
     <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog" timestamp="1587716876183">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
@@ -360,9 +454,10 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1410" y="-128" width="709" height="307" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587423803538" />
-    <state x="414" y="207" key="search.everywhere.popup" timestamp="1586645604450">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state x="-1390" y="-242" width="672" height="678" key="search.everywhere.popup" timestamp="1588092779747">
+      <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
+    <state x="-1390" y="-242" width="672" height="678" key="search.everywhere.popup/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092779747" />
     <state x="414" y="207" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1586645604450" />
   </component>
 </project>

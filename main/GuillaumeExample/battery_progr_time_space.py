@@ -6,14 +6,13 @@ a = np.array([0, 0, 0, 0])  # 4 generators
 P_max = np.array([1, 3, 3, 5])
 d = 6  # demand of 6 MW
 L = 10000
-Horizon_T = 12
+Horizon_T = 4
 Battery_Horizon = Horizon_T+1
 d = np.array([6] * Horizon_T)
 interesting_D = [6]*Horizon_T
 interesting_D[Horizon_T//2] = 1
 d = np.array(interesting_D)
 d = list(d)
-# d = [6]
 # d = np.array([6,10,3])
 n_nodes = 1
 i_battery = 0
@@ -25,9 +24,8 @@ Mu = np.zeros((n_nodes, 1))
 Mu[i_battery] = 1
 
 ### Define H, h
-H = np.concatenate([np.ones((n_nodes,n_nodes)), -np.ones((n_nodes,n_nodes))])
-h = 15*np.zeros(2*H.shape[0])
-h = np.array([0, 0])
+H = np.concatenate([np.eye(n_nodes),-np.eye(n_nodes)])
+h = np.ones(2*H.shape[0])
 
 print("bids = ", b)
 print("Pmax = ", P_max)
@@ -76,7 +74,6 @@ model.mu = pyo.Var(model.prod_times_index, domain=pyo.NonPositiveReals)
 model.sigma_u = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
 model.mu_u = pyo.Var(model.time_index, domain=pyo.NonPositiveReals)
 
-model.r_lambda_ = pyo.Var(model.nodal_index, domain=pyo.Binary)
 model.r_gamma_ = pyo.Var(model.time_index, domain=pyo.Binary)
 model.r_beta_ = pyo.Var(model.beta_index, domain=pyo.Binary)
 model.r_sigma_g = pyo.Var(model.prod_times_index, domain=pyo.Binary)
@@ -91,25 +88,13 @@ def obj_func(model):
     for t in range(Horizon_T):
         for j in range(n_nodes):
             S += d[j, t] * model.lambda_[j, t]
-        for j in range(2*n_nodes):
-            S += h[j] * model.beta[j, t]
         for i in range(len(b)):
             S += - b[i] * model.g_t[i, t] - P_max[i] * model.sigma[i, t]
     return -S + cost_battery*model.q_u_test
 
-# pyo.value(model.obj)
-# j = 0
-# t = 0
-# pyo.value(d[j, t] * model.lambda_[j, t])
-# S = 0
-# for i in range(len(b)):
-#     S += - b[i] * pyo.value(model.g_t[i, t])
-# S = 0
-# for i in range(len(b)):
-#     S += - pyo.value(P_max[i] * model.sigma[i, t])
-#
+
 model.obj = pyo.Objective(rule=obj_func)
-# # model.obj = pyo.Objective(rule=lambda model : 1)
+# model.obj = pyo.Objective(rule=lambda model : 1)
 
 
 # obj_func = lambda model: -((pyo.summation(b, model.g_t) + pyo.summation(np.array([d]), model.lambda_) + P_max@model.sigma))
@@ -152,7 +137,7 @@ def prod_constraint(model, i, t):
 
 
 def prod_constraint_u(model, t):
-    return model.u[t] <= model.q_u[t]  #model.q_u[t]
+    return model.u[t] <= model.q_u_test  #model.q_u[t]
 
 
 model.bid_prod = pyo.Constraint(model.prod_times_index, rule=prod_constraint)
@@ -160,92 +145,23 @@ model.bid_prod_u = pyo.Constraint(model.time_index, rule=prod_constraint_u)
 
 
 def constraint2(model, i, t):
-    S = 0
-    for j in range(n_nodes):
-        S += Mn.T[i,j]*model.lambda_[j, t]
-    return b[i] - S + model.sigma[i, t] + model.mu[i, t] == 0
+    return b[i] - model.lambda_[t] + model.sigma[i, t] + model.mu[i, t] == 0
 
-# i = 1
-# t = 0
-# j =0
-# pyo.value(Mn.T[i,j]*model.lambda_[j, t])
-# S = 0
-# for i in range(len(b)):
-#     S += - b[i] * pyo.value(model.g_t[i, t])
-# S = 0
-# for i in range(len(b)):
-#     S += - pyo.value(P_max[i] * model.sigma[i, t])
-
-# def value_test(model, i, t):
-#     S = 0
-#     for j in range(n_nodes):
-#         S += Mn.T[i, j] * model.lambda_[j, t]
-#     return b[i] + model.sigma[i, t] + model.mu[i, t]
-#
-# pyo.value(value_test(model, 0, 0))
 
 def constraint2_u(model, t):
-    S = 0
-    for j in range(n_nodes):
-        S += Mu.T[j][0] * model.lambda_[j, t]
-    return model.c_u[t] - S + model.sigma_u[t] + model.mu_u[t] == 0
+    return model.c_u[t] - model.lambda_[t] + model.sigma_u[t] + model.mu_u[t] == 0
 
 
 model.dual_balance_constraint = pyo.Constraint(model.prod_times_index, rule=constraint2)
 model.dual_balance_constraint_u = pyo.Constraint(model.time_index, rule=constraint2_u)
 
-def LMP_s(model, i, t):
-    S = 0
-    for j in range(2*n_nodes):
-        S += H.T[i,j] * model.beta[j, t]
-    return model.gamma_[t] + S - model.lambda_[i,t] == 0
-model.LMPs = pyo.Constraint(model.nodal_index, rule=LMP_s)
 
+def constraint3_u(model, t):
+    return model.c_u[t] <= model.lambda_[t] - 0.1
 
-# def constraint3_u(model, t):
-#     return model.c_u[t] <= model.lambda_[t] - 0.1
-#
 
 # model.u_taken = pyo.Constraint(model.time_index, rule=constraint3_u)
 
-def gamma_cstr1(model, t):
-    return model.gamma_[t] <= (1 - model.r_gamma_[t]) * L
-
-def gamma_cstr2(model, t):
-    S = 0
-    for j in range(n_nodes):
-        S += model.p_t[j, t]
-    return S <= model.r_gamma_[t]* L
-
-model.gamma_cstr1 = pyo.Constraint(model.time_index, rule=gamma_cstr1)
-model.gamma_cstr2 = pyo.Constraint(model.time_index, rule=gamma_cstr2)
-
-def beta_ctrs1(model, i, t):
-    return model.beta[i,t] <= (1 - model.r_beta_[i,t]) * L
-
-def beta_ctrs2(model, j, t):
-    S = 0
-    for i in range(n_nodes):
-        S += H[j, i] * model.p_t[i, t]
-    return S - h[j] <= model.r_beta_[j,t] * L
-
-model.beta_ctrs1 = pyo.Constraint(model.beta_index, rule=beta_ctrs1)
-model.beta_ctrs2 = pyo.Constraint(model.beta_index, rule=beta_ctrs2)
-
-def lambda_ctrs1(model, i, t):
-    return model.lambda_[i,t] <= (1 - model.r_lambda_[i,t]) * L
-
-def lambda_ctrs2(model, j, t):
-    S = 0
-    for i in range(n_nodes):
-        for b_ in range(len(b)):
-            S += Mn[i, b_] * model.g_t[b_, t]
-        S += Mu[i][0] * model.u[t]
-    return S - d[j,t] - model.p_t[j,t] <= model.r_lambda_[j,t] * L #model.p_t[j, t] == S - d[j, t]
-
-
-model.lambda_cstrs1 = pyo.Constraint(model.nodal_index, rule=lambda_ctrs1)
-model.lambda_cstrs2 = pyo.Constraint(model.nodal_index, rule=lambda_ctrs2)
 
 def sigma_g_cstr1(model, i, t):
     return model.sigma[i, t] <= (1 - model.r_sigma_g[i, t]) * L
@@ -260,7 +176,7 @@ def sigma_g_cstr1_u(model, t):
 
 
 def sigma_g_cstr2_u(model, t):
-    return model.q_u[t] - model.u[t] <= model.r_sigma_g_u[t] * L #model.q_u[t]
+    return model.q_u_test - model.u[t] <= model.r_sigma_g_u[t] * L #model.q_u[t]
 
 
 model.slack_bid1 = pyo.Constraint(model.prod_times_index, rule=sigma_g_cstr1)
@@ -334,7 +250,6 @@ res = solver.solve(model)
 model.pprint()
 print("\n___ OBJ ____" )
 print(pyo.value(model.obj))
-
 #
 # results = [pyo.value(model.g_t[i]) for i in model.productors_index]
 # LMPs = [pyo.value(model.lambda_[0])]
