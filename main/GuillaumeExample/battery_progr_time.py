@@ -6,12 +6,13 @@ a = np.array([0, 0, 0, 0])  # 4 generators
 P_max = np.array([1, 3, 3, 5])
 d = 6  # demand of 6 MW
 L = 10000
-Horizon_T = 48
+Horizon_T = 12
 Battery_Horizon = Horizon_T+1
 d = np.array([6] * Horizon_T)
 interesting_D = [6]*Horizon_T
 interesting_D[Horizon_T//2] = 1
 d = np.array(interesting_D)
+# d = np.array([6])
 # d = np.array([6,10,3])
 
 print("bids = ", b)
@@ -32,8 +33,9 @@ E = np.zeros((Horizon_T, Battery_Horizon))
 for t in range(0, Horizon_T):
     E[t, t+1] = 1
     E[t, t] = -1
-
 I_tilde = np.eye(Horizon_T)
+
+
 # I_tilde[Horizon_T - 1, Horizon_T - 1] = 0
 
 model = pyo.ConcreteModel(name="feasibility_analysis")
