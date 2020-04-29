@@ -33,8 +33,9 @@ gen_names = Offers201909.Unit.unique().tolist()
 orignodes = pd.Series(Offers201909.PointOfConnection[Offers201909.Unit == unit].unique().tolist()
      for unit in gen_names).swifter.apply(lambda x: x[0][:3])
 
-simpnodes = pd.Series(Offers201909.PointOfConnection[Offers201909.Unit == unit].unique().tolist()
-     for unit in gen_names).swifter.apply(lambda x: x[0][:3]).swifter.apply(lambda x: [key for (key, value) in DictSimpNetwork.items() if x in value]).tolist()
+simpnodes = pd.Series(Offers201909.PointOfConnection[Offers201909.Unit == unit].unique().tolist() for unit in gen_names)\
+    .swifter.apply(lambda x: x[0][:3])\
+    .swifter.apply(lambda x: [key for (key, value) in DictSimpNetwork.items() if x in value]).tolist()
 simpnodes = pd.Series(simpnodes).apply(lambda x: x[0] if len(x) == 1 else '')
 
 # df = pd.DataFrame({

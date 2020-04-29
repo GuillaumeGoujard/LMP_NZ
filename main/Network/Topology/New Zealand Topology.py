@@ -75,8 +75,8 @@ plt.scatter(Node19[:,0],Node19[:,1], marker = 'o')
 
 # Tlines = [None] * (2*(19))
 # for l in range(m):
-#     MXLoc1 = TransmissionLines.MXLOC1.values[l]
-#     MXLoc2 = TransmissionLines.MXLOC2.values[l]
+#     MXLoc1 = SimpNetDetails.LEAVE.values[l]
+#     MXLoc2 = SimpNetDetails.ENTER.values[l]
 #     loc1 = Sites[Sites.MXLOCATION == MXLoc1].index.values.astype(int)[0]
 #     loc2 = Sites[Sites.MXLOCATION == MXLoc2].index.values.astype(int)[0]
 #     Tlines[2*l] = (Sites.X[loc1], Sites.X[loc2])
