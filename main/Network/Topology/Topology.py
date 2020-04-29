@@ -6,7 +6,7 @@ import pandas as pd
 import main.Network.PriceBids.Load.Load as ld
 from main.Network.PriceBids.Generator.Generator import Generator
 from main.Network.PriceBids.Load.Load import Load
-
+import stored_path
 
 class Topology:
     """
@@ -60,8 +60,9 @@ class Topology:
             self.h = pd.concat([Network["Capacity(MW)"], Network["Capacity(MW)"]]).values
 
         elif network is "ABM":
-            Network = pd.read_csv('data/ABM/ABM_Network_details.csv')
+            Network = pd.read_csv(stored_path.main_path + '/data/ABM/ABM_Network_details.csv')
             Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
+            Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
             m = Network.shape[0]
             Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
             Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
@@ -141,6 +142,12 @@ class Topology:
                 Mn[k][l.index] = 1
         self.Mn = Mn
         return self.Mn
+
+    def get_number_of_gen(self):
+        g = 0
+        for node in self.generators.keys():
+            g += len(self.generators[node])
+        return g
 
     def create_H_h(self) -> np.array:
         self.H = create_H(self.I, self.y)
@@ -240,10 +247,32 @@ def create_H(I, y):
 
     '''
     # Initializing sizes
+
+    Network = pd.read_csv(stored_path.main_path + '/data/ABM/ABM_Network_details.csv')
+    Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
+    Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
+    m = Network.shape[0]
+    Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
+    Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
+
+    names_2_nodes = dict([[node, j] for j, node in enumerate(Nodes)])
+    nodes_2_names = generate_nodes_2_names(names_2_nodes)
+    I = create_incidence(Network.NLeave, Network.NEnter)
+    A = create_adjacency(Network.NLeave, Network.NEnter)
+
+    omega_NZ = 50 * (2 * np.pi)
+    z = Network['Resistance (Ohms)'] + 1j * Network["Reactance (Ohms)"] * omega_NZ
+    y = 1 / z
+    y = np.imag(y)
+
     m = I.shape[1]
     Delta_y = np.diag(y)
 
     Y = I @ Delta_y @ I.T
+
+    Y_bar = Y.copy()
+    Y_bar[0,:] = 0
+    Y_bar[:,0] = 0
 
     Y_bar = np.delete(np.delete(Y, 0, 0), 0, 1)
 
@@ -309,12 +338,12 @@ if __name__ == '__main__':
     """
     Create two generators and add them to the network
     """
-    g = Generator("GuillaumeGenerator", "HEN", 0, "dummy", Pmax=20, Pmin=0, marginal_cost=10)
-    AMB_network.add_generator(g)
-    a = Generator("AliceGenerator", "HEN", 2, "dummy", Pmax=200, Pmin=0, marginal_cost=200)
-    AMB_network.add_generator(a)
-    k = Generator("KieranGenerator", "MAN", 1, "dummy", Pmax=100, Pmin=5, marginal_cost=50)
-    AMB_network.add_generator(k)
+    # g = Generator("GuillaumeGenerator", "HEN", 0, "dummy", Pmax=20, Pmin=0, marginal_cost=[10,0])
+    # AMB_network.add_generator(g)
+    # a = Generator("AliceGenerator", "HEN", 2, "dummy", Pmax=200, Pmin=0, marginal_cost=[200,0])
+    # AMB_network.add_generator(a)
+    # k = Generator("KieranGenerator", "MAN", 1, "dummy", Pmax=100, Pmin=5, marginal_cost=[50,0])
+    # AMB_network.add_generator(k)
 
     """
     Create loads on each node
@@ -324,7 +353,7 @@ if __name__ == '__main__':
     Simp_nodes_dict = ld.get_nodes_to_subnodes()
     Simp_nodes_dict["MAN"] = ["MAN2201"]
     Existing_sub_nodes.append("MAN2201")
-    nodes_to_index = pd.read_csv('data/ABM/ABM_Nodes.csv')
+    nodes_to_index = pd.read_csv(stored_path.main_path + '/data/ABM/ABM_Nodes.csv')
     for i, node in enumerate(AMB_network.names_2_nodes.keys()):
         # print("Load added at node : " + node)
         index = nodes_to_index[nodes_to_index["Node names"] == node]["Node index"].values[0]
@@ -338,6 +367,28 @@ if __name__ == '__main__':
     d = []
     for node in AMB_network.loads.keys():
         d.append(AMB_network.loads[node][0].return_d(12,1))
+
+
+    """
+    Add generators
+    """
+    import json
+    import math
+    file_path = stored_path.main_path + '/data/generators/generator_adjacency_matrix_dict.json'
+    with open(file_path) as f:
+        data = json.loads(f.read())
+
+    number_of_added_generators = 0
+    for name_generator in data.keys():
+        L = data[name_generator]
+        try:
+            if type(L[0]) != float:
+                if not math.isnan(L[-2]):
+                    g = Generator(name_generator, L[0], 0, L[-1], Pmax=L[-2], Pmin=L[-3], marginal_cost=L[1])
+                    AMB_network.add_generator(g)
+                    number_of_added_generators +=1
+        except:
+            pass
 
     """
     Add topology specific characteristics

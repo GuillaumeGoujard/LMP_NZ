@@ -11,7 +11,8 @@ class Generator:
         self.type = type
         self.Pmax = Pmax
         self.Pmin = Pmin
-        self.q, self.a, self.k = None, None, None
+        self.a, self.q = marginal_cost[0], marginal_cost[1]
+        # self.q, self.a, self.k = None, None, None
         if type == "dummy":
             self.a = marginal_cost
             self.k, self.q = 0, 0
