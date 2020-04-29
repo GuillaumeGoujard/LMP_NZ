@@ -10,23 +10,23 @@
         + Comment : Introduction with elevator pitch :  they were not price takers !
     @ Slide (R) :
         + Title : "Introduction : Where, How and How much"
-        + Text : one short paragraph with our goal : "Devise an optimization framework to yield optimal location,
-                capacity and bidding price for a battery pack over a nodal wholesale market"
+        + Text : one short paragraph with our goal : "Devise an optimization framework to yield optimal location $i$,
+                capacity $u_max$ and bidding price/volume ($c^u_t$, $q_t^u$) for a battery pack over a nodal wholesale market"
         + Comment :  Short and punchy : link with the class : market + optimization
+    @ Slide (R) :
+        + Title : "5 Challenges"
+        + Table : 2 columns (Challenge / Solution or Assumption), 5 rows :
+                - Uncertainty over bids / Assumption : perfect info
+                - Uncertainty over demand / Assumption : perfect info
+                - Spatial heterogenity / Solution: DC power flow
+                - Multi-temporal dimension / Solution: Battery State of charge equations as a constraint
+                - Endogenous LMPs : Non-linear objective function / Solution : linearized Mathematical Program under Equilibreum constraint
     @ Slide (R) :
         + Title : "Opening example : One node, One trading period, Unlimited Energy"
         + Graphs : Moura's aggregating supply + my 2 working examples
         + Equation : LMP = average price + congestion price
         + Comment : If bid 0 (self schedule) => prices fall !, Bid to LMP ? ... => Not that simple !
-    @ Slide (R) :
-        + Title : "5 Challenges"
-        + Table : 2 columns (Challenge / Solution or Assumption), 5 rows :
-                - Endogenous LMPs : Non-linear objective function / Assumption : MPEC
-                - Uncertainty over bids / Assumption : perfect info
-                - Uncertainty over NET demand / Assumption : perfect info
-                - Spatial heterogenity / ED with DC power flow
-                - Temporal "hetereogenity ?" / Battery State of charge
-
+    
 
 
 ## PART II : Our model
