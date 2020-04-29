@@ -30,20 +30,33 @@ def getKeysByValue(dictOfElements, valueToFind):
 
 gen_names = Offers201909.Unit.unique().tolist()
 
+orignodes = pd.Series(Offers201909.PointOfConnection[Offers201909.Unit == unit].unique().tolist()
+     for unit in gen_names).swifter.apply(lambda x: x[0][:3])
+
 simpnodes = pd.Series(Offers201909.PointOfConnection[Offers201909.Unit == unit].unique().tolist()
      for unit in gen_names).swifter.apply(lambda x: x[0][:3]).swifter.apply(lambda x: [key for (key, value) in DictSimpNetwork.items() if x in value]).tolist()
-# orignodes = [item for sublist in orignodes for item in sublist]
+simpnodes = pd.Series(simpnodes).apply(lambda x: x[0] if len(x) == 1 else '')
+
+# df = pd.DataFrame({
+#     'gen_names' : gen_names,
+#     'orignodes' : orignodes,
+#     'simpnodes' : simpnodes
+# })
 
 A = [None] * len(gen_names)
 for i in range(len(A)):
-    A[i] =
+    gen = gen_names[i]
 
-sum(np.array([Offers201909.PointOfConnection[Offers201909.Unit == unit].unique().tolist()
-     for unit in Offers201909.Unit.unique().tolist()]).shape[0])
+    A[i] = round()
 
+Pmins =
+
+Pmaxs =
+
+fuel_names =
 
 Gendict = {
     gen_name : [node[0], [a,0], Pmin, Pmax, fuel_name]
               for gen_name, node, a, Pmin, Pmax, fuel_name
-              in zip(gen_names,simpnodes,,,,)
+              in zip(gen_names, simpnodes, A, Pmins, Pmaxs, fuel_names)
 }
