@@ -10,7 +10,7 @@ Spans = pd.read_csv('data/topology/Spans.csv')
 Structures = pd.read_csv('data/topology/Structures.csv')
 TransmissionLines = pd.read_csv('data/topology/Transmission_Lines.csv')
 
-Offers201909week1 = pd.concat(pd.read_csv(f'data/generators/2019090{i}_Offers.csv') for i in range(1,8))
+Offers201909 = pd.concat(pd.read_csv(f'data/generators/2019090{i}_Offers.csv') for i in range(1,8))
 Bids201909 = pd.read_csv('data/historicaLMPs/201909_Final_prices.csv')
 
 SimpNetwork = pd.read_csv('data/ABM/ABM_Simplified_network.csv')

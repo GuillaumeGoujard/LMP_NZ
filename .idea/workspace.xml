@@ -2,17 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/generators/20190902_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190908_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190909_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190910_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190911_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190912_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190913_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190914_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190915_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190916_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190917_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190918_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190919_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190920_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190921_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190922_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190923_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190924_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190925_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190926_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190927_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190928_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190929_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/20190930_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator bids.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ABM/ABM_Network_details.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ABM/ABM_Network_details.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ABM/ABM_Simplified_network.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ABM/ABM_Simplified_network.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/generators/20190903_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/generators/20190903_Offers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/generators/20190904_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/generators/20190904_Offers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/generators/20190905_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/generators/20190905_Offers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/generators/20190906_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/generators/20190906_Offers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/generators/20190907_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/generators/20190907_Offers.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/Topology.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,20 +75,17 @@
       <recent name="$PROJECT_DIR$/main/Network/PriceBids/Load" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.New Zealand Topology">
-    <configuration name="MILP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Generator bids">
+    <configuration name="Generator bids" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/GuillaumeExample/MILP.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator bids.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,18 +175,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.Topology" />
-      <item itemvalue="Python.MILP" />
       <item itemvalue="Python.Topology_tests" />
       <item itemvalue="Python.marketOperator_tests" />
       <item itemvalue="Python.New Zealand Topology" />
+      <item itemvalue="Python.Generator bids" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Generator bids" />
         <item itemvalue="Python.New Zealand Topology" />
         <item itemvalue="Python.Topology" />
         <item itemvalue="Python.marketOperator_tests" />
         <item itemvalue="Python.Topology_tests" />
-        <item itemvalue="Python.MILP" />
       </list>
     </recent_temporary>
   </component>
@@ -269,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588093719126</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- Plotting NZ nodes">
+      <created>1588128314432</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588128314433</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -351,15 +370,16 @@
     <MESSAGE value="- Additional characteristics in marketOperator.py and Topology.py" />
     <MESSAGE value="- Further work on marketOperator.py with needs to change characteristics for &#10;- Added Battery.py class (just for the sake of it, not necessarily used)" />
     <MESSAGE value="- New Zealand Topology" />
-    <option name="LAST_COMMIT_MESSAGE" value="- New Zealand Topology" />
+    <MESSAGE value="- Plotting NZ nodes" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Plotting NZ nodes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588116158087">
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588128995813">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587649113329" />
     <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587726427824" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1588116158087" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1588128995813" />
     <state x="-1255" y="-240" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1587423549463">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
@@ -369,11 +389,11 @@
     </state>
     <state x="-1272" y="-158" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587476655109" />
     <state x="506" y="284" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960@0.0.1500.960" timestamp="1586655872928" />
-    <state x="-1056" y="-391" key="CommitChangelistDialog2" timestamp="1588093715323">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state x="561" y="69" key="CommitChangelistDialog2" timestamp="1588128309184">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1056" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588093715323" />
-    <state x="561" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587737112192" />
+    <state x="561" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588128309184" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1586654657154" />
     <state x="-1736" y="-374" width="1536" height="861" key="DiffContextDialog" timestamp="1588092212419">
@@ -386,30 +406,30 @@
     </state>
     <state x="-1240" y="-210" key="FileChooserDialogImpl/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588095386482" />
     <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1586645662516" />
-    <state width="565" height="247" key="GridCell.Tab.0.bottom" timestamp="1588116171619">
+    <state width="565" height="247" key="GridCell.Tab.0.bottom" timestamp="1588129000492">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="727" height="273" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587602707717" />
     <state width="566" height="247" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
-    <state width="565" height="247" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1588116171619" />
-    <state width="565" height="247" key="GridCell.Tab.0.center" timestamp="1588116171618">
+    <state width="565" height="247" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
+    <state width="565" height="247" key="GridCell.Tab.0.center" timestamp="1588129000492">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="727" height="273" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587602707717" />
     <state width="566" height="247" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
-    <state width="565" height="247" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1588116171618" />
-    <state width="565" height="247" key="GridCell.Tab.0.left" timestamp="1588116171614">
+    <state width="565" height="247" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
+    <state width="565" height="247" key="GridCell.Tab.0.left" timestamp="1588129000492">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="727" height="273" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587602707717" />
     <state width="566" height="247" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
-    <state width="565" height="247" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1588116171614" />
-    <state width="565" height="247" key="GridCell.Tab.0.right" timestamp="1588116171619">
+    <state width="565" height="247" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
+    <state width="565" height="247" key="GridCell.Tab.0.right" timestamp="1588129000492">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="727" height="273" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587602707717" />
     <state width="566" height="247" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
-    <state width="565" height="247" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1588116171619" />
+    <state width="565" height="247" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
     <state x="-1222" y="-224" key="RollbackChangesDialog" timestamp="1588092213702">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
