@@ -88,7 +88,9 @@ class Topology:
             self.h = None
 
         self.number_nodes = self.nodes_2_names.keys().__len__()
+
         self.loads = dict([[node, []] for node in self.nodes_2_names.keys()])
+        self.load_data = 0
 
         self.number_generators = 0
         self.generators = dict([[node, []] for node in self.nodes_2_names.keys()])
@@ -107,10 +109,12 @@ class Topology:
     ## Methods
 
     # Adding elements
-    def add_node(self, node_name):
+    def add_nodes(self, node_name):
+
         return
 
     def add_lines(self, Leave_node_name, Enter_node_name):
+
         return
 
     def add_generator(self, generator: Generator):
@@ -140,7 +144,7 @@ class Topology:
 
     def create_H_h(self) -> np.array:
         self.H = create_H(self.I, self.y)
-        self.h = 0 # to change for something more general
+        self.h = pd.concat([self.something, self.something]).values
         return self.H, self.h
 
     def create_Pmin_Pmax(self):
@@ -160,9 +164,9 @@ class Topology:
         return self.Qt, self.at
 
     def create_Au_xt_ct(self):
-        self.Au = np.array([[0]])
-        self.xt = np.array([[0]])
-        self.ct = np.array([[0]])
+        self.Au = np.zeros((2*self.number_nodes,self.number_nodes))
+        self.xt = np.zeros((self.number_nodes,1))
+        self.ct = np.zeros((self.number_nodes,1))
         return self.Au, self.xt, self.ct
 
 

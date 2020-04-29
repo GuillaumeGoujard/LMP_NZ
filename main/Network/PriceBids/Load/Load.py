@@ -10,9 +10,9 @@ class Load:
         self.node_name = node_name
         self.index = index
         self.load_data = None
-        self.d = None
-        if type == "dummy":
-            self.d = constant_demand
+        # self.d = None
+        # if type == "dummy":
+        #     self.d = constant_demand
 
     def add_load_data(self, load_data: pd.DataFrame, from_nodes_to_subnodes, Existing_sub_nodes):
         """
