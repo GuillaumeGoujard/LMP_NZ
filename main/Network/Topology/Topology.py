@@ -90,7 +90,7 @@ class Topology:
         self.number_nodes = self.nodes_2_names.keys().__len__()
 
         self.loads = dict([[node, []] for node in self.nodes_2_names.keys()])
-        self.load_data =
+        self.load_data = 0
 
         self.number_generators = 0
         self.generators = dict([[node, []] for node in self.nodes_2_names.keys()])
