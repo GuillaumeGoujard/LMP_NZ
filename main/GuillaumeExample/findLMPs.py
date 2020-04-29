@@ -2,23 +2,16 @@ import numpy as np
 import pyomo.environ as pyo
 
 L = 10000
-def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of_battery=1):
+def run_program(d, realLMPs, P_max, H, h, Mn):
 
     """
     Defining spatial and temporal constants
     """
     Horizon_T = d.shape[1]
     n_nodes = d.shape[0]
-    Battery_Horizon = Horizon_T + 1
-    n_generators = b.shape[0]
     n_lines = H.shape[0]
+    n_generators = len(P_max)
 
-    """
-    Battery state equations
-    """
-    A, z_bar, I_tilde, E = get_battery_matrices(Battery_Horizon, z_max=10, z_min=1)
-    Mu = np.zeros((n_nodes, 1))
-    # Mu[i_battery] = 1
 
     """
     Defining optimization variables
@@ -26,13 +19,11 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     model = pyo.ConcreteModel(name="feasibility_analysis")
 
     # Indexes over the optimization variables
-    model.prod_times_index = pyo.Set(initialize=list((i, j) for i in range(b.shape[0]) for j in range(Horizon_T)))
+    model.prod_times_index = pyo.Set(initialize=list((i, j) for i in range(n_generators) for j in range(Horizon_T)))
+    model.bid_index = range(n_generators)
     model.time_index = range(Horizon_T)
-    model.battery_index = range(Battery_Horizon)
-    model.mu_index = range(n_nodes)
     model.nodal_index = pyo.Set(initialize=list((i, j) for i in range(n_nodes) for j in range(Horizon_T)))
     model.beta_index = pyo.Set(initialize=list((i, j) for i in range(n_lines) for j in range(Horizon_T)))
-    model.A = pyo.RangeSet(0, 2 * Battery_Horizon - 1)
     model.H_index =  pyo.Set(initialize=list((i, j) for i in range(n_lines) for j in range(H.shape[1])))
 
     """
@@ -41,22 +32,12 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     model.H = pyo.Param(model.H_index, initialize=lambda model, i, j: H_init(model, i, j, H), mutable=True)
 
     """
-    Battery variables
-    """
-    model.z = pyo.Var(model.battery_index, domain=pyo.NonNegativeReals)
-    model.q_u = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
-    model.q_u_test = pyo.Var(domain=pyo.NonNegativeReals) #max capacity
-    model.c_u = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
-    model.M_u = pyo.Var(model.mu_index, domain=pyo.NonNegativeReals)
-    model.starting_z = pyo.Var(domain=pyo.NonNegativeReals)
-    model.i = pyo.Var(domain_type=pyo.IntegerSet, lb=0, ub=n_nodes)
-
-    """
     E.D primal variables
     """
-    model.g_t = pyo.Var(model.prod_times_index, domain=pyo.Reals)
+    model.g_t = pyo.Var(model.prod_times_index, domain=pyo.NonNegativeReals)
     model.p_t = pyo.Var(model.nodal_index, domain=pyo.Reals)
-    model.u = pyo.Var(model.time_index, domain=pyo.Reals)
+
+    model.b = pyo.Var(model.bid_index, domain=pyo.Reals)
 
     """
     E.D dual variables
@@ -66,33 +47,24 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     model.beta = pyo.Var(model.beta_index, domain=pyo.NonNegativeReals)
     model.sigma = pyo.Var(model.prod_times_index, domain=pyo.NonNegativeReals)
     model.mu = pyo.Var(model.prod_times_index, domain=pyo.NonPositiveReals)
-    model.sigma_u = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
-    model.mu_u = pyo.Var(model.time_index, domain=pyo.NonPositiveReals)
 
     """
     Binary variables for slack constraints
     """
-    # model.r_lambda_ = pyo.Var(model.nodal_index, domain=pyo.Binary)
-    # model.r_gamma_ = pyo.Var(model.time_index, domain=pyo.Binary)
     model.r_beta_ = pyo.Var(model.beta_index, domain=pyo.Binary)
     model.r_sigma_g = pyo.Var(model.prod_times_index, domain=pyo.Binary)
     model.r_g_t = pyo.Var(model.prod_times_index, domain=pyo.Binary)
-    model.r_mu_t = pyo.Var(model.prod_times_index, domain=pyo.Binary)
-    model.r_sigma_g_u = pyo.Var(model.time_index, domain=pyo.Binary)
-    model.r_g_t_u = pyo.Var(model.time_index, domain=pyo.Binary)
-    model.r_u = pyo.Var(model.time_index, domain=pyo.Binary)
 
     """
     Define objective
     """
-    model.obj = pyo.Objective(rule=lambda model : obj_func(model, Horizon_T, d, b, P_max, P_min, n_nodes, h, cost_of_battery))
-    # model.obj = pyo.Objective(rule=lambda model : 1)
+    model.obj = pyo.Objective(rule=lambda model : obj_func(model, Horizon_T, n_nodes, realLMPs))
 
     """
     Injection feasibility constraints
     """
     model.injection_definition = pyo.Constraint(model.nodal_index, rule=lambda model, j, t :
-                                                            pt_definition(model, j, t, n_nodes, Mn, Mu, d, n_generators))
+                                                            pt_definition(model, j, t, n_nodes, Mn, d, n_generators))
     model.injection_balance = pyo.Constraint(model.time_index, rule=lambda model, t : injection_balance(model, t, n_nodes))
     model.line_constraints = pyo.Constraint(model.beta_index, rule=lambda model, j,
                                                                            t : line_constraints(model, j, t, n_nodes, h))
@@ -102,52 +74,25 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     """
     model.upper_bound_bid_generators = pyo.Constraint(model.prod_times_index, rule=lambda model, i, t:
                                                                                     prod_constraint(model, i, t, P_max))
-    model.upper_bound_bid_battery = pyo.Constraint(model.time_index, rule=prod_constraint_u)
-    model.down_bound_bid_generators =  pyo.Constraint(model.prod_times_index, rule=lambda model, i, t:
-                                                                                    prod_constraint_min(model, i, t, P_min))
 
     """
     Cost and dual prices for generators
     """
     model.dual_generator_constraint = pyo.Constraint(model.prod_times_index, rule=lambda model, i, t:
-                                                                        generator_price(model, i, t, n_nodes, Mn, b))
-    model.dual_battery_constraint = pyo.Constraint(model.time_index, rule=lambda model, t:
-                                                                        battery_price(model, t, n_nodes, Mu))
+                                                                        generator_price(model, i, t, n_nodes, Mn))
     model.LMPs = pyo.Constraint(model.nodal_index, rule=lambda model, i, t: LMP_s(model, i, t, n_nodes, H))
 
 
-    """
-    Battery states
-    """
-    model.Mu_set = pyo.Constraint(rule=lambda model : Mu_set(model, Mu))
-    model.battery_states_limits = pyo.Constraint(model.A,
-                                                 rule=lambda model, a : battery_states_limits(model, a, Battery_Horizon, A, z_bar))
-    model.battery_states_update = pyo.Constraint(model.time_index,
-                                                 rule=lambda model, t : battery_states_update(model, t, Battery_Horizon, E, Horizon_T,
-                                                                            I_tilde))
-    model.initial_state = pyo.Constraint(rule=initial_state)
-    model.final_state = pyo.Constraint(rule=lambda model : final_state(model, Battery_Horizon))
-    model.battery_bid_cstr = pyo.Constraint(model.time_index, rule=battery_bid_cstr)
-    model.capacity_constraint = pyo.Constraint(rule=battery_capacity_cstr)
 
     """
     Slack constraints
     """
-    # model.gamma_cstr1 = pyo.Constraint(model.time_index, rule=gamma_cstr1)
-    # model.gamma_cstr2 = pyo.Constraint(model.time_index, rule=lambda model, t: gamma_cstr2(model, t, n_nodes))
     model.beta_cstr1 = pyo.Constraint(model.beta_index, rule=beta_cstr1)
     model.beta_cstr2 = pyo.Constraint(model.beta_index, rule=lambda model, j, t : beta_cstr2(model, j, t, n_nodes, h))
-    # model.lambda_cstr1 = pyo.Constraint(model.nodal_index, rule=lambda_cstr1)
-    # model.lambda_cstr2 = pyo.Constraint(model.nodal_index,
-    #                                     rule=lambda model, j, t : lambda_cstr2(model, j, t, n_nodes, n_generators, Mn, Mu, d))
     model.sigma_g_cstr1 = pyo.Constraint(model.prod_times_index, rule=sigma_g_cstr1)
     model.sigma_g_cstr2 = pyo.Constraint(model.prod_times_index, rule=lambda model, i, t :sigma_g_cstr2(model, i, t, P_max))
-    model.sigma_g_cstr1_u = pyo.Constraint(model.time_index, rule=sigma_g_cstr1_u)
-    model.sigma_g_cstr2_u = pyo.Constraint(model.time_index, rule=sigma_g_cstr2_u)
-    model.slack_pos1 = pyo.Constraint(model.prod_times_index, rule=lambda model, i, t: sigma_cstrmu_q(model, i, t, P_min))
+    model.slack_pos1 = pyo.Constraint(model.prod_times_index, rule=sigma_cstrmu_q)
     model.slack_pos2 = pyo.Constraint(model.prod_times_index, rule=sigma_cstrmu)
-    model.slack_pos1_u = pyo.Constraint(model.time_index, rule=sigma_cstrmu_qu)
-    model.slack_pos2_u = pyo.Constraint(model.time_index, rule=sigma_cstrmu_u)
 
     """
     Solve and store
@@ -155,12 +100,12 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     model.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT_EXPORT)
 
     solver = pyo.SolverFactory('gurobi')
-    res = solver.solve(model)
+    solver.options['TimeLimit'] = 60
+    solver.options['mipgap'] = 0.1
+    solver.solve(model, tee=True)
+    # res = solver.solve(model)
     return model
 
-
-def Mu_set(model, Mu):
-    return Mu[model.i] == 1
 
 def injection_balance(model, t, n_nodes):
     S = 0
@@ -176,43 +121,27 @@ def line_constraints(model, j, t, n_nodes, h):
     return S <= h[j]
 
 
-def pt_definition(model, j, t, n_nodes, Mn, Mu, d, n_generators):
+def pt_definition(model, j, t, n_nodes, Mn, d, n_generators):
     S = 0
     # for i in range(n_nodes):
     for b_ in range(n_generators):
         S += Mn[j,b_]*model.g_t[b_, t]
-    S += Mu[j][0]*model.u[t]
     return model.p_t[j,t] - S + d[j, t] == 0
-
-# S=0
-# t=0
-# i = 0
-# for b_ in range(n_generator):
-#     if Mn[i, b_] > 0 :
-#         print(i, b_)
-#     S += pyo.value(Mn[i, b_] * model.g_t[b_, 0])
-# S += pyo.value(Mu[i][0]*model.u[t])
-# d[0,0]
-# pyo.value(model.p_t[0,0])
 
 
 def prod_constraint(model, i, t, P_max):
-    return model.g_t[i, t] <= P_max[i,t]
+    return model.g_t[i, t] <= P_max[i]
 
 
 def prod_constraint_u(model, t):
     return model.u[t] <= model.q_u[t]
 
 
-def prod_constraint_min(model, i, t, P_min):
-    return model.g_t[i, t] >= P_min[i,t]
-
-
-def generator_price(model, i, t, n_nodes, Mn, b):
+def generator_price(model, i, t, n_nodes, Mn):
     S = 0
     for j in range(n_nodes):
         S += Mn.T[i,j]*model.lambda_[j, t]
-    return b[i,t] - S + model.sigma[i, t] + model.mu[i, t] == 0
+    return model.b[i] - S + model.sigma[i, t] + model.mu[i, t] == 0
 
 
 def battery_price(model, t, n_nodes, Mu):
@@ -264,13 +193,7 @@ def sigma_g_cstr1(model, i, t):
     return model.sigma[i, t] <= (1 - model.r_sigma_g[i, t]) * L
 
 def sigma_g_cstr2(model, i, t, P_max):
-    return P_max[i,t] - model.g_t[i, t] <= model.r_sigma_g[i, t] * L
-
-# def mu_g_cstr1(model, i, t):
-#     return model.mu[i, t] <= (1 - model.r_mu_t[i, t]) * L
-#
-# def mu_g_cstr2(model, i, t, P_min):
-#     return model.g_t[i, t] - P_min[i] <= model.r_mu_t[i, t] * L
+    return P_max[i] - model.g_t[i, t] <= model.r_sigma_g[i, t] * L
 
 def sigma_g_cstr1_u(model, t):
     return model.sigma_u[t] <= (1 - model.r_sigma_g_u[t]) * L
@@ -278,8 +201,9 @@ def sigma_g_cstr1_u(model, t):
 def sigma_g_cstr2_u(model, t):
     return model.q_u[t] - model.u[t] <= model.r_sigma_g_u[t] * L
 
-def sigma_cstrmu_q(model, i, t, P_min):
-    return model.g_t[i, t] - P_min[i,t] <= model.r_g_t[i, t] * L
+def sigma_cstrmu_q(model, i, t):
+    return model.g_t[i, t] <= model.r_g_t[i, t] * L
+
 
 def sigma_cstrmu(model, i, t):
     return -model.mu[i, t] <= (1 - model.r_g_t[i, t]) * L
@@ -294,9 +218,6 @@ def sigma_cstrmu_u(model, t):
 
 def battery_bid_cstr(model,t):
     return model.q_u[t] <= model.q_u_test
-
-def battery_capacity_cstr(model):
-    return model.q_u_test <= 30
 
 def battery_states_limits(model, a, Battery_Horizon, A, z_bar):
     S = 0
@@ -341,67 +262,29 @@ def H_init(model, i, j, H):
     return H[i,j]
 
 
-def obj_func(model, Horizon_T, d, b, P_max, P_min, n_nodes, h, cost_of_battery):
+def obj_func(model, Horizon_T, n_nodes, realLMPs):
     S = 0
     for t in range(Horizon_T):
         for j in range(n_nodes):
-            S += d[j, t] * model.lambda_[j, t]
-        for j in range(2 * n_nodes):
-            S += - h[j] * model.beta[j, t]
-        for i in range(len(b)):
-            S += - b[i,t] * (model.g_t[i, t]-P_min[i,t]) - P_max[i,t] * model.sigma[i, t]
-    return -S + cost_of_battery * model.q_u_test
+            S += (realLMPs[j, t] - model.lambda_[j, t])**2
+    return S
 
 
 
 
 if __name__ == '__main__':
-    b = np.array([0, 25, 50, 200])  # 4 generators
-    P_max = np.array([1, 3, 3, 5])
-    P_min = np.array([0,0,0,1])
-
-    Horizon_T = 1
-    Battery_Horizon = Horizon_T + 1
-    d = np.array([6] * Horizon_T)
-    interesting_D = [6] * Horizon_T
-    interesting_D[Horizon_T // 2] = 1
-    interesting_D[0] = 6
-    # interesting_D = np.arange(1, 12)
-
-    n_nodes = 1
-    i_battery = 0
-    d = np.array([interesting_D for n in range(n_nodes)])
-
-    ### Define Mn
-    Mn = np.ones((n_nodes, len(b)))
-    Mu = np.zeros((n_nodes, 1))
-    Mu[i_battery] = 1
-
-    ### Define H, h
-    H = np.concatenate([np.ones((n_nodes, n_nodes)), -np.ones((n_nodes, n_nodes))])
-    h = 15 * np.zeros(2 * H.shape[0])
-    h = np.array([0, 0])
-
-    # model = run_program(d, b, P_max, P_min,  H, h, Mn, i_battery, z_start=1, cost_of_battery=1)
-    #
-    #
-    # model.pprint()
-    # print("\n___ OBJ ____")
-    # print(pyo.value(model.obj))
-
-
     """
-    Real test 
+    Real test
     """
     from main.Network.Topology.Topology import Topology as top
     import main.Network.PriceBids.Load.Load as ld
     from main.Network.PriceBids.Generator.Generator import Generator
     from main.Network.PriceBids.Load.Load import Load
+    from main.GuillaumeExample import LMP
     import pandas as pd
     import stored_path
     import json
     import math
-    from main.GuillaumeExample import LMP
 
     AMB_network = top(network="ABM")
 
@@ -432,31 +315,16 @@ if __name__ == '__main__':
         try:
             if type(L_[0]) != float:
                 if not math.isnan(L_[-2]):
-                    if L_[-1] == "Gas" or L_[-1] == "Biogas":
-                        add = 35
-                    if L_[-1] == "Geothermal":
-                        add = 10
-                    if L_[-1] == "Coal":
-                        add = 50
-                    if L_[-1] == "Diesel":
-                        add = 150
-
-                    if L_[-1] == 'Hydro':
-                        P_min = 0.1*L_[-2]
-                    else:
-                        P_min = 0
-
-                    g = Generator(name_generator, L_[0], 0, L_[-1], Pmax=L_[-2], Pmin=P_min, marginal_cost=add+np.array(L_[1]))
+                    g = Generator(name_generator, L_[0], 0, L_[-1], Pmax=L_[-2], Pmin=L_[-3], marginal_cost=L_[1])
                     AMB_network.add_generator(g)
                     number_of_added_generators += 1
         except:
             pass
 
-
     """
     get d_t for day 12 and trading period 1
     """
-    Horizon_T = 48
+    Horizon_T = 24
     d = []
     for k,node in enumerate(AMB_network.loads.keys()):
         d.append([])
@@ -464,27 +332,24 @@ if __name__ == '__main__':
             d[k].append(1000*AMB_network.loads[node][0].return_d(1, j+1))
 
     d = np.array(d)
-    # d = np.zeros((d.shape[0], Horizon_T))
-    # d = P_min
+
+    realLMPS = np.empty(d.shape)
+    for j in range(Horizon_T):
+        test = LMP.get_vector_LMP(1,j+1)
+        realLMPS[:,j] = test.reshape(test.shape[0], 1)[:,0]
+
+    # realLMPs
 
     """
     Add topology specific characteristics
     """
     n_generator = AMB_network.get_number_of_gen()
-    b = np.zeros((n_generator, Horizon_T))
-    P_max = np.zeros((n_generator, Horizon_T))
-    P_min = np.zeros((n_generator, Horizon_T))
+    b = np.zeros(n_generator)
+    P_max = np.zeros(n_generator)
     for node in AMB_network.generators.keys():
-        for g in AMB_network.generators[node]:
-            for i in range(Horizon_T):
-                pmax, pmin, a = LMP.get_P_min_a(g.name, 1, i+1)
-                P_max[g.index, i] = pmax +1
-                P_min[g.index, i] = pmin if g.type == "Hydro" else 0
-                b[g.index, i] = a
-    print("Loading data done")
-    # name = list_of_generator[1].name
-    # LMP.get_P_min_a(name, 1, 36)
-    # b[list_of_generator[1].index]
+        for g in AMB_network.generators[node] :
+            b[g.index] = g.a
+            P_max[g.index] = g.Pmax
 
     list_of_generator = {}
     for node in AMB_network.generators.keys():
@@ -501,10 +366,7 @@ if __name__ == '__main__':
     # h = np.array(list(h)[:23] + list(-h)[:23])
     Mn = AMB_network.Mn
     i_battery = 1
-    model = run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of_battery=22)
-
-    B = 200*1000/(1*365*24) #USD per KWh
-
+    model = run_program(d, realLMPS, P_max, H, h, Mn)
     # model.pprint()
     # print("\n___ OBJ ____")
     # print(pyo.value(model.obj))
@@ -513,21 +375,3 @@ if __name__ == '__main__':
     #     v.pprint()
 
 
-    # AMB_network.generators[0][0].index
-
-    # H.shape
-    # pt = np.ones(20)
-    # H@pt <= h
-
-    ## Test
-    # gt = d[:,0]
-    # pt = gt - d[:,0]
-    # H @ pt <= h
-    # S=0
-    # for j in range(H.shape[0]) :
-    #     if abs(H.T[1, j]) > 0.1:
-    #         print(j, 1)
-    #         S+=pyo.value(H.T[1, j] * model.beta[j,1])
-
-
-    # model.beta_index = pyo.Set(initialize=list((i, j) for i in range(H.shape[0]) for j in range(H.shape[1])))
