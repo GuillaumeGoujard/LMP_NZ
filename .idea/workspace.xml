@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588265330473</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="More work on automatic generator dictionary for linear bid equation">
+      <created>1588272436866</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1588272436866</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -405,13 +411,13 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1242" y="-332" key="#nodes_on_map/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202103478" />
-    <state x="542" y="69" key="CommitChangelistDialog2" timestamp="1588265328445">
+    <state x="393" y="76" key="CommitChangelistDialog2" timestamp="1588272434589">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1056" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588174619287" />
     <state x="542" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588265328445" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
-    <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1586654657154" />
+    <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1588272434589" />
     <state x="72" y="85" width="1357" height="791" key="DiffContextDialog" timestamp="1588257340498">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
