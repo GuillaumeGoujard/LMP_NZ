@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DictSimpNetwork.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generator_adjacency_matrix_dict1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/Kieran/kieran_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/drafts/Kieran/kieran_tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/add_arrow.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/add_arrow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/Topology/Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/Topology.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +57,7 @@
       <recent name="$PROJECT_DIR$/main/Network/PriceBids/Load" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.plot_market_clearing">
+  <component name="RunManager" selected="Python.kieran_tests">
     <configuration name="MILP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,19 +115,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="nodes_on_map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="kieran_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\kiera\Anaconda3\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/drafts/SalomeCharles/Maps" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drafts/SalomeCharles/Maps/nodes_on_map.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drafts/Kieran/kieran_tests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,18 +153,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.New Zealand Topology" />
-      <item itemvalue="Python.nodes_on_map" />
       <item itemvalue="Python.MILP" />
       <item itemvalue="Python.Topology" />
       <item itemvalue="Python.plot_market_clearing" />
+      <item itemvalue="Python.kieran_tests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.kieran_tests" />
         <item itemvalue="Python.plot_market_clearing" />
         <item itemvalue="Python.Topology" />
         <item itemvalue="Python.MILP" />
         <item itemvalue="Python.New Zealand Topology" />
-        <item itemvalue="Python.nodes_on_map" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588236462723</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="More work on automatic generator dictionary for linear bid equation">
+      <created>1588257160834</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1588257160834</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -377,11 +385,11 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1242" y="-332" key="#New_Zealand_Topology/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202071762" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588239955591">
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588264492397">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202534828" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588239955591" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588264492397" />
     <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1588128995813" />
     <state x="-1255" y="-240" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1587423549463">
       <screen x="-1920" y="-466" width="1920" height="1040" />
@@ -396,46 +404,47 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1242" y="-332" key="#nodes_on_map/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202103478" />
-    <state x="542" y="69" key="CommitChangelistDialog2" timestamp="1588236461078">
+    <state x="542" y="69" key="CommitChangelistDialog2" timestamp="1588257159570">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1056" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588174619287" />
-    <state x="542" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588236461078" />
+    <state x="542" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588257159570" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1586654657154" />
-    <state x="-1828" y="-374" width="1736" height="856" key="DiffContextDialog" timestamp="1588201965749">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog" timestamp="1588257340498">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1828" y="-374" width="1736" height="856" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588201965749" />
+    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588257340498" />
     <state x="144" y="85" width="1200" height="794" key="DiffContextDialog/0.0.1500.960@0.0.1500.960" timestamp="1586655915044" />
     <state x="-1240" y="-210" key="FileChooserDialogImpl" timestamp="1588095386482">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1240" y="-210" key="FileChooserDialogImpl/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588095386482" />
     <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1586645662516" />
-    <state width="245" height="332" key="GridCell.Tab.0.bottom" timestamp="1588254183988">
+    <state width="245" height="332" key="GridCell.Tab.0.bottom" timestamp="1588264483820">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="245" height="332" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588254183988" />
+    <state width="245" height="332" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588264483820" />
     <state width="565" height="247" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
-    <state width="245" height="332" key="GridCell.Tab.0.center" timestamp="1588254183988">
+    <state width="245" height="332" key="GridCell.Tab.0.center" timestamp="1588264483819">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="245" height="332" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588254183988" />
+    <state width="245" height="332" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588264483819" />
     <state width="565" height="247" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
-    <state width="245" height="332" key="GridCell.Tab.0.left" timestamp="1588254183988">
+    <state width="245" height="332" key="GridCell.Tab.0.left" timestamp="1588264483819">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="245" height="332" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588254183988" />
+    <state width="245" height="332" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588264483819" />
     <state width="565" height="247" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
-    <state width="245" height="332" key="GridCell.Tab.0.right" timestamp="1588254183988">
+    <state width="245" height="332" key="GridCell.Tab.0.right" timestamp="1588264483820">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="245" height="332" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588254183988" />
+    <state width="245" height="332" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588264483820" />
     <state width="565" height="247" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
     <state x="-1222" y="-224" key="RollbackChangesDialog" timestamp="1588092213702">
       <screen x="-1920" y="-466" width="1920" height="1040" />

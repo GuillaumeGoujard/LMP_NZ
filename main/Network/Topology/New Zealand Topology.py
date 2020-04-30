@@ -28,6 +28,15 @@ DictSimpNetwork = {
     for snode in SimpNetwork.SimpNode
     }
 
+# import json
+# with open('DictSimpNetwork.json', 'w') as fp:
+#     json.dump(DictSimpNetwork, fp)
+
+with open('/generators/generator_adjacency_matrix_dict.json') as f:
+    generator_adjacency_matrix_dict = json.load(f)
+
+
+
 SimpNodes = pd.read_csv('data/ABM/ABM_Nodes.csv')
 SimpNetDetails = pd.read_csv('data/ABM/ABM_Network_details.csv')
 

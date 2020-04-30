@@ -215,7 +215,7 @@ def create_incidence(NLeave, NEnter):
 
     return M
 
-def create_H(I, y):
+def create_H_hat(I, y):
     '''
     Shift Factor matrix
 
@@ -248,23 +248,6 @@ def create_H(I, y):
     '''
     # Initializing sizes
 
-    Network = pd.read_csv(stored_path.main_path + '/data/ABM/ABM_Network_details.csv')
-    Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
-    Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
-    m = Network.shape[0]
-    Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
-    Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
-
-    names_2_nodes = dict([[node, j] for j, node in enumerate(Nodes)])
-    nodes_2_names = generate_nodes_2_names(names_2_nodes)
-    I = create_incidence(Network.NLeave, Network.NEnter)
-    A = create_adjacency(Network.NLeave, Network.NEnter)
-
-    omega_NZ = 50 * (2 * np.pi)
-    z = Network['Resistance (Ohms)'] + 1j * Network["Reactance (Ohms)"] * omega_NZ
-    y = 1 / z
-    y = np.imag(y)
-
     m = I.shape[1]
     Delta_y = np.diag(y)
 
@@ -273,6 +256,49 @@ def create_H(I, y):
     Y_bar = Y.copy()
     Y_bar[0,:] = 0
     Y_bar[:,0] = 0
+
+    Y_bar = np.delete(np.delete(Y, 0, 0), 0, 1)
+
+    Y_dag = np.concatenate((np.zeros((1, Y_bar.shape[0] + 1)),
+                            np.concatenate((np.zeros((Y_bar.shape[0], 1)),
+                                            np.linalg.inv(Y_bar)),
+                                           axis=1)),
+                           axis=0)
+
+    H_hat = np.diag(y) @ I.T @ Y_dag
+
+    return H_hat
+
+def create_H(I,y):
+    '''
+        Shift Factor matrix
+
+        Args:
+            I: Incidence matrix
+
+            y: Impedance vector
+                Size: (m,)
+                Type: np.array
+                Unit: Ohms
+                Description: Array of impedances of each line, in Ohms. Each row corresponds to the indice of line l.
+
+        Returns:
+            H: Shift factor matrix
+                Size: (2*m,n)
+                Type: np.array
+                Unit: ???
+                Description:
+
+        '''
+
+    m = I.shape[1]
+    Delta_y = np.diag(y)
+
+    Y = I @ Delta_y @ I.T
+
+    Y_bar = Y.copy()
+    Y_bar[0, :] = 0
+    Y_bar[:, 0] = 0
 
     Y_bar = np.delete(np.delete(Y, 0, 0), 0, 1)
 

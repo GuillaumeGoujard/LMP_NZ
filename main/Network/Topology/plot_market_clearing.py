@@ -3,6 +3,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+import random
+from main.Network.Topology.Topology import create_incidence
+from main.Network.Topology.Topology import create_adjacency
+from main.Network.Topology.Topology import create_H_hat
+
 
 import networkx as nx
 
@@ -22,18 +27,23 @@ DictSimpNetwork = {
     for snode in SimpNetwork.SimpNode
     }
 
-
-
-
-
 # Order of nodes used for H and solver
-Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
-Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
+
+Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
+Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
+
+I = create_incidence(Network.NLeave, Network.NEnter)
+A = create_adjacency(Network.NLeave, Network.NEnter)
+
+omega_NZ = 50*(2*np.pi)
+z = Network['Resistance (Ohms)'] + 1j*Network["Reactance (Ohms)"]*omega_NZ
+y = 1/z
+y = np.imag(y)
+H_hat = create_H_hat(I, y)
 
 locations = Sites.MXLOCATION.unique().tolist()
 locations.remove('WKM')
 locations.remove('HLY')
-
 def X_node(node):
     if node in locations:
         x_value = Sites.X[Sites.MXLOCATION == node].values[0]
@@ -47,7 +57,6 @@ def X_node(node):
         x_value = Sites.X[Sites.MXLOCATION.apply(lambda x: x in DictSimpNetwork[node])].mean()
 
     return x_value
-
 def Y_node(node):
     if node in locations:
         y_value = Sites.Y[Sites.MXLOCATION == node].values[0]
@@ -62,52 +71,22 @@ def Y_node(node):
 
     return y_value
 
-
-
-
+Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
+Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
 
 X = pd.Series(Nodes).apply(lambda node: X_node(node)).tolist()
 Y = pd.Series(Nodes).apply(lambda node: Y_node(node)).tolist()
 
-
-f = 5
-
+f = 10
 Nodes_df = pd.DataFrame({
     'Node': Nodes,
     'x': X,
     'y': Y,
-    'cum_demand': [0] + [10*f]*9 + [50*f]*10,
-    'cum_supply': [0] + [150*f]*6 + [120*f]*5 + [210*f]*8,
-    'p_t': [0] + [70*f]* 19,
-    'u_t': [0,1] + [0]*18
+    'd_t': [0]*20,
+    'g_t': [0]*20,
+    'p_t': [0]*20,
+    'u_t': [0]*20
 })
-
-# Plotting tests
-
-
-fig = plt.figure()
-ax = fig.add_subplot(111)
-# Dots
-ax.scatter(Nodes_df.x.values,
-            Nodes_df.y.values,
-            s = Nodes_df.cum_demand.values,
-            c = 'g',
-            alpha = 0.2)
-ax.scatter(Nodes_df.x.values,
-            Nodes_df.y.values,
-            s = Nodes_df.cum_supply.values,
-            c = 'r',
-            alpha = 0.2)
-
-# Annotations
-for node in Nodes_df.Node.values:
-    ax.annotate(node,
-                 (Nodes_df[Nodes_df.Node == node].x.values[0],
-                  Nodes_df[Nodes_df.Node == node].y.values[0]),
-                 fontsize='large')
-ax.set_xlabel('Longitude (X)')
-ax.set_ylabel('Latitude (Y)')
-ax.axis('equal')
 
 Node_leave = Network.LEAVE.tolist()
 x1 = pd.Series(Node_leave).apply(lambda node: X_node(node)).tolist()
@@ -125,37 +104,92 @@ Lines_df = pd.DataFrame({
     'Node_enter' : Network.ENTER.tolist(),
     'x2' : x2,
     'y2' : y2,
-    'Power_flow' : [(-1)**i*(i+1) for i in range(m)]
+    'f' : [0]*m,
+    'normed_f' : [0]*m
 })
 
-Lines_df['Arrow'] = Lines_df.Power_flow.apply(np.sign)
+def plot_NZ_market_offer_demand(Nodes_df,Lines_df,d_t,g_t):
 
-Lines_df['Line2D'] = Lines_df[['x1','x2','y1','y2','Power_flow']].apply(lambda row: Line2D(*[(row[0],row[1]),(row[2],row[3]),np.abs(row[4])]), axis = 1)
-for i, line in enumerate(Lines_df['Line2D'].values.tolist()):
-    ax.add_line(line)
-    add_arrow(line, size = Lines_df['Power_flow'].values[i]*3+10)
+    Nodes_df.d_t = d_t
+    Nodes_df.g_t = g_t
 
-ax.scatter(Nodes_df.x.values,
-            Nodes_df.y.values,
-            color = 'k')
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    # Dots
+    ax.scatter(Nodes_df.x.values,
+               Nodes_df.y.values,
+               s=Nodes_df.d_t.values,
+               c='g',
+               alpha=0.2,
+               label='Demand')
+    ax.scatter(Nodes_df.x.values,
+               Nodes_df.y.values,
+               s=Nodes_df.g_t.values,
+               c='b',
+               alpha=0.2,
+               label='Supply')
+
+    Lines_df['Line2D'] = Lines_df[['x1', 'x2', 'y1', 'y2']].apply(
+        lambda row: Line2D(*[(row[0], row[1]), (row[2], row[3])], alpha=1), axis=1)
+    for i, line in enumerate(Lines_df['Line2D'].values.tolist()):
+        ax.add_line(line)
+
+    for i, node in enumerate(Nodes_df.Node.values):
+        ax.annotate(f'{node}: \n d = {round(Nodes_df.d_t.values[i])} MW \n g = {round(Nodes_df.g_t.values[i])} MW',
+                    (Nodes_df[Nodes_df.Node == node].x.values[0],
+                     Nodes_df[Nodes_df.Node == node].y.values[0] + 10000),
+                    fontsize=15)
+
+    ax.set_xlabel('Longitude (X)')
+    ax.set_ylabel('Latitude (Y)')
+    ax.axis('equal')
+    ax.legend()
+
+def plot_NZ_market_clearing(Nodes_df, Lines_df, H_hat, p_t, u_t):
+    Nodes_df.p_t = p_t
+    Nodes_df.u_t = u_t
+
+    Lines_df.f = H_hat@np.array([p_t]).T
+    Lines_df.normed_f = Lines_df.f/Lines_df.f.abs().max()
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+
+    ax.scatter(Nodes_df.x.values,
+               Nodes_df.y.values,
+               s=np.abs(Nodes_df.p_t.values),
+               c='r',
+               alpha=0.2,
+               label='Injection')
+
+    ax.scatter(Nodes_df.x.values,
+               Nodes_df.y.values,
+               s=Nodes_df.u_t.values,
+               c='k',
+               marker='+',
+               label='Optimal battery placement')
+
+    Lines_df['Arrow'] = Lines_df.f.apply(np.sign)
+    Lines_df['Line2D'] = Lines_df[['x1', 'x2', 'y1', 'y2', 'normed_f']].apply(
+        lambda row: Line2D(*[(row[0], row[1]), (row[2], row[3]), 15*row[4]], alpha=0.2), axis=1)
+    for i, line in enumerate(Lines_df.Line2D.values.tolist()):
+        ax.add_line(line)
+        add_arrow(line, size=15*Lines_df.normed_f.values[i])
+
+    for i, node in enumerate(Nodes_df.Node.values):
+        ax.annotate(f'{node}: p = {round(Nodes_df.p_t.values[i])} MW',
+                    (Nodes_df[Nodes_df.Node == node].x.values[0],
+                     Nodes_df[Nodes_df.Node == node].y.values[0] + 10000),
+                    fontsize=15)
+    ax.set_xlabel('Longitude (X)')
+    ax.set_ylabel('Latitude (Y)')
+    ax.axis('equal')
 
 
-# plt.plot((x1,x2),(y1,y2), c = 'r')
-# plt.xlabel('Longitude (X)')
-# plt.ylabel('Latitude (Y)')
-# plt.axis('equal')
-# plt.show()
+d_t = [0] + [f*random.uniform(0,150) for i in range(19)]
+g_t = [0] + [f*random.uniform(0,150) for i in range(19)]
+p_t =[0] + [f*random.uniform(-150,150) for i in range(19)]
+u_t = [0,1000] + [0]*18
 
-
-def plot_NZ_market_clearing(p_t,u_t):
-    '''
-
-
-    :return:
-    plot figure
-    '''
-
-
-
-
-
+plot_NZ_market_offer_demand(Nodes_df, Lines_df, d_t, g_t)
+plot_NZ_market_clearing(Nodes_df, Lines_df, H_hat, p_t, u_t)
