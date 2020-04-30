@@ -6,15 +6,16 @@ from matplotlib.lines import Line2D
 import random
 from main.Network.Topology.Topology import create_incidence
 from main.Network.Topology.Topology import create_adjacency
-from main.Network.Topology.Topology import create_H_hat
-
+from main.Network.Topology.Topology import create_H
+import stored_path
 
 import networkx as nx
 
 # Files
-Sites = pd.read_csv('data/topology/Sites.csv')
-Network = pd.read_csv('data/ABM/ABM_Network_details.csv')
-SimpNetwork = pd.read_csv('data/ABM/ABM_Simplified_network.csv')
+Sites = pd.read_csv(stored_path.main_path+'/data/topology/Sites.csv')
+Network = pd.read_csv(stored_path.main_path+'/data/ABM/ABM_Network_details.csv')
+SimpNetwork = pd.read_csv(stored_path.main_path+'/data/ABM/ABM_Simplified_network.csv')
+
 SimpNetwork.rename(columns = {
     'Swem Node' : 'SimpNode',
     ' NZEM Substations that act as Grid Exit Points' : 'OriginNodes'
@@ -29,6 +30,12 @@ DictSimpNetwork = {
 
 # Order of nodes used for H and solver
 
+m = Network.shape[0]
+
+Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
+Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
+
+
 Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
 Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
 
@@ -39,7 +46,9 @@ omega_NZ = 50*(2*np.pi)
 z = Network['Resistance (Ohms)'] + 1j*Network["Reactance (Ohms)"]*omega_NZ
 y = 1/z
 y = np.imag(y)
-H_hat = create_H_hat(I, y)
+H = create_H(I,y)
+H_hat = H[:H.shape[0]//2,:]
+# H_hat = create_H_hat(I, y)
 
 locations = Sites.MXLOCATION.unique().tolist()
 locations.remove('WKM')
@@ -71,9 +80,6 @@ def Y_node(node):
 
     return y_value
 
-Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
-Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
-
 X = pd.Series(Nodes).apply(lambda node: X_node(node)).tolist()
 Y = pd.Series(Nodes).apply(lambda node: Y_node(node)).tolist()
 
@@ -95,8 +101,6 @@ Node_enter = Network.ENTER.tolist()
 x2 = pd.Series(Node_enter).apply(lambda node: X_node(node)).tolist()
 y2 = pd.Series(Node_enter).apply(lambda node: Y_node(node)).tolist()
 
-m = Network.shape[0]
-
 Lines_df = pd.DataFrame({
     'Node_leave' : Node_leave,
     'x1' : x1,
@@ -116,15 +120,17 @@ def plot_NZ_market_offer_demand(Nodes_df,Lines_df,d_t,g_t):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     # Dots
+    f = 100
+
     ax.scatter(Nodes_df.x.values,
                Nodes_df.y.values,
-               s=Nodes_df.d_t.values,
+               s=f*Nodes_df.d_t.values/Nodes_df.d_t.max(),
                c='g',
                alpha=0.2,
                label='Demand')
     ax.scatter(Nodes_df.x.values,
                Nodes_df.y.values,
-               s=Nodes_df.g_t.values,
+               s=f*Nodes_df.g_t.values/Nodes_df.g_t.max(),
                c='b',
                alpha=0.2,
                label='Supply')
@@ -155,9 +161,11 @@ def plot_NZ_market_clearing(Nodes_df, Lines_df, H_hat, p_t, u_t):
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
+    f = 5000
+
     ax.scatter(Nodes_df.x.values,
                Nodes_df.y.values,
-               s=np.abs(Nodes_df.p_t.values),
+               s=f*np.abs(Nodes_df.p_t.values/np.abs(Nodes_df.p_t).max()),
                c='r',
                alpha=0.2,
                label='Injection')
@@ -187,9 +195,11 @@ def plot_NZ_market_clearing(Nodes_df, Lines_df, H_hat, p_t, u_t):
 
 
 d_t = [0] + [f*random.uniform(0,150) for i in range(19)]
-g_t = [0] + [f*random.uniform(0,150) for i in range(19)]
+Mng_t = [0] + [f*random.uniform(0,150) for i in range(19)]
 p_t =[0] + [f*random.uniform(-150,150) for i in range(19)]
 u_t = [0,1000] + [0]*18
 
 plot_NZ_market_offer_demand(Nodes_df, Lines_df, d_t, g_t)
+plt.show()
 plot_NZ_market_clearing(Nodes_df, Lines_df, H_hat, p_t, u_t)
+plt.show()

@@ -5,9 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/LMP_NZ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LMP_NZ.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/clean_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/clean_program.py" afterDir="false" />
+=======
+>>>>>>> 354dd8c... Work on plotting
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -552,7 +555,18 @@
       <option name="project" value="LOCAL" />
       <updated>1588267426681</updated>
     </task>
+<<<<<<< HEAD
     <option name="localTasksCounter" value="15" />
+=======
+    <task id="LOCAL-00018" summary="More work on automatic generator dictionary for linear bid equation">
+      <created>1588272436866</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1588272436866</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+>>>>>>> 354dd8c... Work on plotting
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -616,10 +630,22 @@
     <state x="-1417" y="-384" key="CommitChangelistDialog2" timestamp="1587433161858">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
+<<<<<<< HEAD
     <state x="-1417" y="-384" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587433161858" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1586654657154" />
     <state x="144" y="85" width="1200" height="794" key="DiffContextDialog" timestamp="1586655915044">
+=======
+    <state x="-1242" y="-332" key="#nodes_on_map/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202103478" />
+    <state x="393" y="76" key="CommitChangelistDialog2" timestamp="1588272434589">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="-1056" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588174619287" />
+    <state x="542" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588265328445" />
+    <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
+    <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1588272434589" />
+    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog" timestamp="1588257340498">
+>>>>>>> 354dd8c... Work on plotting
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="144" y="85" width="1200" height="794" key="DiffContextDialog/0.0.1500.960@0.0.1500.960" timestamp="1586655915044" />

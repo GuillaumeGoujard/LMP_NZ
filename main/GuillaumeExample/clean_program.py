@@ -44,7 +44,7 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     model.nodal_index = pyo.Set(initialize=list((i, j) for i in range(n_nodes) for j in range(Horizon_T)))
     model.beta_index = pyo.Set(initialize=list((i, j) for i in range(n_lines) for j in range(Horizon_T)))
     model.A = pyo.RangeSet(0, 2 * Battery_Horizon - 1)
-    model.H_index =  pyo.Set(initialize=list((i, j) for i in range(n_lines) for j in range(H.shape[1])))
+    model.H_index = pyo.Set(initialize=list((i, j) for i in range(n_lines) for j in range(H.shape[1])))
 
     """
     H parameter
@@ -142,7 +142,7 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
                                                  rule=lambda model, t : battery_states_update(model, t, Battery_Horizon, E, Horizon_T,
                                                                             I_tilde))
     model.initial_state = pyo.Constraint(rule=initial_state)
-    # model.final_state = pyo.Constraint(rule=lambda model : final_state(model, Battery_Horizon))
+    model.final_state = pyo.Constraint(rule=lambda model : final_state(model, Battery_Horizon))
     model.battery_bid_cstr = pyo.Constraint(model.time_index, rule=battery_bid_cstr)
     model.capacity_constraint = pyo.Constraint(rule=battery_capacity_cstr)
 
@@ -425,7 +425,7 @@ def launch_model():
             pass
 
     node_name = "MDN"
-    index = 10
+    # index = 10
     AMB_network.add_generator(Generator("diesel_gen", node_name, 0, 0, Pmax=200, Pmin=0,
                                   marginal_cost=[0,0]))
     # AMB_network.generators[10]
@@ -433,7 +433,7 @@ def launch_model():
     """
     get d_t for day 12 and trading period 1
     """
-    Horizon_T = 1
+    Horizon_T = 12
     day = 2
     d = []
     for k, node in enumerate(AMB_network.loads.keys()):
@@ -445,9 +445,9 @@ def launch_model():
     d = np.array(d)
     # # d[1] = d[1]*10
     #
-    # import matplotlib.pyplot as plt
-    # plt.plot(sum(d))
-    # plt.show()
+    import matplotlib.pyplot as plt
+    plt.plot(sum(d))
+    plt.show()
     #
     # sum(d[:,0])
     # d = np.zeros((d.shape[0], Horizon_T))
@@ -464,23 +464,15 @@ def launch_model():
         for g in AMB_network.generators[node]:
             for i,j in enumerate(range(day*48, day*48+Horizon_T)):
                 if g.name == "diesel_gen":
-                    pmax, pmin, a = 200, 0, 200
+                    pmax, pmin, a = 500, 0, 200
                 else:
                     pmax, pmin, a = LMP.get_P_min_a(g.name, 1+j//48, j%48+1, g.type)
                 P_max[g.index, i] = pmax
                 P_min[g.index, i] = pmin if g.type == "Hydro" else 0
                 b[g.index, i] = a if a>0 else np.random.randint(0,100)
-                # if g.node_name == "ROX":
-                #     print("ok")
-                #     P_min[g.index, i] = pmin
 
-    # b += 10
     print("Loading data done")
-    # P_min = np.zeros((n_generator, Horizon_T))
-    # name = list_of_generator[1].name
-    # LMP.get_P_min_a(name, 1, 36)
-    # P_max
-    # b[list_of_generator[1].index]
+
 
     list_of_generator = {}
     for node in AMB_network.generators.keys():
@@ -490,46 +482,60 @@ def launch_model():
     for key in sorted(list_of_generator.keys()):
         new_dict[key] = list_of_generator[key]
 
-    # P_min, P_max = AMB_network.create_Pmin_Pmax()
-    # P_max = P_max.reshape(-1) #*10
     H, h = AMB_network.H, AMB_network.h
-    # h[[4, 4 + 23]] = 300
-    # h[[6, 6 + 23]] = 50
-    # sum(P_max[:,0])
-    # P_max = P_max /2
-    # P_min[P_min > P_max] = P_max[P_min > P_max]
     Mn = AMB_network.Mn
-    i_battery = 1
-    d2 = d.copy()
-    # d = d2
-    d[10] = 600
-    model = run_program(d, b, P_max, P_min, H, h, Mn, i_battery=12, z_start=1, cost_of_battery=0)
-    model.beta.pprint()
-    # model.pprint()
+    save = d[10].copy()
+    d[10] = save + np.random.randint(0, 900, d[10].shape)
+    cost_of_battery = 200 * 1000 / (5 * 365)
+    model = run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of_battery=cost_of_battery)
+
+
+
     print("\n___ OBJ ____")
     print(pyo.value(model.obj))
 
-    nodes = np.array([5,9, 13, 15 ])
+    # lambdas @ u
+    #
+    # p_t = np.array([pyo.value(model.p_t[i,0]) for i in range(Mn.shape[0])])
+    #
+    # [20] #[:h.shape[0]//2,:]
+    # h[[4,4+23]]= 300
+    # h[[6, 6 + 23]] = 30
+    #
+    #
+    # line_to_cong = 0
+    #
+    # p = p_t.copy()
+    # p[10] = - 600
+    # (H @ p)[0]
+    # h[0]
 
-    (Mn@P_min)[nodes]
 
-    lambdas = np.array([pyo.value(model.lambda_[1, t]) for t in range(Horizon_T)])
+def save(model, i_test=0):
+    import os
+    path = stored_path.main_path + "/data/results" + "/test{}".format(i_test)
+    try:
+        os.mkdir(path)
+    except:
+        pass
+    lambdas = np.array([[pyo.value(model.lambda_[t, i]) for i in range(Horizon_T)] for t in range(d.shape[0])])
+    df_lambda = pd.DataFrame(data=lambdas)
+    df_lambda.to_csv(path+"/df_lambda.csv")
+    p_t = np.array([[pyo.value(model.p_t[t, i]) for i in range(Horizon_T)] for t in range(d.shape[0])])
+    df_p_t = pd.DataFrame(data=p_t)
+    df_p_t.to_csv(path + "/df_p_t.csv")
+    df_demand = pd.DataFrame(data=d)
+    df_demand.to_csv(path + "/df_demand.csv")
+
+    lambdas = np.array([pyo.value(model.lambda_[10, t]) for t in range(Horizon_T)])
     u = np.array([pyo.value(model.u[t]) for t in range(Horizon_T)])
-    lambdas@u
+    z = np.array([pyo.value(model.z[i]) for i in range(Horizon_T)])
+    c_u = np.array([pyo.value(model.c_u[t]) for t in range(Horizon_T)])
+    q_u = np.array([pyo.value(model.q_u[t]) for t in range(Horizon_T)])
+    df_z = pd.DataFrame(data=np.array([z,u,c_u,q_u]).T, columns=["z", "u", "c_u", "q_u"])
+    df_z.to_csv(path + "/df_z.csv")
 
-    p_t = np.array([pyo.value(model.p_t[i,0]) for i in range(Mn.shape[0])])
-
-    [20] #[:h.shape[0]//2,:]
-    h[[4,4+23]]= 300
-    h[[6, 6 + 23]] = 30
-
-
-    line_to_cong = 0
-
-    p = p_t.copy()
-    p[10] = - 600
-    (H @ p)[0]
-    h[0]
+    return True
 
 
 
