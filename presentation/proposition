@@ -31,17 +31,20 @@
 
 ## PART II : Our model
     @ Slide (R) :
-        + Title : "Optimization variables"
+        + Title : "Optimization Problem"
     @ Slide (R) :
-        + Title : "Spatial and Temporal complexity"
-    @ Slide (R) :
-        + Title : "Light Optimization program"
+        + Title : "Challenges"
+         Economic Dispatch under DC power flow assumption + constant marginal cost of generators is an LP.
+            - Equilibreum conditions (A.K.A KKT conditions) of an L.P includes slack constraints are non-linear 
+            in the optimization variables => Binary constraints 
+            - The objective function is still non-linear => Strong duality 
     @ Slide :
-        + Title : "Graphical objective function linearization"
+        + Title : "One-node objective function linearization"
+        
     @ Slide (R) :
         + Title : "Final MILP"
     @ Slide (R) :
-        + Title : "Simulating bids"
+        + Title : "Exognenous input the  bids"
 
 
 ## PART III : Our Results
