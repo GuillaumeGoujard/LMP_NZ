@@ -29,6 +29,12 @@ DictSimpNetwork = {
 
 # Order of nodes used for H and solver
 
+m = Network.shape[0]
+
+Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
+Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
+
+
 Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
 Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
 
@@ -71,9 +77,6 @@ def Y_node(node):
 
     return y_value
 
-Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
-Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
-
 X = pd.Series(Nodes).apply(lambda node: X_node(node)).tolist()
 Y = pd.Series(Nodes).apply(lambda node: Y_node(node)).tolist()
 
@@ -95,8 +98,6 @@ Node_enter = Network.ENTER.tolist()
 x2 = pd.Series(Node_enter).apply(lambda node: X_node(node)).tolist()
 y2 = pd.Series(Node_enter).apply(lambda node: Y_node(node)).tolist()
 
-m = Network.shape[0]
-
 Lines_df = pd.DataFrame({
     'Node_leave' : Node_leave,
     'x1' : x1,
@@ -116,15 +117,17 @@ def plot_NZ_market_offer_demand(Nodes_df,Lines_df,d_t,g_t):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     # Dots
+    f = 100
+
     ax.scatter(Nodes_df.x.values,
                Nodes_df.y.values,
-               s=Nodes_df.d_t.values,
+               s=f*Nodes_df.d_t.values/Nodes_df.d_t.max(),
                c='g',
                alpha=0.2,
                label='Demand')
     ax.scatter(Nodes_df.x.values,
                Nodes_df.y.values,
-               s=Nodes_df.g_t.values,
+               s=f*Nodes_df.g_t.values/Nodes_df.g_t.max(),
                c='b',
                alpha=0.2,
                label='Supply')
@@ -155,9 +158,11 @@ def plot_NZ_market_clearing(Nodes_df, Lines_df, H_hat, p_t, u_t):
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
+    f = 5000
+
     ax.scatter(Nodes_df.x.values,
                Nodes_df.y.values,
-               s=np.abs(Nodes_df.p_t.values),
+               s=f*np.abs(Nodes_df.p_t.values/np.abs(Nodes_df.p_t).max()),
                c='r',
                alpha=0.2,
                label='Injection')
