@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="adjacency">
-      <change afterPath="$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/GuillaumeExample/findLMPs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stored_path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LMP_NZ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LMP_NZ.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ABM/ABM_Network_details.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/ABM/ABM_Network_details.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/clean_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/clean_program.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Network/Topology/Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/Topology.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -25,10 +18,89 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/clean_program.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="497" column="97" lean-forward="true" selection-start-line="471" selection-start-column="4" selection-end-line="497" selection-end-column="97" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/ABM/ABM_Simplified_network.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+          <provider selected="true" editor-type-id="csv-text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/ABM/ABM_Nodes.csv">
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="52" column="20" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/LMP.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="88" selection-start-line="88" selection-start-column="2" selection-end-line="96" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stored_path.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="1" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/ABM/Simp_nodes_dict.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="7" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drafts/SalomeCharles/generator_adjacency_matrix_dict.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/Network/Topology/Topology.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="282" column="3" selection-start-line="282" selection-start-column="3" selection-end-line="282" selection-end-column="63" />
+            <state relative-caret-position="420">
+              <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -42,87 +114,8 @@
             <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
           </provider>
           <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/clean_program.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/drafts/SalomeCharles/Offers_2019-09-01.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="62" column="45" selection-start-line="50" selection-start-column="4" selection-end-line="62" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/LMP.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="68" selection-start-column="56" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/drafts/SalomeCharles/Data/20190901_Offers.csv">
-          <provider selected="true" editor-type-id="csv-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/findLMPs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="326" column="18" selection-start-line="326" selection-start-column="18" selection-end-line="326" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/historicaLMPs/201909_Final_prices.csv">
-          <provider selected="true" editor-type-id="csv-text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -140,6 +133,8 @@
     <findStrings>
       <find>matri</find>
       <find>model.mu</find>
+      <find>Mu</find>
+      <find>M_u</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,7 +145,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/data/ABM/ABM_Nodes.csv" />
-        <option value="$PROJECT_DIR$/main/GuillaumeExample/MILP.py" />
         <option value="$PROJECT_DIR$/main/MarketOperator/marketOperator.py" />
         <option value="$PROJECT_DIR$/presentation/proposition" />
         <option value="$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time_space.py" />
@@ -158,10 +152,11 @@
         <option value="$PROJECT_DIR$/stored_path.py" />
         <option value="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" />
         <option value="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py" />
-        <option value="$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict.json" />
+        <option value="$PROJECT_DIR$/main/GuillaumeExample/findLMPs.py" />
+        <option value="$PROJECT_DIR$/main/GuillaumeExample/MILP.py" />
         <option value="$PROJECT_DIR$/data/ABM/ABM_Network_details.csv" />
         <option value="$PROJECT_DIR$/main/Network/Topology/Topology.py" />
-        <option value="$PROJECT_DIR$/main/GuillaumeExample/findLMPs.py" />
+        <option value="$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict.json" />
         <option value="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" />
         <option value="$PROJECT_DIR$/main/GuillaumeExample/clean_program.py" />
       </list>
@@ -183,7 +178,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,117 +185,11 @@
               <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
               <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="ABM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="generators" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="historicaLMPs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="loads" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="topology" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="drafts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="drafts" type="462c0819:PsiDirectoryNode" />
-              <item name="SalomeCharles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="drafts" type="462c0819:PsiDirectoryNode" />
-              <item name="SalomeCharles" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="GuillaumeExample" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="MarketOperator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Network" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Network" type="462c0819:PsiDirectoryNode" />
-              <item name="PriceBids" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Network" type="462c0819:PsiDirectoryNode" />
-              <item name="PriceBids" type="462c0819:PsiDirectoryNode" />
-              <item name="Battery" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Network" type="462c0819:PsiDirectoryNode" />
-              <item name="PriceBids" type="462c0819:PsiDirectoryNode" />
-              <item name="Generator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Network" type="462c0819:PsiDirectoryNode" />
-              <item name="PriceBids" type="462c0819:PsiDirectoryNode" />
-              <item name="Load" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -320,16 +208,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data/generators" />
-      <recent name="$PROJECT_DIR$/main/GuillaumeExample" />
-      <recent name="$PROJECT_DIR$/main/Network/PriceBids/Load" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/presentation/CE295_Pres/source/plotCe295" />
       <recent name="$PROJECT_DIR$/presentation" />
       <recent name="$PROJECT_DIR$/data/ABM" />
       <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\data\ABM" />
       <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\drafts\Kieran" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/generators" />
+      <recent name="$PROJECT_DIR$/main/GuillaumeExample" />
+      <recent name="$PROJECT_DIR$/main/Network/PriceBids/Load" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -364,20 +253,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Load" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="MILP" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main/Network/PriceBids/Load" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main/GuillaumeExample" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/GuillaumeExample/MILP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -495,19 +381,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.battery_progr_time_space" />
-      <item itemvalue="Python.Load" />
       <item itemvalue="Python.Topology" />
       <item itemvalue="Python.clean_program" />
       <item itemvalue="Python.LMP" />
       <item itemvalue="Python.findLMPs" />
+      <item itemvalue="Python.MILP" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.clean_program" />
         <item itemvalue="Python.LMP" />
+        <item itemvalue="Python.MILP" />
         <item itemvalue="Python.findLMPs" />
         <item itemvalue="Python.Topology" />
-        <item itemvalue="Python.Load" />
       </list>
     </recent_temporary>
   </component>
@@ -533,7 +419,8 @@
       <workItem from="1588102492685" duration="1544000" />
       <workItem from="1588110187521" duration="214000" />
       <workItem from="1588110561823" duration="15968000" />
-      <workItem from="1588173456022" duration="12227000" />
+      <workItem from="1588173456022" duration="29339000" />
+      <workItem from="1588225442525" duration="7199000" />
     </task>
     <task id="LOCAL-00001" summary="Adding H matrix creation">
       <created>1586642757848</created>
@@ -591,17 +478,44 @@
       <option name="project" value="LOCAL" />
       <updated>1588091408657</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="adjacency">
+      <created>1588194256447</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1588194256447</updated>
+    </task>
+    <task id="LOCAL-00010" summary="adjacency">
+      <created>1588211084322</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588211084322</updated>
+    </task>
+    <task id="LOCAL-00011" summary="adjacency">
+      <created>1588211145909</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1588211145909</updated>
+    </task>
+    <task id="LOCAL-00012" summary="adjacency">
+      <created>1588223464061</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588223464061</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111624000" />
+    <option name="totallyTimeSpent" value="135935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1164" y="-1080" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13539445" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20415778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -614,18 +528,18 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32994923" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.41928935" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32994923" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.49946696" visible="true" weight="0.44467005" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.32994923" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" visible="true" weight="0.32994923" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49946696" weight="0.33299494" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32919255" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.94817656" weight="0.4173774" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.94817656" weight="0.47867805" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" order="7" sideWeight="0.051823415" side_tool="true" weight="0.61247337" />
+      <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" order="7" sideWeight="0.051823415" side_tool="true" weight="0.6124642" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -749,16 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/MILP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6540">
-          <caret line="436" column="38" selection-start-line="312" selection-start-column="3" selection-end-line="436" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/MarketOperator/marketOperator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -778,13 +682,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" selection-start-line="3" selection-end-line="14" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time_space.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -822,56 +719,6 @@
     <entry file="file://$PROJECT_DIR$/data/loads/Grid_demand_trends_20200421102501.csv">
       <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/ABM/ABM_Simplified_network.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ABM/ABM_Nodes.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stored_path.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ABM/Simp_nodes_dict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="56" column="53" selection-start-line="52" selection-start-column="4" selection-end-line="56" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/ABM/ABM_Network_details.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/historicaLMPs/201909_Final_prices.csv">
       <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
@@ -881,16 +728,6 @@
           <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/Network/Topology/Topology.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="282" column="3" selection-start-line="282" selection-start-column="3" selection-end-line="282" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -908,23 +745,6 @@
     <entry file="file://$PROJECT_DIR$/drafts/SalomeCharles/Data/20190901_Offers.csv">
       <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="68" selection-start-column="56" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/LMP.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/drafts/SalomeCharles/Offers_2019-09-01.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -935,13 +755,150 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/Pyomo-5.6.1-py3.7.egg/pyomo/core/base/misc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/matplotlib/axes/_axes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="2063" selection-start-line="2063" selection-end-line="2063" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/Pyomo-5.6.1-py3.7.egg/pyomo/core/base/objective.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="354" selection-start-line="354" selection-end-line="354" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presentation/CE295_Pres/case1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presentation/CE295_Pres/cas3earn240USD.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presentation/CE295_Pres/case2selfscheduleearn120USD.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="14" selection-start-line="3" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/MILP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="509" column="4" selection-start-line="509" selection-start-column="4" selection-end-line="533" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#12436#17851#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-364">
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="52" column="20" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ABM/ABM_Simplified_network.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ABM/ABM_Nodes.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Network/Topology/Topology.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ABM/ABM_Network_details.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/clean_program.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
+        <state relative-caret-position="447">
+          <caret line="497" column="97" lean-forward="true" selection-start-line="471" selection-start-column="4" selection-end-line="497" selection-end-column="97" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ABM/Simp_nodes_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drafts/SalomeCharles/generator_adjacency_matrix_dict.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/generators/generator_adjacency_matrix_dict.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/LMP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="88" selection-start-line="88" selection-start-column="2" selection-end-line="96" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stored_path.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="37" />
         </state>
       </provider>
     </entry>
