@@ -486,11 +486,60 @@ def plot_results_1_node(clearing_price, b, a, P_max, d, batteries=None):
     plt.show()
     return True
 
+def obj_f_linear():
+    b = np.array([0, 20, 40, 50, 100])  # 4 generators
+    a = np.array([0, 0, 0, 0, 0])  # 4 generators
+    P_max = np.array([1, 2, 3, 3, 1])
+    d = 9
+    c_u = 50
+    u = 1
+    clearing_price = 50
+
+
+    max_range = max(max(P_max), u)
+    productor_bids = [[a[i] * x + b[i] if x < P_max[i] else np.nan for x in range(max_range)] for i in range(len(a))]
+    productor_bids[0][1] = 0
+    productor_bids += [[c_u if x < u else np.nan for x in range(max_range)]]
+    productor_bids = np.array(productor_bids).reshape(-1)
+    place_battery_bids = np.argwhere(np.argsort(productor_bids) >= (max_range) * len(b))
+    sorted_bids = np.sort(productor_bids)
+    df = pd.DataFrame(index=np.arange(0, len(sorted_bids)), data=sorted_bids, columns=["cumulated_bids"])
+    df = df.dropna()
+    df["clearing_price"] = clearing_price
+
+    plt.figure(figsize=(8, 5))
+    bars = ('A', 'B', 'C', 'D', 'E')
+    # Choose the position of each barplots on the x-axis (space=1,4,3,1)
+    y_pos = [0.5, 2, 3+1.5, 7, 8.5]
+    width = [1, 2, 3, 2, 1]
+    height = [0,20,40,50,50]
+    # Create bars
+    plt.bar(y_pos, height, width=width, color=('grey', 'grey', 'grey', 'grey','red'),  edgecolor='blue')
+    # Create names on the x-axis
+    # plt.xticks(y_pos, bars)
+    # Show graphic
+    plt.step(df.index, df["cumulated_bids"], label='cumulated bids')
+    plt.plot(df.index, df["cumulated_bids"], 'C0o', alpha=0.5)
+    index_battery = [iu[0] for iu in place_battery_bids if iu[0] <= len(df.index)]
+    to_plot = list(df["cumulated_bids"].iloc[index_battery])
+    plt.step([8,9], [to_plot[0]] + to_plot, color="red", label='battery bids')
+
+    plt.plot(df.index, df["clearing_price"], label=r'$\lambda$', linestyle=(0, (1, 2)))
+    plt.axvline(x=d, color="red", label=r'$d$', linestyle=(0, (1, 2)))
+    plt.legend()
+    plt.ylabel("USD/MWh")
+    plt.title("Clearing price and bids for a trading period")
+    plt.xlabel("Cumulated bids (MWh)")
+
+    plt.show()
+
+
+
 if __name__ == '__main__':
     """
     bidding curve for each of the 4 generators is a*x + b
     """
-    b = np.array([0, 20, 40, 50, 200])  # 4 generators
+    b = np.array([0, 20, 40, 50, 100])  # 4 generators
     a = np.array([0, 0, 0, 0,  0])  # 4 generators
     P_max = np.array([1, 2, 3, 3, 1])
     d = 9  # demand of 6 MWh

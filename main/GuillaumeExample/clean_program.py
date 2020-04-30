@@ -85,7 +85,9 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     """
     Define objective
     """
-    model.obj = pyo.Objective(rule=lambda model : obj_func(model, Horizon_T, d, b, P_max, P_min, n_nodes, h, cost_of_battery))
+    # obj_func(model, Horizon_T, d, b, P_max, P_min, n_lines, h, n_generators, cost_of_battery)
+    model.obj = pyo.Objective(rule=lambda model : obj_func(model, Horizon_T, d, b, P_max, P_min, n_lines, h, n_generators, n_nodes,
+                                                           cost_of_battery))
     # model.obj = pyo.Objective(rule=lambda model : 1)
 
     """
@@ -129,7 +131,7 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
                                                  rule=lambda model, t : battery_states_update(model, t, Battery_Horizon, E, Horizon_T,
                                                                             I_tilde))
     model.initial_state = pyo.Constraint(rule=initial_state)
-    model.final_state = pyo.Constraint(rule=lambda model : final_state(model, Battery_Horizon))
+    # model.final_state = pyo.Constraint(rule=lambda model : final_state(model, Battery_Horizon))
     model.battery_bid_cstr = pyo.Constraint(model.time_index, rule=battery_bid_cstr)
     model.capacity_constraint = pyo.Constraint(rule=battery_capacity_cstr)
 
@@ -351,15 +353,15 @@ def H_init(model, i, j, H):
     return H[i,j]
 
 
-def obj_func(model, Horizon_T, d, b, P_max, P_min, n_nodes, h, cost_of_battery):
+def obj_func(model, Horizon_T, d, b, P_max, P_min, n_lines, h, n_generators, n_nodes, cost_of_battery):
     S = 0
     for t in range(Horizon_T):
         for j in range(n_nodes):
             S += d[j, t] * model.lambda_[j, t]
-        for j in range(2 * n_nodes):
+        for j in range(n_lines):
             S += - h[j] * model.beta[j, t]
-        for i in range(len(b)):
-            S += - b[i,t] * (model.g_t[i, t]-P_min[i,t]) - P_max[i,t] * model.sigma[i, t]
+        for i in range(n_generators):
+            S = -b[i,t] * (model.g_t[i, t]) - P_max[i,t]*model.sigma[i, t] - P_min[i,t]*model.mu[i,t]
     return -S + cost_of_battery * model.q_u_test
 
 
@@ -426,7 +428,7 @@ def launch_model():
     """
     get d_t for day 12 and trading period 1
     """
-    Horizon_T = 12
+    Horizon_T = 2
     d = []
     for k, node in enumerate(AMB_network.loads.keys()):
         d.append([])
@@ -452,6 +454,7 @@ def launch_model():
                 P_min[g.index, i] = pmin if g.type == "Hydro" else 0
                 b[g.index, i] = a
     print("Loading data done")
+    P_min = np.zeros((n_generator, Horizon_T))
     # name = list_of_generator[1].name
     # LMP.get_P_min_a(name, 1, 36)
     # b[list_of_generator[1].index]
@@ -471,8 +474,8 @@ def launch_model():
     # h = np.array(list(h)[:23] + list(-h)[:23])
     Mn = AMB_network.Mn
     i_battery = 1
-    model = run_program(d, b, P_max, P_min, H, h, Mn, i_battery=11, z_start=1, cost_of_battery=22)
-    model.pprint()
+    model = run_program(d, b, P_max, P_min, H, h, Mn, i_battery=1, z_start=1, cost_of_battery=0)
+    # model.pprint()
     print("\n___ OBJ ____")
     print(pyo.value(model.obj))
 
