@@ -62,7 +62,7 @@ def create_data_Sept():
 
 df = create_data_Sept()
 
-def get_P_min_a(generator, day,  tp):
+def get_P_min_a(generator, day,  tp, type):
     df_ = df[(df['name'] == generator)&(df['TradingPeriod'] == tp)&(df['day'] == day)].copy()
     # df_ = df_[df_.groupby('Band').UTCSubmissionTime.transform('max') == df_['UTCSubmissionTime']]
     df_ = df_[df_["IsLatest"]=="Y"]
@@ -70,14 +70,31 @@ def get_P_min_a(generator, day,  tp):
     df_['cumsum_MW'] = df_['Megawatt'].cumsum()
 
     min_power = df_['cumsum_MW'][df_.DollarsPerMegawattHour <= 5]
+    # if type == "Hydro":
     P_min = min_power.iloc[-1] if len(min_power) >0  else 0
+    cap = 5
+    # else:
+    #     P_min = 0
+    #     cap = 5
     P_max = df_['cumsum_MW'].iloc[-1] if len(df_) >0  else 0
-    new_df = df_[df_.DollarsPerMegawattHour >= 5].copy()
-    if len(new_df) == 0 or sum(new_df['cumsum_MW']) == 0 :
+    new_df = df_[df_.DollarsPerMegawattHour >= cap].copy()
+    if len(new_df) == 0 or sum(new_df['cumsum_MW']) == 0 or sum(new_df['Megawatt']) ==0:
         a =0
     else:
-        a = sum(new_df['cumsum_MW']*new_df['DollarsPerMegawattHour'])/sum(new_df['cumsum_MW'])
+        a = sum(new_df['Megawatt']*new_df['DollarsPerMegawattHour'])/sum(new_df['Megawatt'])
     return P_max, P_min, a
+
+
+
+# import json
+# file_path = stored_path.main_path + '/data/generators/generator_adjacency_matrix_dict.json'
+# with open(file_path) as f:
+#     data = json.loads(f.read())
+#
+# generator = "KIN0_KIN0112"
+# day =1
+# tp = 24
+# type = "Hydro"
 
 #
 # tp = 15

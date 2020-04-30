@@ -1,5 +1,16 @@
+import json
+import math
+
 import numpy as np
+import pandas as pd
 import pyomo.environ as pyo
+
+import main.Network.PriceBids.Load.Load as ld
+import stored_path
+from main.GuillaumeExample import LMP
+from main.Network.PriceBids.Generator.Generator import Generator
+from main.Network.PriceBids.Load.Load import Load
+from main.Network.Topology.Topology import Topology as top
 
 L = 10000
 def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of_battery=1):
@@ -361,21 +372,20 @@ def obj_func(model, Horizon_T, d, b, P_max, P_min, n_lines, h, n_generators, n_n
         for j in range(n_lines):
             S += - h[j] * model.beta[j, t]
         for i in range(n_generators):
-            S = -b[i,t] * (model.g_t[i, t]) - P_max[i,t]*model.sigma[i, t] - P_min[i,t]*model.mu[i,t]
+            S += -b[i,t] * (model.g_t[i, t]) - P_max[i,t]*model.sigma[i, t] - P_min[i,t]*model.mu[i,t]
     return -S + cost_of_battery * model.q_u_test
 
 
-def launch_model():
-    from main.Network.Topology.Topology import Topology as top
-    import main.Network.PriceBids.Load.Load as ld
-    from main.Network.PriceBids.Generator.Generator import Generator
-    from main.Network.PriceBids.Load.Load import Load
-    import pandas as pd
-    import stored_path
-    import json
-    import math
-    from main.GuillaumeExample import LMP
+# t = 0
+# S = 0
+# for j in range(d.shape[0]):
+#     S += d[j, t] * pyo.value(model.lambda_[j, t])
+# for j in range(h.shape[0]):
+#     S += - h[j] * pyo.value(model.beta[j, t])
+# for i in range(b.shape[0]):
+#     S += pyo.value(-b[i, t] * (model.g_t[i, t]) - P_max[i, t] * model.sigma[i, t] - P_min[i, t] * model.mu[i, t])
 
+def launch_model():
     AMB_network = top(network="ABM")
 
     """
@@ -428,14 +438,18 @@ def launch_model():
     """
     get d_t for day 12 and trading period 1
     """
-    Horizon_T = 2
+    Horizon_T = 48
     d = []
     for k, node in enumerate(AMB_network.loads.keys()):
         d.append([])
-        for j in range(Horizon_T):
-            d[k].append(1000 * AMB_network.loads[node][0].return_d(1, j + 1))
+        for j in range(48, 48+Horizon_T):
+            d[k].append(1000 * AMB_network.loads[node][0].return_d(1+j//48, j%48+1))
 
     d = np.array(d)
+
+    import matplotlib.pyplot as plt
+    plt.plot(sum(d))
+    plt.show()
     # d = np.zeros((d.shape[0], Horizon_T))
     # d = P_min
 
@@ -448,15 +462,20 @@ def launch_model():
     P_min = np.zeros((n_generator, Horizon_T))
     for node in AMB_network.generators.keys():
         for g in AMB_network.generators[node]:
-            for i in range(Horizon_T):
-                pmax, pmin, a = LMP.get_P_min_a(g.name, 1, i + 1)
+            for j in range(48, 48+Horizon_T):
+                pmax, pmin, a = LMP.get_P_min_a(g.name, 1+j//48, j%48+1, g.type)
                 P_max[g.index, i] = pmax + 1
                 P_min[g.index, i] = pmin if g.type == "Hydro" else 0
                 b[g.index, i] = a
+                # if g.node_name == "ROX":
+                #     print("ok")
+                #     P_min[g.index, i] = pmin
+
     print("Loading data done")
-    P_min = np.zeros((n_generator, Horizon_T))
+    # P_min = np.zeros((n_generator, Horizon_T))
     # name = list_of_generator[1].name
     # LMP.get_P_min_a(name, 1, 36)
+    # P_max
     # b[list_of_generator[1].index]
 
     list_of_generator = {}
@@ -470,18 +489,29 @@ def launch_model():
     # P_min, P_max = AMB_network.create_Pmin_Pmax()
     # P_max = P_max.reshape(-1) #*10
     H, h = AMB_network.H, AMB_network.h
+    # h[22] = 150
+    # h[22+23] = 150
+    # h = h -100
     # h = h
     # h = np.array(list(h)[:23] + list(-h)[:23])
     Mn = AMB_network.Mn
     i_battery = 1
-    model = run_program(d, b, P_max, P_min, H, h, Mn, i_battery=1, z_start=1, cost_of_battery=0)
+    # h[39] += 1000
+    model = run_program(d, b, P_max, P_min, H, h, Mn, i_battery=12, z_start=1, cost_of_battery=0)
     # model.pprint()
     print("\n___ OBJ ____")
     print(pyo.value(model.obj))
 
-    lambdas = np.array([pyo.value(model.lambda_[11, t]) for t in range(Horizon_T)])
+    nodes = np.array([5,9, 13, 15 ])
+
+    (Mn@P_min)[nodes]
+
+    lambdas = np.array([pyo.value(model.lambda_[1, t]) for t in range(Horizon_T)])
     u = np.array([pyo.value(model.u[t]) for t in range(Horizon_T)])
     lambdas@u
+
+    p_t = np.array([pyo.value(model.p_t[i,23]) for i in range(Mn.shape[0])])
+    H@p_t
 
 
 if __name__ == '__main__':

@@ -4,9 +4,10 @@ import numpy as np
 import pandas as pd
 
 import main.Network.PriceBids.Load.Load as ld
+import stored_path
 from main.Network.PriceBids.Generator.Generator import Generator
 from main.Network.PriceBids.Load.Load import Load
-import stored_path
+
 
 class Topology:
     """
@@ -248,22 +249,22 @@ def create_H(I, y):
     '''
     # Initializing sizes
 
-    Network = pd.read_csv(stored_path.main_path + '/data/ABM/ABM_Network_details.csv')
-    Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
-    Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
-    m = Network.shape[0]
-    Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
-    Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
-
-    names_2_nodes = dict([[node, j] for j, node in enumerate(Nodes)])
-    nodes_2_names = generate_nodes_2_names(names_2_nodes)
-    I = create_incidence(Network.NLeave, Network.NEnter)
-    A = create_adjacency(Network.NLeave, Network.NEnter)
-
-    omega_NZ = 50 * (2 * np.pi)
-    z = Network['Resistance (Ohms)'] + 1j * Network["Reactance (Ohms)"] * omega_NZ
-    y = 1 / z
-    y = np.imag(y)
+    # Network = pd.read_csv(stored_path.main_path + '/data/ABM/ABM_Network_details.csv')
+    # Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
+    # Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
+    # m = Network.shape[0]
+    # Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
+    # Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
+    #
+    # names_2_nodes = dict([[node, j] for j, node in enumerate(Nodes)])
+    # nodes_2_names = generate_nodes_2_names(names_2_nodes)
+    # I = create_incidence(Network.NLeave, Network.NEnter)
+    # A = create_adjacency(Network.NLeave, Network.NEnter)
+    #
+    # omega_NZ = 50 * (2 * np.pi)
+    # z = Network['Resistance (Ohms)'] + 1j * Network["Reactance (Ohms)"] * omega_NZ
+    # y = 1 / z
+    # y = np.imag(y)
 
     m = I.shape[1]
     Delta_y = np.diag(y)
