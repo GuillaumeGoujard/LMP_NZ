@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/main/Network/Topology/add_arrow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LMP_NZ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LMP_NZ.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator bids.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator bids.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Maps/nodes_on_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/drafts/SalomeCharles/Maps/nodes_on_map.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +44,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/main/Network/PriceBids/Battery" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -57,6 +61,9 @@
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -93,6 +100,9 @@
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -129,19 +139,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="marketOperator_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="nodes_on_map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Users\kiera\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/drafts/SalomeCharles/Maps" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/MarketOperator/marketOperator_tests.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drafts/SalomeCharles/Maps/nodes_on_map.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,19 +161,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Topology" />
-      <item itemvalue="Python.marketOperator_tests" />
-      <item itemvalue="Python.New Zealand Topology" />
       <item itemvalue="Python.Generator bids" />
+      <item itemvalue="Python.New Zealand Topology" />
       <item itemvalue="Python.Offers_2019-09-01" />
+      <item itemvalue="Python.Topology" />
+      <item itemvalue="Python.nodes_on_map" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.New Zealand Topology" />
+        <item itemvalue="Python.nodes_on_map" />
         <item itemvalue="Python.Offers_2019-09-01" />
         <item itemvalue="Python.Generator bids" />
         <item itemvalue="Python.Topology" />
-        <item itemvalue="Python.marketOperator_tests" />
       </list>
     </recent_temporary>
   </component>
@@ -366,11 +376,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="More work on automatic generator dictionary for linear bid equation" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588172112909">
+    <state x="-1242" y="-332" key="#New_Zealand_Topology" timestamp="1588202071762">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
-    <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172112909" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587726427824" />
+    <state x="-1242" y="-332" key="#New_Zealand_Topology/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202071762" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588231337218">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202534828" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588231337218" />
     <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1588128995813" />
     <state x="-1255" y="-240" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1587423549463">
       <screen x="-1920" y="-466" width="1920" height="1040" />
@@ -381,6 +395,10 @@
     </state>
     <state x="-1272" y="-158" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587476655109" />
     <state x="506" y="284" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960@0.0.1500.960" timestamp="1586655872928" />
+    <state x="-1242" y="-332" key="#nodes_on_map" timestamp="1588202103478">
+      <screen x="-1920" y="-466" width="1920" height="1040" />
+    </state>
+    <state x="-1242" y="-332" key="#nodes_on_map/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202103478" />
     <state x="-1056" y="-391" key="CommitChangelistDialog2" timestamp="1588174619287">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
@@ -388,48 +406,48 @@
     <state x="561" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588135203003" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1586654657154" />
-    <state x="-1736" y="-374" width="1536" height="861" key="DiffContextDialog" timestamp="1588092212419">
+    <state x="-1828" y="-374" width="1736" height="856" key="DiffContextDialog" timestamp="1588201965749">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
-    <state x="-1736" y="-374" width="1536" height="861" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092212419" />
+    <state x="-1828" y="-374" width="1736" height="856" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588201965749" />
     <state x="144" y="85" width="1200" height="794" key="DiffContextDialog/0.0.1500.960@0.0.1500.960" timestamp="1586655915044" />
     <state x="-1240" y="-210" key="FileChooserDialogImpl" timestamp="1588095386482">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1240" y="-210" key="FileChooserDialogImpl/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588095386482" />
     <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1586645662516" />
-    <state width="725" height="272" key="GridCell.Tab.0.bottom" timestamp="1588172117454">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state width="725" height="272" key="GridCell.Tab.0.bottom" timestamp="1588202868204">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="566" height="247" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
+    <state width="725" height="272" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588202868204" />
     <state width="565" height="247" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
-    <state width="725" height="272" key="GridCell.Tab.0.center" timestamp="1588172117454">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state width="725" height="272" key="GridCell.Tab.0.center" timestamp="1588202868204">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="566" height="247" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
+    <state width="725" height="272" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588202868204" />
     <state width="565" height="247" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
-    <state width="725" height="272" key="GridCell.Tab.0.left" timestamp="1588172117454">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state width="725" height="272" key="GridCell.Tab.0.left" timestamp="1588202868203">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="566" height="247" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
+    <state width="725" height="272" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588202868203" />
     <state width="565" height="247" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
-    <state width="725" height="272" key="GridCell.Tab.0.right" timestamp="1588172117454">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state width="725" height="272" key="GridCell.Tab.0.right" timestamp="1588202868204">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="566" height="247" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1587723749776" />
+    <state width="725" height="272" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588202868204" />
     <state width="565" height="247" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1588129000492" />
     <state x="-1222" y="-224" key="RollbackChangesDialog" timestamp="1588092213702">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1222" y="-224" key="RollbackChangesDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092213702" />
-    <state x="252" y="124" key="SettingsEditor" timestamp="1588122056976">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state x="-1597" y="-332" key="SettingsEditor" timestamp="1588202350621">
+      <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
-    <state x="-1597" y="-332" key="SettingsEditor/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587653286813" />
+    <state x="-1597" y="-332" key="SettingsEditor/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202350621" />
     <state x="252" y="124" key="SettingsEditor/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588122056976" />
     <state x="252" y="124" key="SettingsEditor/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586816665291" />
     <state x="252" y="124" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1586642534960" />
@@ -456,11 +474,11 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1828" y="-374" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588094391214" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1588169147818">
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1588231174128">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587716876183" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588169147818" />
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588231174128" />
     <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586879540903" />
     <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960@0.0.1500.960" timestamp="1586643050763" />
     <state x="558" y="398" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586655829109">
@@ -475,10 +493,11 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1410" y="-128" width="709" height="307" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587423803538" />
-    <state x="-1390" y="-242" width="672" height="678" key="search.everywhere.popup" timestamp="1588092779747">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
+    <state x="415" y="208" width="672" height="626" key="search.everywhere.popup" timestamp="1588202843730">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1390" y="-242" width="672" height="678" key="search.everywhere.popup/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092779747" />
+    <state x="415" y="208" width="672" height="626" key="search.everywhere.popup/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588202843730" />
     <state x="414" y="207" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1586645604450" />
   </component>
 </project>
