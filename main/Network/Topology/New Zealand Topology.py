@@ -20,6 +20,13 @@ SimpNetwork.rename(columns = {
     'Swem Node' : 'SimpNode',
     ' NZEM Substations that act as Grid Exit Points' : 'OriginNodes'
 }, inplace=True)
+DictSimpNetwork = {
+        snode: list(set([onode[:3]
+                         for onode in SimpNetwork.OriginNodes[SimpNetwork.SimpNode == snode]
+                        .values[0]
+                        .split(' ')[1:]]))
+    for snode in SimpNetwork.SimpNode
+    }
 
 SimpNodes = pd.read_csv('data/ABM/ABM_Nodes.csv')
 SimpNetDetails = pd.read_csv('data/ABM/ABM_Network_details.csv')
@@ -68,9 +75,6 @@ if plottype == 'All nodes':
 elif plottype == '19 Nodes':
 
     ## Visualizing the location of 19 nodes compared to the existing nodes
-    DictSimpNetwork = {
-        snode: list(set([onode[:3] for onode in SimpNetwork.OriginNodes[SimpNetwork.SimpNode == snode].values[0].split(' ')[1:]])) for snode in SimpNetwork.SimpNode
-    }
 
     # Nodes
 
