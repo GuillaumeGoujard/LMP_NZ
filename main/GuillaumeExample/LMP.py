@@ -86,15 +86,16 @@ def get_P_min_a(generator, day,  tp, type):
 
 
 
-# import json
-# file_path = stored_path.main_path + '/data/generators/generator_adjacency_matrix_dict.json'
-# with open(file_path) as f:
-#     data = json.loads(f.read())
-#
-# generator = "KIN0_KIN0112"
-# day =1
-# tp = 24
-# type = "Hydro"
+import json
+file_path = stored_path.main_path + '/data/generators/generator_adjacency_matrix_dict1.json'
+with open(file_path) as f:
+    data = json.loads(f.read())
+
+generator = "OKI0_OKI2201"
+day =1
+tp = 1
+type = "Hydro"
+t = get_P_min_a(generator, day,  tp, type)
 
 #
 # tp = 15
