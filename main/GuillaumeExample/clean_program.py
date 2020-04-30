@@ -47,9 +47,9 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     model.q_u = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
     model.q_u_test = pyo.Var(domain=pyo.NonNegativeReals) #max capacity
     model.c_u = pyo.Var(model.time_index, domain=pyo.NonNegativeReals)
-    model.M_u = pyo.Var(model.mu_index, domain=pyo.NonNegativeReals)
+    model.M_u = pyo.Var(model.mu_index, domain=pyo.Binary)
     model.starting_z = pyo.Var(domain=pyo.NonNegativeReals)
-    model.i = pyo.Var(domain_type=pyo.IntegerSet, lb=0, ub=n_nodes)
+    # model.i = pyo.Var(domain_type=pyo.IntegerSet, lb=0, ub=n_nodes)
 
     """
     E.D primal variables
@@ -85,14 +85,16 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     """
     Define objective
     """
-    model.obj = pyo.Objective(rule=lambda model : obj_func(model, Horizon_T, d, b, P_max, P_min, n_nodes, h, cost_of_battery))
+    # obj_func(model, Horizon_T, d, b, P_max, P_min, n_lines, h, n_generators, cost_of_battery)
+    model.obj = pyo.Objective(rule=lambda model : obj_func(model, Horizon_T, d, b, P_max, P_min, n_lines, h, n_generators, n_nodes,
+                                                           cost_of_battery))
     # model.obj = pyo.Objective(rule=lambda model : 1)
 
     """
     Injection feasibility constraints
     """
     model.injection_definition = pyo.Constraint(model.nodal_index, rule=lambda model, j, t :
-                                                            pt_definition(model, j, t, n_nodes, Mn, Mu, d, n_generators))
+                                                            pt_definition(model, j, t, n_nodes, Mn, d, n_generators))
     model.injection_balance = pyo.Constraint(model.time_index, rule=lambda model, t : injection_balance(model, t, n_nodes))
     model.line_constraints = pyo.Constraint(model.beta_index, rule=lambda model, j,
                                                                            t : line_constraints(model, j, t, n_nodes, h))
@@ -112,21 +114,24 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     model.dual_generator_constraint = pyo.Constraint(model.prod_times_index, rule=lambda model, i, t:
                                                                         generator_price(model, i, t, n_nodes, Mn, b))
     model.dual_battery_constraint = pyo.Constraint(model.time_index, rule=lambda model, t:
-                                                                        battery_price(model, t, n_nodes, Mu))
+                                                                        battery_price(model, t, n_nodes))
     model.LMPs = pyo.Constraint(model.nodal_index, rule=lambda model, i, t: LMP_s(model, i, t, n_nodes, H))
 
 
     """
     Battery states
     """
-    model.Mu_set = pyo.Constraint(rule=lambda model : Mu_set(model, Mu))
+    model.Mu_set = pyo.Constraint(rule=lambda model : Mu_set(model, n_nodes))
+    if i_battery is not None:
+        model.Battery = pyo.Constraint(rule=lambda model: Mu_battery(model, i_battery))
+
     model.battery_states_limits = pyo.Constraint(model.A,
                                                  rule=lambda model, a : battery_states_limits(model, a, Battery_Horizon, A, z_bar))
     model.battery_states_update = pyo.Constraint(model.time_index,
                                                  rule=lambda model, t : battery_states_update(model, t, Battery_Horizon, E, Horizon_T,
                                                                             I_tilde))
     model.initial_state = pyo.Constraint(rule=initial_state)
-    model.final_state = pyo.Constraint(rule=lambda model : final_state(model, Battery_Horizon))
+    # model.final_state = pyo.Constraint(rule=lambda model : final_state(model, Battery_Horizon))
     model.battery_bid_cstr = pyo.Constraint(model.time_index, rule=battery_bid_cstr)
     model.capacity_constraint = pyo.Constraint(rule=battery_capacity_cstr)
 
@@ -159,8 +164,15 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of
     return model
 
 
-def Mu_set(model, Mu):
-    return Mu[model.i] == 1
+def Mu_set(model, n_nodes):
+    S = 0
+    for i in range(n_nodes):
+        S += model.M_u[i]
+    return S == 1
+
+def Mu_battery(model, i_battery):
+    return model.M_u[i_battery] == 1
+
 
 def injection_balance(model, t, n_nodes):
     S = 0
@@ -176,12 +188,12 @@ def line_constraints(model, j, t, n_nodes, h):
     return S <= h[j]
 
 
-def pt_definition(model, j, t, n_nodes, Mn, Mu, d, n_generators):
+def pt_definition(model, j, t, n_nodes, Mn, d, n_generators):
     S = 0
     # for i in range(n_nodes):
     for b_ in range(n_generators):
         S += Mn[j,b_]*model.g_t[b_, t]
-    S += Mu[j][0]*model.u[t]
+    S += model.M_u[j]*model.u[t]
     return model.p_t[j,t] - S + d[j, t] == 0
 
 # S=0
@@ -215,10 +227,10 @@ def generator_price(model, i, t, n_nodes, Mn, b):
     return b[i,t] - S + model.sigma[i, t] + model.mu[i, t] == 0
 
 
-def battery_price(model, t, n_nodes, Mu):
+def battery_price(model, t, n_nodes):
     S = 0
     for j in range(n_nodes):
-        S += Mu.T[0][j] * model.lambda_[j, t]
+        S += model.M_u[j] * model.lambda_[j, t]
     return model.c_u[t] - S + model.sigma_u[t] + model.mu_u[t] == 0
 
 
@@ -341,18 +353,135 @@ def H_init(model, i, j, H):
     return H[i,j]
 
 
-def obj_func(model, Horizon_T, d, b, P_max, P_min, n_nodes, h, cost_of_battery):
+def obj_func(model, Horizon_T, d, b, P_max, P_min, n_lines, h, n_generators, n_nodes, cost_of_battery):
     S = 0
     for t in range(Horizon_T):
         for j in range(n_nodes):
             S += d[j, t] * model.lambda_[j, t]
-        for j in range(2 * n_nodes):
+        for j in range(n_lines):
             S += - h[j] * model.beta[j, t]
-        for i in range(len(b)):
-            S += - b[i,t] * (model.g_t[i, t]-P_min[i,t]) - P_max[i,t] * model.sigma[i, t]
+        for i in range(n_generators):
+            S = -b[i,t] * (model.g_t[i, t]) - P_max[i,t]*model.sigma[i, t] - P_min[i,t]*model.mu[i,t]
     return -S + cost_of_battery * model.q_u_test
 
 
+def launch_model():
+    from main.Network.Topology.Topology import Topology as top
+    import main.Network.PriceBids.Load.Load as ld
+    from main.Network.PriceBids.Generator.Generator import Generator
+    from main.Network.PriceBids.Load.Load import Load
+    import pandas as pd
+    import stored_path
+    import json
+    import math
+    from main.GuillaumeExample import LMP
+
+    AMB_network = top(network="ABM")
+
+    """
+    Create loads on each node
+    """
+    Existing_sub_nodes = ld.get_existing_subnodes()
+    historical_loads = ld.get_historical_loads()
+    Simp_nodes_dict = ld.get_nodes_to_subnodes()
+    Simp_nodes_dict["MAN"] = ["MAN2201"]
+    Existing_sub_nodes.append("MAN2201")
+    nodes_to_index = pd.read_csv(stored_path.main_path + '/data/ABM/ABM_Nodes.csv')
+    for i, node in enumerate(AMB_network.names_2_nodes.keys()):
+        # print("Load added at node : " + node)
+        index = nodes_to_index[nodes_to_index["Node names"] == node]["Node index"].values[0]
+        load = Load(node, node, index, type="real_load")
+        load.add_load_data(historical_loads, Simp_nodes_dict, Existing_sub_nodes)
+        AMB_network.add_load(load)
+
+    file_path = stored_path.main_path + '/data/generators/generator_adjacency_matrix_dict.json'
+    with open(file_path) as f:
+        data = json.loads(f.read())
+
+    number_of_added_generators = 0
+    for name_generator in data.keys():
+        L_ = data[name_generator]
+        try:
+            if type(L_[0]) != float:
+                if not math.isnan(L_[-2]):
+                    if L_[-1] == "Gas" or L_[-1] == "Biogas":
+                        add = 35
+                    if L_[-1] == "Geothermal":
+                        add = 10
+                    if L_[-1] == "Coal":
+                        add = 50
+                    if L_[-1] == "Diesel":
+                        add = 150
+
+                    if L_[-1] == 'Hydro':
+                        P_min = 0.1 * L_[-2]
+                    else:
+                        P_min = 0
+
+                    g = Generator(name_generator, L_[0], 0, L_[-1], Pmax=L_[-2], Pmin=P_min,
+                                  marginal_cost=add + np.array(L_[1]))
+                    AMB_network.add_generator(g)
+                    number_of_added_generators += 1
+        except:
+            pass
+
+    """
+    get d_t for day 12 and trading period 1
+    """
+    Horizon_T = 2
+    d = []
+    for k, node in enumerate(AMB_network.loads.keys()):
+        d.append([])
+        for j in range(Horizon_T):
+            d[k].append(1000 * AMB_network.loads[node][0].return_d(1, j + 1))
+
+    d = np.array(d)
+    # d = np.zeros((d.shape[0], Horizon_T))
+    # d = P_min
+
+    """
+    Add topology specific characteristics
+    """
+    n_generator = AMB_network.get_number_of_gen()
+    b = np.zeros((n_generator, Horizon_T))
+    P_max = np.zeros((n_generator, Horizon_T))
+    P_min = np.zeros((n_generator, Horizon_T))
+    for node in AMB_network.generators.keys():
+        for g in AMB_network.generators[node]:
+            for i in range(Horizon_T):
+                pmax, pmin, a = LMP.get_P_min_a(g.name, 1, i + 1)
+                P_max[g.index, i] = pmax + 1
+                P_min[g.index, i] = pmin if g.type == "Hydro" else 0
+                b[g.index, i] = a
+    print("Loading data done")
+    P_min = np.zeros((n_generator, Horizon_T))
+    # name = list_of_generator[1].name
+    # LMP.get_P_min_a(name, 1, 36)
+    # b[list_of_generator[1].index]
+
+    list_of_generator = {}
+    for node in AMB_network.generators.keys():
+        for g in AMB_network.generators[node]:
+            list_of_generator[g.index] = g
+    new_dict = {}
+    for key in sorted(list_of_generator.keys()):
+        new_dict[key] = list_of_generator[key]
+
+    # P_min, P_max = AMB_network.create_Pmin_Pmax()
+    # P_max = P_max.reshape(-1) #*10
+    H, h = AMB_network.H, AMB_network.h
+    # h = h
+    # h = np.array(list(h)[:23] + list(-h)[:23])
+    Mn = AMB_network.Mn
+    i_battery = 1
+    model = run_program(d, b, P_max, P_min, H, h, Mn, i_battery=1, z_start=1, cost_of_battery=0)
+    # model.pprint()
+    print("\n___ OBJ ____")
+    print(pyo.value(model.obj))
+
+    lambdas = np.array([pyo.value(model.lambda_[11, t]) for t in range(Horizon_T)])
+    u = np.array([pyo.value(model.u[t]) for t in range(Horizon_T)])
+    lambdas@u
 
 
 if __name__ == '__main__':
@@ -393,117 +522,10 @@ if __name__ == '__main__':
     """
     Real test 
     """
-    from main.Network.Topology.Topology import Topology as top
-    import main.Network.PriceBids.Load.Load as ld
-    from main.Network.PriceBids.Generator.Generator import Generator
-    from main.Network.PriceBids.Load.Load import Load
-    import pandas as pd
-    import stored_path
-    import json
-    import math
-    from main.GuillaumeExample import LMP
-
-    AMB_network = top(network="ABM")
-
-    """
-    Create loads on each node
-    """
-    Existing_sub_nodes = ld.get_existing_subnodes()
-    historical_loads = ld.get_historical_loads()
-    Simp_nodes_dict = ld.get_nodes_to_subnodes()
-    Simp_nodes_dict["MAN"] = ["MAN2201"]
-    Existing_sub_nodes.append("MAN2201")
-    nodes_to_index = pd.read_csv(stored_path.main_path + '/data/ABM/ABM_Nodes.csv')
-    for i, node in enumerate(AMB_network.names_2_nodes.keys()):
-        # print("Load added at node : " + node)
-        index = nodes_to_index[nodes_to_index["Node names"] == node]["Node index"].values[0]
-        load = Load(node, node, index, type="real_load")
-        load.add_load_data(historical_loads, Simp_nodes_dict, Existing_sub_nodes)
-        AMB_network.add_load(load)
 
 
-    file_path = stored_path.main_path + '/data/generators/generator_adjacency_matrix_dict.json'
-    with open(file_path) as f:
-        data = json.loads(f.read())
-
-    number_of_added_generators = 0
-    for name_generator in data.keys():
-        L_ = data[name_generator]
-        try:
-            if type(L_[0]) != float:
-                if not math.isnan(L_[-2]):
-                    if L_[-1] == "Gas" or L_[-1] == "Biogas":
-                        add = 35
-                    if L_[-1] == "Geothermal":
-                        add = 10
-                    if L_[-1] == "Coal":
-                        add = 50
-                    if L_[-1] == "Diesel":
-                        add = 150
-
-                    if L_[-1] == 'Hydro':
-                        P_min = 0.1*L_[-2]
-                    else:
-                        P_min = 0
-
-                    g = Generator(name_generator, L_[0], 0, L_[-1], Pmax=L_[-2], Pmin=P_min, marginal_cost=add+np.array(L_[1]))
-                    AMB_network.add_generator(g)
-                    number_of_added_generators += 1
-        except:
-            pass
 
 
-    """
-    get d_t for day 12 and trading period 1
-    """
-    Horizon_T = 48
-    d = []
-    for k,node in enumerate(AMB_network.loads.keys()):
-        d.append([])
-        for j in range(Horizon_T):
-            d[k].append(1000*AMB_network.loads[node][0].return_d(1, j+1))
-
-    d = np.array(d)
-    # d = np.zeros((d.shape[0], Horizon_T))
-    # d = P_min
-
-    """
-    Add topology specific characteristics
-    """
-    n_generator = AMB_network.get_number_of_gen()
-    b = np.zeros((n_generator, Horizon_T))
-    P_max = np.zeros((n_generator, Horizon_T))
-    P_min = np.zeros((n_generator, Horizon_T))
-    for node in AMB_network.generators.keys():
-        for g in AMB_network.generators[node]:
-            for i in range(Horizon_T):
-                pmax, pmin, a = LMP.get_P_min_a(g.name, 1, i+1)
-                P_max[g.index, i] = pmax +1
-                P_min[g.index, i] = pmin if g.type == "Hydro" else 0
-                b[g.index, i] = a
-    print("Loading data done")
-    # name = list_of_generator[1].name
-    # LMP.get_P_min_a(name, 1, 36)
-    # b[list_of_generator[1].index]
-
-    list_of_generator = {}
-    for node in AMB_network.generators.keys():
-        for g in AMB_network.generators[node] :
-            list_of_generator[g.index] = g
-    new_dict = {}
-    for key in sorted(list_of_generator.keys()):
-        new_dict[key] = list_of_generator[key]
-
-    # P_min, P_max = AMB_network.create_Pmin_Pmax()
-    # P_max = P_max.reshape(-1) #*10
-    H, h = AMB_network.H, AMB_network.h
-    # h = h
-    # h = np.array(list(h)[:23] + list(-h)[:23])
-    Mn = AMB_network.Mn
-    i_battery = 1
-    model = run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of_battery=22)
-
-    B = 200*1000/(1*365*24) #USD per KWh
 
     # model.pprint()
     # print("\n___ OBJ ____")

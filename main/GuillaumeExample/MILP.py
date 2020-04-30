@@ -241,7 +241,7 @@ def optimal_batter_progr(b, P_max, d):
     model.r_sigma_g_u = pyo.Var(domain=pyo.Binary)
     model.r_g_t_u = pyo.Var(domain=pyo.Binary)
 
-    obj_func = lambda model: -((pyo.summation(b, model.g_t) + pyo.summation(np.array([d]), model.lambda_) + P_max@model.sigma))
+    # obj_func = lambda model: ((pyo.summation(b, model.g_t) - pyo.summation(np.array([d]), model.lambda_) + P_max@model.sigma))
 
     def equality(model):
         return pyo.summation(model.g_t) - d + model.u == 0
@@ -293,7 +293,13 @@ def optimal_batter_progr(b, P_max, d):
     model.slack_pos1_u = pyo.Constraint(rule=sigma_cstrmu_qu)
     model.slack_pos2_u = pyo.Constraint(rule=sigma_cstrmu_u)
 
+    def obj_func(model):
+        S = 0
+        for i in range(len(b)):
+            S += b[i]*model.g_t[i] - d*model.lambda_[0] + P_max[i]*model.sigma[i]
+        return S
     model.obj = pyo.Objective(rule=obj_func)
+    # model.obj = pyo.Objective(rule=obj_func)
 
     model.dual = pyo.Suffix(direction=pyo.Suffix.IMPORT_EXPORT)
 
@@ -364,7 +370,7 @@ def optimal_batter_progr_in_f_time(b, P_max, d):
         S = 0
         for t in range(Horizon_T):
             for i in range(len(b)):
-                S += -(b[i]*model.g_t[i,t] + d[t]*model.lambda_[t] + P_max[i]*model.sigma[i,t])
+                S += b[i]*model.g_t[i,t] - d[t]*model.lambda_[t] + P_max[i]*model.sigma[i,t]
         return S
     model.obj = pyo.Objective(rule=obj_func)
 
@@ -430,11 +436,11 @@ def optimal_batter_progr_in_f_time(b, P_max, d):
     solver = pyo.SolverFactory('gurobi')
     res = solver.solve(model)
 
-    results = [pyo.value(model.g_t[i]) for i in model.productors_index]
-    LMPs = [pyo.value(model.lambda_[0])]
-    print("Value of u = {}, for a cost of {} and quantity of {}".format(pyo.value(model.u), pyo.value(model.c_u), pyo.value(model.q_u)))
-    print("Dispatch is {} ".format(results))
-    print("For LMP : {}".format(LMPs))
+    # results = [pyo.value(model.g_t[i]) for i in model.productors_index]
+    # LMPs = [pyo.value(model.lambda_[0])]
+    # print("Value of u = {}, for a cost of {} and quantity of {}".format(pyo.value(model.u), pyo.value(model.c_u), pyo.value(model.q_u)))
+    # print("Dispatch is {} ".format(results))
+    # print("For LMP : {}".format(LMPs))
     return model
 
 
@@ -445,16 +451,18 @@ def optimal_batter_progr_in_f_time(b, P_max, d):
 
 
 
-def plot_results_1_node(clearing_price, b, a, P_max, batteries=None):
+def plot_results_1_node(clearing_price, b, a, P_max, d, batteries=None):
     if batteries is not None:
         assert len(batteries) == 2
         c_u, u = batteries
-    productor_bids = [[a[i]*x + b[i] if x <= P_max[i] else np.nan for x in range(max(P_max)+1) ] for i in range(len(a))]
+    max_range = max(P_max) if batteries is None else max(max(P_max), u)
+    productor_bids = [[a[i]*x + b[i] if x < P_max[i] else np.nan for x in range(max_range) ] for i in range(len(a))]
+    productor_bids[0][1] = 0
     if batteries is not None:
-        productor_bids += [[c_u if x <= u else np.nan for x in range(max(P_max)+1) ]]
+        productor_bids += [[c_u if x < u else np.nan for x in range(max_range) ]]
     productor_bids = np.array(productor_bids).reshape(-1)
     if batteries is not None:
-        place_battery_bids = np.argwhere(np.argsort(productor_bids) >= (max(P_max)+1)*len(b))
+        place_battery_bids = np.argwhere(np.argsort(productor_bids) >= (max_range)*len(b))
     sorted_bids = np.sort(productor_bids)
     df = pd.DataFrame(index=np.arange(0, len(sorted_bids)), data= sorted_bids, columns=["cumulated_bids"])
     df = df.dropna()
@@ -478,14 +486,63 @@ def plot_results_1_node(clearing_price, b, a, P_max, batteries=None):
     plt.show()
     return True
 
+def obj_f_linear():
+    b = np.array([0, 20, 40, 50, 100])  # 4 generators
+    a = np.array([0, 0, 0, 0, 0])  # 4 generators
+    P_max = np.array([1, 2, 3, 3, 1])
+    d = 9
+    c_u = 50
+    u = 1
+    clearing_price = 50
+
+
+    max_range = max(max(P_max), u)
+    productor_bids = [[a[i] * x + b[i] if x < P_max[i] else np.nan for x in range(max_range)] for i in range(len(a))]
+    productor_bids[0][1] = 0
+    productor_bids += [[c_u if x < u else np.nan for x in range(max_range)]]
+    productor_bids = np.array(productor_bids).reshape(-1)
+    place_battery_bids = np.argwhere(np.argsort(productor_bids) >= (max_range) * len(b))
+    sorted_bids = np.sort(productor_bids)
+    df = pd.DataFrame(index=np.arange(0, len(sorted_bids)), data=sorted_bids, columns=["cumulated_bids"])
+    df = df.dropna()
+    df["clearing_price"] = clearing_price
+
+    plt.figure(figsize=(8, 5))
+    bars = ('A', 'B', 'C', 'D', 'E')
+    # Choose the position of each barplots on the x-axis (space=1,4,3,1)
+    y_pos = [0.5, 2, 3+1.5, 7, 8.5]
+    width = [1, 2, 3, 2, 1]
+    height = [0,20,40,50,50]
+    # Create bars
+    plt.bar(y_pos, height, width=width, color=('grey', 'grey', 'grey', 'grey','red'),  edgecolor='blue')
+    # Create names on the x-axis
+    # plt.xticks(y_pos, bars)
+    # Show graphic
+    plt.step(df.index, df["cumulated_bids"], label='cumulated bids')
+    plt.plot(df.index, df["cumulated_bids"], 'C0o', alpha=0.5)
+    index_battery = [iu[0] for iu in place_battery_bids if iu[0] <= len(df.index)]
+    to_plot = list(df["cumulated_bids"].iloc[index_battery])
+    plt.step([8,9], [to_plot[0]] + to_plot, color="red", label='battery bids')
+
+    plt.plot(df.index, df["clearing_price"], label=r'$\lambda$', linestyle=(0, (1, 2)))
+    plt.axvline(x=d, color="red", label=r'$d$', linestyle=(0, (1, 2)))
+    plt.legend()
+    plt.ylabel("USD/MWh")
+    plt.title("Clearing price and bids for a trading period")
+    plt.xlabel("Cumulated bids (MWh)")
+
+    plt.show()
+
+
+
 if __name__ == '__main__':
     """
     bidding curve for each of the 4 generators is a*x + b
     """
-    b = np.array([0, 20, 50, 200])  # 4 generators
-    a = np.array([0, 0, 0, 0])  # 4 generators
-    P_max = np.array([1, 3, 3, 1])
-    d = 6  # demand of 6 MWh
+    b = np.array([0, 20, 40, 50, 100])  # 4 generators
+    a = np.array([0, 0, 0, 0,  0])  # 4 generators
+    P_max = np.array([1, 2, 3, 3, 1])
+    d = 9  # demand of 6 MWh
 
     """
     Create and solve model
@@ -496,36 +553,40 @@ if __name__ == '__main__':
     """
     Plot results
     """
-    plot_results_1_node(clearing_price, b, a, P_max)
+    plot_results_1_node(clearing_price, b, a, P_max, d)
 
     """
     Create and solve model with battery
     """
-    c_u, q_u = 10, 2
+    c_u, q_u = 0, 6
+    u = q_u
     model = create_and_solve_simple_model_with_battery(b, d, c_u, q_u, P_max)
     clearing_price = model.dual[model.balance_constraint]
 
     """
     Plot results
     """
-    plot_results_1_node(clearing_price, b, a, P_max, batteries=(c_u, q_u))
+    plot_results_1_node(clearing_price, b, a, P_max, d, batteries=(c_u, q_u))
 
     """
     Find best u, c_u
     """
     model = optimal_batter_progr(b, P_max, d)
+    # model = optimal_batter_progr_in_f_time(b, P_max, d)
     c_u, q_u = pyo.value(model.c_u), pyo.value(model.q_u)
-    c_u = c_u - 0.1
+    c_u = 49.5
     # c_u = 48
-    q_u = 3
+    q_u = 6
 
     model = create_and_solve_simple_model_with_battery(b, d, c_u, q_u, P_max)
     clearing_price = model.dual[model.balance_constraint]
 
+    # optimal_batter_progr_in_f_time(b, P_max, d)
+
     """
     Plot results
     """
-    plot_results_1_node(clearing_price, b, a, P_max, batteries=(c_u, q_u))
+    plot_results_1_node(clearing_price, b, a, P_max, d, batteries=(c_u, q_u))
 
 
 
