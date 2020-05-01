@@ -308,7 +308,7 @@ def battery_bid_cstr(model,t):
     return model.q_u[t] <= model.q_u_test
 
 def battery_capacity_cstr(model):
-    return model.q_u_test <= 30
+    return model.q_u_test <= 2000
 
 def battery_states_limits(model, a, Battery_Horizon, A, z_bar):
     S = 0
@@ -373,6 +373,33 @@ def obj_func(model, Horizon_T, d, b, P_max, P_min, n_lines, h, n_generators, n_n
 #     S += - h[j] * pyo.value(model.beta[j, t])
 # for i in range(b.shape[0]):
 #     S += pyo.value(-b[i, t] * (model.g_t[i, t]) - P_max[i, t] * model.sigma[i, t] - P_min[i, t] * model.mu[i, t])
+def save_results(model, i_test=0):
+    import os
+    path = stored_path.main_path + "/data/results" + "/test{}".format(i_test)
+    try:
+        os.mkdir(path)
+    except:
+        pass
+    lambdas = np.array([[pyo.value(model.lambda_[t, i]) for i in range(Horizon_T)] for t in range(d.shape[0])])
+    df_lambda = pd.DataFrame(data=lambdas)
+    df_lambda.to_csv(path+"/df_lambda.csv")
+    p_t = np.array([[pyo.value(model.p_t[t, i]) for i in range(Horizon_T)] for t in range(d.shape[0])])
+    df_p_t = pd.DataFrame(data=p_t)
+    df_p_t.to_csv(path + "/df_p_t.csv")
+    df_demand = pd.DataFrame(data=d)
+    df_demand.to_csv(path + "/df_demand.csv")
+    df_gamma = pd.DataFrame(data=[pyo.value(model.gamma_[t]) for t in range(Horizon_T)])
+    df_gamma.to_csv(path + "/df_gamma.csv")
+
+    u = np.array([pyo.value(model.u[t]) for t in range(Horizon_T)])
+    z = np.array([pyo.value(model.z[i]) for i in range(Horizon_T)])
+    c_u = np.array([pyo.value(model.c_u[t]) for t in range(Horizon_T)])
+    q_u = np.array([pyo.value(model.q_u[t]) for t in range(Horizon_T)])
+    df_z = pd.DataFrame(data=np.array([z,u,c_u,q_u]).T, columns=["z", "u", "c_u", "q_u"])
+    df_z.to_csv(path + "/df_z.csv")
+
+    return True
+
 
 def launch_model():
     AMB_network = top(network="ABM")
@@ -433,7 +460,7 @@ def launch_model():
     """
     get d_t for day 12 and trading period 1
     """
-    Horizon_T = 12
+    Horizon_T = 48
     day = 2
     d = []
     for k, node in enumerate(AMB_network.loads.keys()):
@@ -445,9 +472,9 @@ def launch_model():
     d = np.array(d)
     # # d[1] = d[1]*10
     #
-    import matplotlib.pyplot as plt
-    plt.plot(sum(d))
-    plt.show()
+    # import matplotlib.pyplot as plt
+    # plt.plot(sum(d))
+    # plt.show()
     #
     # sum(d[:,0])
     # d = np.zeros((d.shape[0], Horizon_T))
@@ -485,19 +512,27 @@ def launch_model():
     H, h = AMB_network.H, AMB_network.h
     Mn = AMB_network.Mn
     save = d[10].copy()
-    d[10] = save + np.random.randint(0, 900, d[10].shape)
-    cost_of_battery = 200 * 1000 / (5 * 365)
+    save_d = d.copy()
+    d[10] = save
+    d = 1.3*save_d.copy()
+    d[10] = save*12.1
+    cost_of_battery = 200 * 1000 / (2 * 365)
     model = run_program(d, b, P_max, P_min, H, h, Mn, i_battery=None, z_start=1, cost_of_battery=cost_of_battery)
 
-
+    beta = np.array([[pyo.value(model.beta[t,i]) for i in range(Horizon_T)] for t in range(H.shape[0])])
+    save_results(model, i_test=4)
 
     print("\n___ OBJ ____")
     print(pyo.value(model.obj))
 
     # lambdas @ u
     #
-    # p_t = np.array([pyo.value(model.p_t[i,0]) for i in range(Mn.shape[0])])
-    #
+    # p_t = np.array([pyo.value(model.p_t[i,t]) for i in range(Mn.shape[0])])
+    # p = p_t.copy()
+    # # p[10] = - 600
+    # (H @ p)[0]
+    # h[0]
+
     # [20] #[:h.shape[0]//2,:]
     # h[[4,4+23]]= 300
     # h[[6, 6 + 23]] = 30
@@ -505,37 +540,10 @@ def launch_model():
     #
     # line_to_cong = 0
     #
-    # p = p_t.copy()
-    # p[10] = - 600
-    # (H @ p)[0]
-    # h[0]
 
 
-def save(model, i_test=0):
-    import os
-    path = stored_path.main_path + "/data/results" + "/test{}".format(i_test)
-    try:
-        os.mkdir(path)
-    except:
-        pass
-    lambdas = np.array([[pyo.value(model.lambda_[t, i]) for i in range(Horizon_T)] for t in range(d.shape[0])])
-    df_lambda = pd.DataFrame(data=lambdas)
-    df_lambda.to_csv(path+"/df_lambda.csv")
-    p_t = np.array([[pyo.value(model.p_t[t, i]) for i in range(Horizon_T)] for t in range(d.shape[0])])
-    df_p_t = pd.DataFrame(data=p_t)
-    df_p_t.to_csv(path + "/df_p_t.csv")
-    df_demand = pd.DataFrame(data=d)
-    df_demand.to_csv(path + "/df_demand.csv")
 
-    lambdas = np.array([pyo.value(model.lambda_[10, t]) for t in range(Horizon_T)])
-    u = np.array([pyo.value(model.u[t]) for t in range(Horizon_T)])
-    z = np.array([pyo.value(model.z[i]) for i in range(Horizon_T)])
-    c_u = np.array([pyo.value(model.c_u[t]) for t in range(Horizon_T)])
-    q_u = np.array([pyo.value(model.q_u[t]) for t in range(Horizon_T)])
-    df_z = pd.DataFrame(data=np.array([z,u,c_u,q_u]).T, columns=["z", "u", "c_u", "q_u"])
-    df_z.to_csv(path + "/df_z.csv")
 
-    return True
 
 
 
