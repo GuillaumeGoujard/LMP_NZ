@@ -6,16 +6,29 @@ from matplotlib.lines import Line2D
 import random
 from main.Network.Topology.Topology import create_incidence
 from main.Network.Topology.Topology import create_adjacency
-from main.Network.Topology.Topology import create_H
-import stored_path
+from main.Network.Topology.Topology import create_H_hat
 
 import networkx as nx
 
 # Files
-Sites = pd.read_csv(stored_path.main_path+'/data/topology/Sites.csv')
-Network = pd.read_csv(stored_path.main_path+'/data/ABM/ABM_Network_details.csv')
-SimpNetwork = pd.read_csv(stored_path.main_path+'/data/ABM/ABM_Simplified_network.csv')
+d_t_df = pd.read_csv('data/results/test3/df_demand.csv')
+d_t_df = d_t_df.rename(columns={'Unnamed: 0': "t"})
 
+gamma_df = pd.read_csv('data/results/test3/df_gamma.csv')
+gamma_df = gamma_df.rename(columns={'Unnamed: 0': "t", "0" : "gamma"})
+
+LMP_df = pd.read_csv('data/results/test3/df_lambda.csv')
+LMP_df = LMP_df.rename(columns={'Unnamed: 0': "Node"})
+
+p_t_df = pd.read_csv('data/results/test3/df_p_t.csv')
+p_t_df = p_t_df.rename(columns={'Unnamed: 0': "Node"})
+
+z_df = pd.read_csv('data/results/test3/df_z.csv')
+z_df = z_df.rename(columns={'Unnamed: 0': "t"})
+
+Sites = pd.read_csv('data/topology/Sites.csv')
+Network = pd.read_csv('data/ABM/ABM_Network_details.csv')
+SimpNetwork = pd.read_csv('data/ABM/ABM_Simplified_network.csv')
 SimpNetwork.rename(columns = {
     'Swem Node' : 'SimpNode',
     ' NZEM Substations that act as Grid Exit Points' : 'OriginNodes'
@@ -46,9 +59,7 @@ omega_NZ = 50*(2*np.pi)
 z = Network['Resistance (Ohms)'] + 1j*Network["Reactance (Ohms)"]*omega_NZ
 y = 1/z
 y = np.imag(y)
-H = create_H(I,y)
-H_hat = H[:H.shape[0]//2,:]
-# H_hat = create_H_hat(I, y)
+H_hat = create_H_hat(I, y)
 
 locations = Sites.MXLOCATION.unique().tolist()
 locations.remove('WKM')
@@ -195,11 +206,9 @@ def plot_NZ_market_clearing(Nodes_df, Lines_df, H_hat, p_t, u_t):
 
 
 d_t = [0] + [f*random.uniform(0,150) for i in range(19)]
-Mng_t = [0] + [f*random.uniform(0,150) for i in range(19)]
+g_t = [0] + [f*random.uniform(0,150) for i in range(19)]
 p_t =[0] + [f*random.uniform(-150,150) for i in range(19)]
 u_t = [0,1000] + [0]*18
 
 plot_NZ_market_offer_demand(Nodes_df, Lines_df, d_t, g_t)
-plt.show()
 plot_NZ_market_clearing(Nodes_df, Lines_df, H_hat, p_t, u_t)
-plt.show()

@@ -32,8 +32,8 @@ DictSimpNetwork = {
 # with open('DictSimpNetwork.json', 'w') as fp:
 #     json.dump(DictSimpNetwork, fp)
 
-with open('/generators/generator_adjacency_matrix_dict.json') as f:
-    generator_adjacency_matrix_dict = json.load(f)
+# with open('/generators/generator_adjacency_matrix_dict.json') as f:
+#     generator_adjacency_matrix_dict = json.load(f)
 
 
 
@@ -41,8 +41,10 @@ SimpNodes = pd.read_csv('data/ABM/ABM_Nodes.csv')
 SimpNetDetails = pd.read_csv('data/ABM/ABM_Network_details.csv')
 
 plottype = '19 Nodes'
+# plottype = "19 vs all nodes"
 # plottype = 'All nodes'
 
+fs = 15
 
 if plottype == 'All nodes':
 
@@ -76,9 +78,57 @@ if plottype == 'All nodes':
     plt.plot(*Tlines)
 
     # Labels
-    plt.xlabel('Longitude (X)')
-    plt.ylabel('Latitude (Y)')
+    plt.xlabel('Longitude (X)', fontsize = fs)
+    plt.ylabel('Latitude (Y)', fontsize = fs)
     plt.axis('equal')
+    plt.show()
+
+elif plottype == "19 vs all nodes":
+    plt.figure(num=1, figsize=(8, 15), dpi=80, facecolor='w', edgecolor='k')
+
+    plt.scatter(Sites.X.values, Sites.Y.values, marker='.', label = 'Original node locations')
+
+    # Referenced nodes
+    Node19 = np.zeros((20, 2))
+    locations = Sites.MXLOCATION.unique().tolist()
+    locations.remove('WKM')
+    locations.remove('HLY')
+
+    for i, node in enumerate(DictSimpNetwork.keys()):
+        if node in locations:
+            Node19[i, 0] = Sites.X[Sites.MXLOCATION == node]
+            Node19[i, 1] = Sites.Y[Sites.MXLOCATION == node]
+        elif node == 'WKM':
+            Node19[i, 0] = Sites.X[Sites.MXLOCATION == node] + 50000
+            Node19[i, 1] = Sites.Y[Sites.MXLOCATION == node]
+        elif node == 'HLY':
+            Node19[i, 0] = Sites.X[Sites.MXLOCATION == node]
+            Node19[i, 1] = Sites.Y[Sites.MXLOCATION == node] - 50000
+        else:
+            Node19[i, 0] = Sites.X[Sites.MXLOCATION.apply(lambda x: x in DictSimpNetwork[node])].mean()
+            Node19[i, 1] = Sites.Y[Sites.MXLOCATION.apply(lambda x: x in DictSimpNetwork[node])].mean()
+
+    # B_star
+    srs = pd.Series(list(DictSimpNetwork.keys()))
+
+    locHAY = srs[srs == 'HAY'].index.values.astype(int)[0]
+    locTWZ = srs[srs == 'TWZ'].index.values.astype(int)[0]
+
+    p = 0.25
+    Node19[-1, 0] = (Node19[locHAY, 0] + p * (Node19[locTWZ, 0] - Node19[locHAY, 0]))
+    Node19[-1, 1] = (Node19[locHAY, 1] + p * (Node19[locTWZ, 1] - Node19[locHAY, 1]))
+
+    plt.scatter(Node19[:, 0], Node19[:, 1], marker='o', label = 'Simplified nodes')
+    for i, node in enumerate(DictSimpNetwork.keys()):
+        plt.annotate(node, (Node19[i, 0], Node19[i, 1]), fontsize=fs)
+    plt.annotate('B_star', (Node19[19, 0], Node19[19, 1]), fontsize=fs)
+
+    # Labels
+    plt.xlabel('Longitude (X)', fontsize = fs)
+    plt.ylabel('Latitude (Y)', fontsize = fs)
+    plt.title('300 vs 19 nodes', fontsize = fs)
+    plt.axis('equal')
+    plt.legend(fontsize = fs)
     plt.show()
 
 elif plottype == '19 Nodes':
@@ -86,6 +136,8 @@ elif plottype == '19 Nodes':
     ## Visualizing the location of 19 nodes compared to the existing nodes
 
     # Nodes
+
+    plt.figure(num=1, figsize=(8, 15), dpi=80, facecolor='w', edgecolor='k')
 
     # Referenced nodes
     Node19 = np.zeros((20,2))
@@ -117,7 +169,7 @@ elif plottype == '19 Nodes':
     Node19[-1, 0] = (Node19[locHAY, 0] + p*(Node19[locTWZ, 0]-Node19[locHAY, 0]))
     Node19[-1, 1] = (Node19[locHAY, 1] + p*(Node19[locTWZ, 1]-Node19[locHAY, 1]))
 
-    plt.scatter(Node19[:,0],Node19[:,1], marker = 'o')
+    plt.scatter(Node19[:,0],Node19[:,1], marker = 'o', label = 'Simplified nodes')
     for i, node in enumerate(DictSimpNetwork.keys()):
         plt.annotate(node, (Node19[i, 0], Node19[i, 1]), fontsize='large')
     plt.annotate('B_star', (Node19[19, 0], Node19[19, 1]), fontsize='large')
@@ -152,13 +204,13 @@ elif plottype == '19 Nodes':
     Tlines[3 * (m-1) + 1] = (Node19[locTWZ, 1], Node19[-1, 1])
     Tlines[3 * (m-1) + 2] = color
 
-    plt.plot(*Tlines)
-    add_arrow(*Tlines)
-    Lines = *Tlines
+    plt.plot(*Tlines, 'g')
 
     # Labels
-    plt.xlabel('Longitude (X)')
-    plt.ylabel('Latitude (Y)')
+    plt.xlabel('Longitude (X)', fontsize = fs)
+    plt.ylabel('Latitude (Y)', fontsize = fs)
+    plt.title('Simplified network', fontsize = fs)
+    plt.legend(fontsize = fs)
     plt.axis('equal')
     plt.show()
 
