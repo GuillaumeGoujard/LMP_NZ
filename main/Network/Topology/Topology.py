@@ -289,6 +289,60 @@ def create_H(I, y):
 
     return H
 
+def create_H_hat(I, y):
+    '''
+    Shift Factor matrix
+
+    Args:
+        NLeave: Leaving node vector
+            Size: (m,)
+            Type: np.array
+            Unit: integer value
+            Description: List of nodes through which line of index l leaves
+
+        NEnter: Entering node vector
+            Size: (m,)
+            Type: np.array
+            Unit: integer value
+            Description: List of nodes through which line of index l enters
+
+        y: Impedance vector
+            Size: (m,)
+            Type: np.array
+            Unit: Ohms
+            Description: Array of impedances of each line, in Ohms. Each row corresponds to the indice of line l.
+
+    Returns:
+        H: Shift factor matrix
+            Size: (2*m,n)
+            Type: np.array
+            Unit: ???
+            Description:
+
+    '''
+    # Initializing sizes
+
+    m = I.shape[1]
+    Delta_y = np.diag(y)
+
+    Y = I @ Delta_y @ I.T
+
+    Y_bar = Y.copy()
+    Y_bar[0,:] = 0
+    Y_bar[:,0] = 0
+
+    Y_bar = np.delete(np.delete(Y, 0, 0), 0, 1)
+
+    Y_dag = np.concatenate((np.zeros((1, Y_bar.shape[0] + 1)),
+                            np.concatenate((np.zeros((Y_bar.shape[0], 1)),
+                                            np.linalg.inv(Y_bar)),
+                                           axis=1)),
+                           axis=0)
+
+    H_hat = np.diag(y) @ I.T @ Y_dag
+
+    return H_hat
+
 def Aq_matrix():
     return
 

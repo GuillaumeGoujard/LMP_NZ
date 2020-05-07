@@ -45,10 +45,10 @@ def plot_congestion(Nodes, gamma_df, LMP_df, t, Node = None):
         Node_name = Nodes[Node]
         Nodes = [None]*len(Nodes)
         Nodes[Node] = Node_name
-        Y = np.array([gamma_df.gamma[:t].tolist()]).T - np.array(LMP_df[[f'{i}' for i in range(t)]]).T
+        Y = np.array(LMP_df[[f'{i}' for i in range(t)]]).T - np.array([gamma_df.gamma[:t].tolist()]).T
 
     else:
-        Y = np.array([gamma_df.gamma[:t].tolist()]).T - np.array(LMP_df[[f'{i}' for i in range(t)]]).T
+        Y = np.array(LMP_df[[f'{i}' for i in range(t)]]).T - np.array([gamma_df.gamma[:t].tolist()]).T
 
     plt.figure(num=1, figsize=(15, 8), dpi=80, facecolor='w', edgecolor='k')
     lines = plt.plot(Y)
@@ -82,7 +82,7 @@ def plot_profit(z_df, LMP_df, Node, t):
 def plot_congestion_profit(Nodes, gamma_df, z_df, LMP_df, Node, t):
     fig, axs = plt.subplots(2, sharex = True, figsize=(15, 8), dpi=80, facecolor='w', edgecolor='k')
     plt.subplots_adjust(hspace=.0)
-    fs = 15
+    fs = 20
 
     # Profits
     u = np.array([z_df.u[:t]]).T
@@ -94,12 +94,12 @@ def plot_congestion_profit(Nodes, gamma_df, z_df, LMP_df, Node, t):
     axs[0].plot(Y_cum, label='Profit')
     axs[0].axhline(y=0, color='k', ls='--')
     axs[0].set_ylabel('Profit [\$]', fontsize=fs)
-    axs[0].set_title(f'Profit and congestions \n Node = {Node}, {Nodes[Node]}', fontsize=fs)
+    axs[0].set_title(f'Profit and congestions, 1st week of september 2019 \n Node = {Node}, {Nodes[Node]}', fontsize=fs)
     axs[0].legend(fontsize=fs)
 
     # Congestion
 
-    Y = np.array([gamma_df.gamma[:t].tolist()]).T - np.array(LMP_df[[f'{i}' for i in range(t)]]).T
+    Y = np.array(LMP_df[[f'{i}' for i in range(t)]]).T - np.array([gamma_df.gamma[:t].tolist()]).T
     for i in range(len(Nodes)):
         if i == 10:
             axs[1].plot(Y[:,i], label = Nodes[i])
@@ -107,11 +107,15 @@ def plot_congestion_profit(Nodes, gamma_df, z_df, LMP_df, Node, t):
             axs[1].plot(Y[:,i])
     axs[1].legend(fontsize = fs)
     axs[1].set_ylabel('$\lambda - \gamma$ [\$/MW]', fontsize=fs)
-    axs[1].set_xlabel('Time t [30 min]', fontsize=fs)
+    axs[1].set_xlabel('Time t [h]', fontsize=fs)
     axs[1].set_xlim([0, 48])
 
-
-
+plt.figure()
+plt.plot(np.array(d_t_df[[f'{i}' for i in range(48)]]).T)
+plt.xlabel('Time [h]', fontsize = 15)
+plt.ylabel('Demand [MW]', fontsize = 15)
+plt.title('Demand curves', fontsize = 15)
+plt.show()
 
 
 """
@@ -120,4 +124,4 @@ TESTS
 
 plot_congestion(Nodes, gamma_df, LMP_df, 48, Node = 2)
 plot_profit(z_df, LMP_df, 10, 48)
-plot_congestion_profit(Nodes, gamma_df, z_df, LMP_df, 10, 45)
+plot_congestion_profit(Nodes, gamma_df, z_df, LMP_df, 10, 18)

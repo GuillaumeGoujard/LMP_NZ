@@ -29,3 +29,12 @@ def add_arrow(line, position=None, direction=1, size=50, color=None):
         arrowprops=dict(arrowstyle="->", color=color),
         size=size
     )
+
+
+#
+#
+# line = Line2D((0,0),(0,1), linewidth = 2, linestyle = '-', color = 'k')
+# fig = plt.figure()
+# ax = fig.add_subplot(111)
+# ax.add_line(line)
+# add_arrow(line, direction = -1)

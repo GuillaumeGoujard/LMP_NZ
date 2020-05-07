@@ -8,7 +8,6 @@ from main.Network.Topology.Topology import create_incidence
 from main.Network.Topology.Topology import create_adjacency
 from main.Network.Topology.Topology import create_H_hat
 
-import networkx as nx
 
 # Files
 d_t_df = pd.read_csv('data/results/test3/df_demand.csv')
@@ -204,6 +203,64 @@ def plot_NZ_market_clearing(Nodes_df, Lines_df, H_hat, p_t, u_t):
     ax.set_ylabel('Latitude (Y)')
     ax.axis('equal')
 
+def plot_NZ_market_clearing_time(Nodes_df, Lines_df, H_hat, p_t_df, z_df, d_t_df, LMP_df, Node, t):
+    fs = 15
+
+    p_t = p_t_df[f'{t}'].values.tolist()
+    Nodes_df.p_t = p_t
+    u_t = [0]*(Node) + [z_df.u[z_df.t == t].values[0]] + [0]*(20-Node-1)
+    Nodes_df.u_t = u_t
+
+    Lines_df.f = H_hat@np.array([p_t]).T
+    Lines_df.normed_f = Lines_df.f/Lines_df.f.abs().max()
+
+    LMP = LMP_df[f'{t}']
+
+    d_t = d_t_df[f'{t}']
+
+    fig = plt.figure(num=1, figsize=(18, 20), dpi=80, facecolor='w', edgecolor='k')
+    ax = fig.add_subplot(111)
+
+    f = 5000
+
+    ax.scatter(Nodes_df.x.values,
+               Nodes_df.y.values,
+               s=f*np.abs(d_t.values/np.abs(d_t).max()),
+               c='b',
+               alpha=0.2,
+               label='Demand')
+
+    c = 'g'
+    if u_t[Node] < 0:
+        c = 'r'
+
+    ax.scatter(Nodes_df.x.values,
+               Nodes_df.y.values,
+               s = f/4*np.abs(Nodes_df.u_t.values),
+               c = c,
+               marker = '+',
+               label = 'Optimal battery placement')
+
+    Lines_df['Arrow'] = Lines_df.f.apply(np.sign)
+    Lines_df['Line2D'] = Lines_df[['x1', 'x2', 'y1', 'y2', 'normed_f']].apply(
+        lambda row: Line2D(*[(row[0], row[1]), (row[2], row[3]), 15*row[4]], alpha=0.2, color = 'k'), axis=1)
+    for i, line in enumerate(Lines_df.Line2D.values.tolist()):
+        ax.add_line(line)
+        add_arrow(line, size= 60, direction = Lines_df['Arrow'].values[i])
+
+    for i, node in enumerate(Nodes_df.Node.values):
+        ax.annotate(f'{node}: \n $\lambda$ = {round(LMP.values[i])} \$/MW',
+                    (Nodes_df[Nodes_df.Node == node].x.values[0],
+                     Nodes_df[Nodes_df.Node == node].y.values[0] + 10000),
+                    fontsize=fs)
+    ax.set_xlabel('Longitude (X)', fontsize = fs)
+    ax.set_ylabel('Latitude (Y)', fontsize = fs)
+    plt.title(f'State of the network \n t = {t}', fontsize = fs)
+    # ax.legend(fontsize = fs)
+    ax.axis('equal')
+
+
+
 
 d_t = [0] + [f*random.uniform(0,150) for i in range(19)]
 g_t = [0] + [f*random.uniform(0,150) for i in range(19)]
@@ -212,3 +269,10 @@ u_t = [0,1000] + [0]*18
 
 plot_NZ_market_offer_demand(Nodes_df, Lines_df, d_t, g_t)
 plot_NZ_market_clearing(Nodes_df, Lines_df, H_hat, p_t, u_t)
+
+Node = 10
+plot_NZ_market_clearing_time(Nodes_df, Lines_df, H_hat, p_t_df, z_df, d_t_df, LMP_df, Node, 33)
+
+
+
+
