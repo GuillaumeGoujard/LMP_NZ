@@ -1,10 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.lines as lines
 import numpy as np
-import swifter
-
-from main.Network.Topology.add_arrow import add_arrow
 
 ## Importing relevant csv files
 Sites = pd.read_csv('data/topology/Sites.csv')

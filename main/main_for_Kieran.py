@@ -1,8 +1,8 @@
 from main.GuillaumeExample import price_making_algorithm
 from main.GuillaumeExample import economic_dispatch
 from main.GuillaumeExample import price_taking_algorithm
-import imp
-imp.reload(economic_dispatch)
+import importlib
+importlib.reload(economic_dispatch)
 import json
 import math
 import numpy as np
@@ -24,7 +24,7 @@ Brace for it and follow me : start by reading exp1 and then do exp2
 """
 
 
-def how_to_deal_with_price_maker_algo(Horizon_T=48, day=2):
+def how_to_deal_with_price_maker_algo(Horizon_T = 48, day = 2):
     """
     Choose your number of trading period : Horizon T and your day. By default let's do everything
     on day 2 and Horizon_T = 48
@@ -49,7 +49,7 @@ def how_to_deal_with_price_maker_algo(Horizon_T=48, day=2):
         @ always choose the location of the battery, 
         @ if you want to fix the maximum capacity fix it to something otherwise say "=None" and the algorithm will
         find the best capacity
-        @cost of the battery the "B" of the article
+        @ cost of the battery is the "B" of the article
         
     In the example below best capacity for 0 cost of capacity at node 1
     """
@@ -70,7 +70,7 @@ def how_to_deal_with_price_maker_algo(Horizon_T=48, day=2):
     model = price_making_algorithm.run_program(d, b, P_max, P_min, H, h, Mn, i_battery=1,
                                                max_capacity=None, cost_of_battery=cost_of_battery)
     print("Model computed")
-    save_results(model, d, Horizon_T, i_test=0) #i-test is the number of the folder in which you store the results
+    save_results(model, d, Horizon_T, i_test = 0) #i-test is the number of the folder in which you store the results
 
     """
     Let's get to it and store some nice output !!!!
@@ -79,13 +79,16 @@ def how_to_deal_with_price_maker_algo(Horizon_T=48, day=2):
     """
 
     """
-    1st example : get the objective function value and zcap in function of the index of the nodes
+    1st example : get the objective function value and zcap as a function of the index of the nodes
     
         WARNING : the profit of the battery is different from the objective function.
         Obj function = profit - B*z_cap !
     """
-    benefits_per_node = []
-    zcap_per_node = []
+    y = 10  # amortize in 10 years
+    cost_of_battery = 200 * 1000 / (y * 365)
+
+    obj_values_PM = []
+    zcap_per_node_PM = []
     for j in range(1, d.shape[0]):
         print("Launching model for node {}...".format(j))
         model = price_making_algorithm.run_program(d, b, P_max, P_min, H, h, Mn, i_battery=j,
@@ -94,8 +97,8 @@ def how_to_deal_with_price_maker_algo(Horizon_T=48, day=2):
 
         print("\n___ OBJ ____")
         print(pyo.value(model.obj))
-        benefits_per_node.append(pyo.value(model.obj)) #here we store the result of the constraint obj (not the variable)
-        zcap_per_node.append(pyo.value(model.z_cap))
+        obj_values_PM.append(pyo.value(model.obj)) #here we store the result of the constraint obj (not the variable)
+        zcap_per_node_PM.append(pyo.value(model.z_cap))
         print("\n")
 
     """
@@ -104,9 +107,9 @@ def how_to_deal_with_price_maker_algo(Horizon_T=48, day=2):
     
     The longer you can wait to amortize your investment the more likely you will install a fucking fat battery
     """
-    benefits_per_node = []
-    zcap_per_node = []
-    for y in list(range(1, 10))+[1000]:
+    obj_values_cost = []
+    zcap_per_cost = []
+    for y in list(range(1, 10)):
         print("Launching model...")
         cost_of_battery = 200 * 1000 / (y * 365)
         model = price_making_algorithm.run_program(d, b, P_max, P_min, H, h, Mn, i_battery=10,
@@ -118,6 +121,7 @@ def how_to_deal_with_price_maker_algo(Horizon_T=48, day=2):
         benefits_per_node.append(pyo.value(model.obj))
         zcap_per_node.append(pyo.value(model.z_cap))
         print("\n")
+
 
     """
     Let's see the next step
@@ -137,7 +141,7 @@ def how_to_deal_with_price_taker_algo(Horizon_T = 48, day = 2):
     lambdas = np.zeros((n, Horizon_T))
     for j in range(Horizon_T):
         """
-        Here is a new optimization framework which is rigoursely the same as devised in the algorithm, 
+        Here is a new optimization framework which is rigorously the same as devised in the algorithm, 
         WARNING this is just for time period j.
         
         We input the c and q, the price and quantity offered by the battery. Here 0,0 because we want the LMPs
@@ -158,24 +162,34 @@ def how_to_deal_with_price_taker_algo(Horizon_T = 48, day = 2):
     
     As for the maker, you choose the node of the battery, the cost (B), and the max_capacity (if none, will find the best)
     """
-    model = price_taking_algorithm.run_program(lambdas, i_battery=10, cost_of_battery=100, max_capacity=None)
-    planning = [pyo.value(model.u[t]) for t in range(Horizon_T)] #planning of push and pull from the network
-    expected_profits = sum([planning[i]*lambdas[1,i] for i in range(Horizon_T)]) #expected profits (lambda cross u with lambdas as exogenous)
+    y = 10  # amortize in 10 years
+    cost_of_battery = 200 * 1000 / (y * 365)
+
+    expected_profits = [0]*19
+    for j in range(1, d.shape[0]):
+        model = price_taking_algorithm.run_program(lambdas, i_battery=j, cost_of_battery=cost_of_battery, max_capacity=None)
+        planning = [pyo.value(model.u[t]) for t in range(Horizon_T)] #planning of push and pull from the network
+        expected_profits[j-1] = sum([planning[i]*lambdas[1,i] for i in range(Horizon_T)]) #expected profits (lambda cross u with lambdas as exogenous)
 
     n_lambdas = np.zeros((n, Horizon_T)) #new prices !
-    for j in range(Horizon_T):
-        """
-        Here we sell and buy at 0 (i.e we self-schedule_) the quantity devised in the optimization algorithm
-        """
-        model = economic_dispatch.run_ED_1period(d[:, j], b[:, j], P_max[:, j], P_min[:, j], 0, planning[j], H, h, Mn,
-                                                 i_battery=10)
-        for k in range(n):
-            n_lambdas[k, j] = model.dual[model.injection_definition[k]]
-
-    actual_profits = sum([planning[i] * n_lambdas[1, i] for i in range(Horizon_T)])
+    actual_profits = [0]*19
+    for j in range(1, d.shape[0]):
+        model_PT = price_taking_algorithm.run_program(lambdas, i_battery=j, cost_of_battery=cost_of_battery,
+                                                   max_capacity=None)
+        planning = [pyo.value(model_PT.u[t]) for t in range(Horizon_T)]  # planning of push and pull from the network
+        for t in range(Horizon_T):
+            """
+            Here we sell and buy at 0 (i.e we self-schedule_) the quantity devised in the optimization algorithm
+            """
+            model = economic_dispatch.run_ED_1period(d[:, t], b[:, t], P_max[:, t], P_min[:, t], 0, planning[t], H, h, Mn,
+                                                     i_battery=j)
+            for k in range(n):
+                n_lambdas[k, t] = model.dual[model.injection_definition[k]]
+        actual_profits = sum([planning[i] * n_lambdas[1, i] for i in range(Horizon_T)])
     """
     Actual profits.
     """
+
 
 def get_basics(Horizon_T, day):
     AMB_network = top(network="ABM")
@@ -211,10 +225,6 @@ def get_basics(Horizon_T, day):
     return H, h, Mn, b, P_max, P_min, d
 
 
-
-
-
-
 def tweak_d(d, load_factor = 1.3, index_to_tweak = 10, load_factor_for_node=12.1):
     save = d[index_to_tweak].copy()
     save_d = d.copy()
@@ -238,6 +248,7 @@ def add_loads_to_topology(AMB_network):
         load.add_load_data(historical_loads, Simp_nodes_dict, Existing_sub_nodes)
         AMB_network.add_load(load)
     return AMB_network
+
 
 def add_generators_to_topology(AMB_network):
     file_path = stored_path.main_path + '/data/generators/generator_adjacency_matrix_dict1.json'

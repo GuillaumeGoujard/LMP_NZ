@@ -1,4 +1,4 @@
-from main.Network.Topology.add_arrow import add_arrow
+from main.Visualization.add_arrow import add_arrow
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
