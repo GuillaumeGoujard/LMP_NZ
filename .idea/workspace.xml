@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/results/test0/df_gamma.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/Visualization/plot_PM_PT_profit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/Visualization/plot_zcap_amortissement.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/results/test5/df_demand.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/results/test5/df_gamma.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/results/test5/df_lambda.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/results/test5/df_p_t.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/results/test5/df_z.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/Visualization/plot_PM_PT_lambda_diff.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/results/test0/df_lambda.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/test0/df_lambda.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/results/test0/df_p_t.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/test0/df_p_t.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/results/test0/df_z.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/results/test0/df_z.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/add_arrow.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Visualization/add_arrow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/animate_market_clearing.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Visualization/animate_market_clearing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Visualization/plot_market_clearing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/plot_pricemaker_pricetaker_profit.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Visualization/plot_pricemaker_pricetaker_profit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/plot_profit_congestion_curves.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Visualization/plot_profit_congestion_curves.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Visualization/plot_PM_PT_profit.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Visualization/plot_PM_PT_profit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Visualization/plot_profit_congestion_curves.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Visualization/plot_profit_congestion_curves.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/main_for_Kieran.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_for_Kieran.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +48,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/main/Network/PriceBids/Battery" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="LMP_NZ" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="LMP_NZ" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -150,15 +155,12 @@
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\main\Visualization\plot_profit_congestion_curves.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Visualization/plot_profit_congestion_curves.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -177,10 +179,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main_for_Kieran" />
-        <item itemvalue="Python.plot_pricemaker_pricetaker_profit" />
-        <item itemvalue="Python.plot_market_clearing" />
         <item itemvalue="Python.plot_profit_congestion_curves" />
         <item itemvalue="Python.New Zealand Topology" />
+        <item itemvalue="Python.plot_pricemaker_pricetaker_profit" />
+        <item itemvalue="Python.plot_market_clearing" />
       </list>
     </recent_temporary>
   </component>
@@ -345,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588864470355</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Reorganizing plot files and work on main_for_Kieran.py">
+      <created>1588991526290</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1588991526290</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -432,18 +441,19 @@
     <MESSAGE value="Work on plotting" />
     <MESSAGE value="Congestion and profit curves" />
     <MESSAGE value="Additional plot files, attempt to animate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Additional plot files, attempt to animate" />
+    <MESSAGE value="Reorganizing plot files and work on main_for_Kieran.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganizing plot files and work on main_for_Kieran.py" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1242" y="-332" key="#New_Zealand_Topology" timestamp="1588202071762">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1242" y="-332" key="#New_Zealand_Topology/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202071762" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588949276136">
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589070582490">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202534828" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588949276136" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1589070582490" />
     <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1588296818444" />
     <state x="-1255" y="-240" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1587423549463">
       <screen x="-1920" y="-466" width="1920" height="1040" />
@@ -458,47 +468,47 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1242" y="-332" key="#nodes_on_map/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202103478" />
-    <state x="542" y="69" key="CommitChangelistDialog2" timestamp="1588864468493">
+    <state x="542" y="69" width="780" height="735" key="CommitChangelistDialog2" timestamp="1588991524008">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1056" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588174619287" />
-    <state x="542" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588864468493" />
+    <state x="542" y="69" width="780" height="735" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588991524008" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1588302501208" />
-    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog" timestamp="1588257340498">
+    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog" timestamp="1589126648285">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1828" y="-374" width="1736" height="856" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588201965749" />
-    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588257340498" />
+    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1589126648285" />
     <state x="144" y="85" width="1200" height="794" key="DiffContextDialog/0.0.1500.960@0.0.1500.960" timestamp="1586655915044" />
     <state x="-1240" y="-210" key="FileChooserDialogImpl" timestamp="1588095386482">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1240" y="-210" key="FileChooserDialogImpl/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588095386482" />
     <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1586645662516" />
-    <state width="312" height="241" key="GridCell.Tab.0.bottom" timestamp="1588952077534">
+    <state width="312" height="241" key="GridCell.Tab.0.bottom" timestamp="1589089393235">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="312" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588952077534" />
+    <state width="312" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1589089393235" />
     <state width="293" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1588302534953" />
-    <state width="312" height="241" key="GridCell.Tab.0.center" timestamp="1588952077534">
+    <state width="312" height="241" key="GridCell.Tab.0.center" timestamp="1589089393235">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="312" height="241" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588952077534" />
+    <state width="312" height="241" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1589089393235" />
     <state width="293" height="241" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1588302534953" />
-    <state width="312" height="241" key="GridCell.Tab.0.left" timestamp="1588952077534">
+    <state width="312" height="241" key="GridCell.Tab.0.left" timestamp="1589089393235">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="312" height="241" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588952077534" />
+    <state width="312" height="241" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1589089393235" />
     <state width="293" height="241" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1588302534953" />
-    <state width="312" height="241" key="GridCell.Tab.0.right" timestamp="1588952077534">
+    <state width="312" height="241" key="GridCell.Tab.0.right" timestamp="1589089393235">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="312" height="241" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588952077534" />
+    <state width="312" height="241" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1589089393235" />
     <state width="293" height="241" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1588302534953" />
     <state x="462" y="196" key="MultipleFileMergeDialog" timestamp="1588293098038">
       <screen x="0" y="0" width="1500" height="960" />
@@ -508,11 +518,11 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1222" y="-224" key="RollbackChangesDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092213702" />
-    <state x="252" y="124" key="SettingsEditor" timestamp="1588953226403">
+    <state x="252" y="124" key="SettingsEditor" timestamp="1589048687326">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1597" y="-332" key="SettingsEditor/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202350621" />
-    <state x="252" y="124" key="SettingsEditor/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588953226403" />
+    <state x="252" y="124" key="SettingsEditor/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1589048687326" />
     <state x="252" y="124" key="SettingsEditor/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586816665291" />
     <state x="252" y="124" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1588293116011" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1586827460919">
@@ -523,11 +533,11 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1114" y="-30" key="VCS.ChangelistChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588091861306" />
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1588864473695">
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1588991534870">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1481" y="-234" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588174626012" />
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588864473695" />
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588991534870" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827599970" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1588302506234" />
     <state x="-1813" y="298" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588093666344">
@@ -538,11 +548,11 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1828" y="-374" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588094391214" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1588953318091">
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1589123244605">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587716876183" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588953318091" />
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1589123244605" />
     <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586879540903" />
     <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960@0.0.1500.960" timestamp="1588302593159" />
     <state x="558" y="398" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586655829109">

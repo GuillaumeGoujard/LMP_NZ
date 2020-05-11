@@ -63,14 +63,14 @@ def how_to_deal_with_price_maker_algo(Horizon_T = 48, day = 2):
     """
     You can also save the results using save_results function (as we did last week)
     """
-    y = 10  # amortize in 10 years
+    y = 5  # amortize in 10 years
     cost_of_battery = 200 * 1000 / (y * 365)
 
     print("Launching model...")
-    model = price_making_algorithm.run_program(d, b, P_max, P_min, H, h, Mn, i_battery=1,
+    model = price_making_algorithm.run_program(d, b, P_max, P_min, H, h, Mn, i_battery=10,
                                                max_capacity=None, cost_of_battery=cost_of_battery)
     print("Model computed")
-    save_results(model, d, Horizon_T, i_test = 0) #i-test is the number of the folder in which you store the results
+    save_results(model, d, Horizon_T, i_test = 5) #i-test is the number of the folder in which you store the results
 
     """
     Let's get to it and store some nice output !!!!
@@ -84,11 +84,11 @@ def how_to_deal_with_price_maker_algo(Horizon_T = 48, day = 2):
         WARNING : the profit of the battery is different from the objective function.
         Obj function = profit - B*z_cap !
     """
-    y = 10  # amortize in 10 years
+    y = 5  # amortize in 10 years
     cost_of_battery = 200 * 1000 / (y * 365)
 
     obj_values_PM = []
-    zcap_per_node_PM = []
+    zcap_per_node_PM = [0]*d.shape[0]
     for j in range(1, d.shape[0]):
         print("Launching model for node {}...".format(j))
         model = price_making_algorithm.run_program(d, b, P_max, P_min, H, h, Mn, i_battery=j,
@@ -112,14 +112,14 @@ def how_to_deal_with_price_maker_algo(Horizon_T = 48, day = 2):
     for y in list(range(1, 10)):
         print("Launching model...")
         cost_of_battery = 200 * 1000 / (y * 365)
-        model = price_making_algorithm.run_program(d, b, P_max, P_min, H, h, Mn, i_battery=10,
+        model_PM = price_making_algorithm.run_program(d, b, P_max, P_min, H, h, Mn, i_battery=10,
                                                    max_capacity=None, cost_of_battery=cost_of_battery)
         print("Model computed")
 
         print("\n___ OBJ ____")
         print(pyo.value(model.obj))  # get the benefits
-        benefits_per_node.append(pyo.value(model.obj))
-        zcap_per_node.append(pyo.value(model.z_cap))
+        obj_values_cost.append(pyo.value(model.obj))
+        zcap_per_cost.append(pyo.value(model.z_cap))
         print("\n")
 
 
@@ -139,6 +139,7 @@ def how_to_deal_with_price_taker_algo(Horizon_T = 48, day = 2):
     Find lambdas for the day (they will be deemed exogenous)
     """
     lambdas = np.zeros((n, Horizon_T))
+    gamma = np.zeros((1,Horizon_T))
     for j in range(Horizon_T):
         """
         Here is a new optimization framework which is rigorously the same as devised in the algorithm, 
@@ -152,7 +153,7 @@ def how_to_deal_with_price_taker_algo(Horizon_T = 48, day = 2):
         model = economic_dispatch.run_ED_1period(d[:,j], b[:,j], P_max[:,j], P_min[:,j], c, q, H, h, Mn)
         for k in range(n):
             lambdas[k,j] = model.dual[model.injection_definition[k]] #here we store the dual variables of the injection definition constraint
-
+        gamma[0,j] = model.dual[model.injection_balance]
     """
     Can you compare the lambdas of the economic dispatch with the one we find with the price maker dispatch ?
     """
@@ -162,30 +163,32 @@ def how_to_deal_with_price_taker_algo(Horizon_T = 48, day = 2):
     
     As for the maker, you choose the node of the battery, the cost (B), and the max_capacity (if none, will find the best)
     """
-    y = 10  # amortize in 10 years
+    y = 5  # amortize in 10 years
     cost_of_battery = 200 * 1000 / (y * 365)
 
     expected_profits = [0]*19
     for j in range(1, d.shape[0]):
-        model = price_taking_algorithm.run_program(lambdas, i_battery=j, cost_of_battery=cost_of_battery, max_capacity=None)
+        model = price_taking_algorithm.run_program(lambdas, i_battery=10, cost_of_battery=cost_of_battery, max_capacity=zcap_per_node_PM[9])
         planning = [pyo.value(model.u[t]) for t in range(Horizon_T)] #planning of push and pull from the network
         expected_profits[j-1] = sum([planning[i]*lambdas[1,i] for i in range(Horizon_T)]) #expected profits (lambda cross u with lambdas as exogenous)
 
+
     n_lambdas = np.zeros((n, Horizon_T)) #new prices !
     actual_profits = [0]*19
+
     for j in range(1, d.shape[0]):
-        model_PT = price_taking_algorithm.run_program(lambdas, i_battery=j, cost_of_battery=cost_of_battery,
-                                                   max_capacity=None)
+        model_PT = price_taking_algorithm.run_program(lambdas, i_battery=10, cost_of_battery=cost_of_battery,
+                                                   max_capacity=zcap_per_node_PM[10-1])
         planning = [pyo.value(model_PT.u[t]) for t in range(Horizon_T)]  # planning of push and pull from the network
         for t in range(Horizon_T):
             """
             Here we sell and buy at 0 (i.e we self-schedule_) the quantity devised in the optimization algorithm
             """
             model = economic_dispatch.run_ED_1period(d[:, t], b[:, t], P_max[:, t], P_min[:, t], 0, planning[t], H, h, Mn,
-                                                     i_battery=j)
+                                                     i_battery=10)
             for k in range(n):
                 n_lambdas[k, t] = model.dual[model.injection_definition[k]]
-        actual_profits = sum([planning[i] * n_lambdas[1, i] for i in range(Horizon_T)])
+        actual_profits[j-1] = sum([planning[i] * n_lambdas[1, i] for i in range(Horizon_T)])
     """
     Actual profits.
     """
@@ -304,12 +307,12 @@ def get_producers_matrices(AMB_network, day, Horizon_T):
         for g in AMB_network.generators[node]:
             for i, j in enumerate(range(day * 48, day * 48 + Horizon_T)):
                 if g.name == "diesel_gen":
-                    pmax, pmin, a = 500, 0, 200
+                    pmax, pmin, a = 500, 0, 100
                 else:
                     pmax, pmin, a = LMP.get_P_min_a(g.name, 1 + j // 48, j % 48 + 1, g.type)
                 P_max[g.index, i] = pmax
                 P_min[g.index, i] = pmin if g.type == "Hydro" else 0
-                b[g.index, i] = a if a > 0 else np.random.randint(0, 100)
+                b[g.index, i] = a if a > 0 else np.random.randint(0, 50)
     return b, P_max, P_min
 
 

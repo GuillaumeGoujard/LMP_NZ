@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import swifter
 
 ## Importing relevant csv files
 Sites = pd.read_csv('data/topology/Sites.csv')
@@ -16,6 +17,7 @@ SimpNetwork.rename(columns = {
     'Swem Node' : 'SimpNode',
     ' NZEM Substations that act as Grid Exit Points' : 'OriginNodes'
 }, inplace=True)
+
 DictSimpNetwork = {
         snode: list(set([onode[:3]
                          for onode in SimpNetwork.OriginNodes[SimpNetwork.SimpNode == snode]
@@ -24,21 +26,25 @@ DictSimpNetwork = {
     for snode in SimpNetwork.SimpNode
     }
 
-# import json
+Network = pd.read_csv('data/ABM/ABM_Network_details.csv')
+Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
+Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
+
+import json
 # with open('DictSimpNetwork.json', 'w') as fp:
 #     json.dump(DictSimpNetwork, fp)
 
-# with open('/generators/generator_adjacency_matrix_dict.json') as f:
-#     generator_adjacency_matrix_dict = json.load(f)
-
+with open('data/generators/generator_adjacency_matrix_dict1.json') as f:
+    generator_adjacency_matrix_dict = json.load(f)
+len(list(generator_adjacency_matrix_dict.keys()))
 
 
 SimpNodes = pd.read_csv('data/ABM/ABM_Nodes.csv')
 SimpNetDetails = pd.read_csv('data/ABM/ABM_Network_details.csv')
 
-plottype = '19 Nodes'
+# plottype = '19 Nodes'
 # plottype = "19 vs all nodes"
-# plottype = 'All nodes'
+plottype = 'All nodes'
 
 fs = 15
 
@@ -46,6 +52,8 @@ if plottype == 'All nodes':
 
 ## Visualizing the location of all nodes and transmission lines
 ## Nodes
+    plt.figure(num=1, figsize=(8, 12), dpi=80, facecolor='w', edgecolor='k')
+
     plt.scatter(Sites.X.values, Sites.Y.values, marker = '.')
     # for i, txt in enumerate(Sites.MXLOCATION):
     #     if txt in SimpNetwork.SimpNode.values.tolist():
@@ -76,11 +84,12 @@ if plottype == 'All nodes':
     # Labels
     plt.xlabel('Longitude (X)', fontsize = fs)
     plt.ylabel('Latitude (Y)', fontsize = fs)
+    plt.title('Original network')
     plt.axis('equal')
     plt.show()
 
 elif plottype == "19 vs all nodes":
-    plt.figure(num=1, figsize=(8, 15), dpi=80, facecolor='w', edgecolor='k')
+    plt.figure(num=2, figsize=(8, 15), dpi=80, facecolor='w', edgecolor='k')
 
     plt.scatter(Sites.X.values, Sites.Y.values, marker='.', label = 'Original node locations')
 
@@ -122,7 +131,7 @@ elif plottype == "19 vs all nodes":
     # Labels
     plt.xlabel('Longitude (X)', fontsize = fs)
     plt.ylabel('Latitude (Y)', fontsize = fs)
-    plt.title('300 vs 19 nodes', fontsize = fs)
+    plt.title('182 vs 19 nodes', fontsize = fs)
     plt.axis('equal')
     plt.legend(fontsize = fs)
     plt.show()
@@ -133,7 +142,7 @@ elif plottype == '19 Nodes':
 
     # Nodes
 
-    plt.figure(num=1, figsize=(8, 15), dpi=80, facecolor='w', edgecolor='k')
+    plt.figure(num=1, figsize=(8, 12), dpi=80, facecolor='w', edgecolor='k')
 
     # Referenced nodes
     Node19 = np.zeros((20,2))
@@ -141,39 +150,38 @@ elif plottype == '19 Nodes':
     locations.remove('WKM')
     locations.remove('HLY')
 
-    for i, node in enumerate(DictSimpNetwork.keys()):
+    for i, node in enumerate(Nodes[1:]):
         if node in locations:
-            Node19[i, 0] = Sites.X[Sites.MXLOCATION == node]
-            Node19[i, 1] = Sites.Y[Sites.MXLOCATION == node]
+            Node19[i+1, 0] = Sites.X[Sites.MXLOCATION == node]
+            Node19[i+1, 1] = Sites.Y[Sites.MXLOCATION == node]
         elif node == 'WKM':
-            Node19[i, 0] = Sites.X[Sites.MXLOCATION == node] + 50000
-            Node19[i, 1] = Sites.Y[Sites.MXLOCATION == node]
+            Node19[i+1, 0] = Sites.X[Sites.MXLOCATION == node] + 50000
+            Node19[i+1, 1] = Sites.Y[Sites.MXLOCATION == node]
         elif node == 'HLY':
-            Node19[i, 0] = Sites.X[Sites.MXLOCATION == node]
-            Node19[i, 1] = Sites.Y[Sites.MXLOCATION == node] - 50000
+            Node19[i+1, 0] = Sites.X[Sites.MXLOCATION == node]
+            Node19[i+1, 1] = Sites.Y[Sites.MXLOCATION == node] - 50000
         else:
-            Node19[i, 0] = Sites.X[Sites.MXLOCATION.apply(lambda x: x in DictSimpNetwork[node])].mean()
-            Node19[i, 1] = Sites.Y[Sites.MXLOCATION.apply(lambda x: x in DictSimpNetwork[node])].mean()
+            Node19[i+1, 0] = Sites.X[Sites.MXLOCATION.apply(lambda x: x in DictSimpNetwork[node])].mean()
+            Node19[i+1, 1] = Sites.Y[Sites.MXLOCATION.apply(lambda x: x in DictSimpNetwork[node])].mean()
 
     # B_star
-    srs = pd.Series(list(DictSimpNetwork.keys()))
+    srs = pd.Series(Nodes)
 
     locHAY = srs[srs == 'HAY'].index.values.astype(int)[0]
     locTWZ = srs[srs == 'TWZ'].index.values.astype(int)[0]
 
     p = 0.25
-    Node19[-1, 0] = (Node19[locHAY, 0] + p*(Node19[locTWZ, 0]-Node19[locHAY, 0]))
-    Node19[-1, 1] = (Node19[locHAY, 1] + p*(Node19[locTWZ, 1]-Node19[locHAY, 1]))
+    Node19[0, 0] = (Node19[locHAY, 0] + p*(Node19[locTWZ, 0]-Node19[locHAY, 0]))
+    Node19[0, 1] = (Node19[locHAY, 1] + p*(Node19[locTWZ, 1]-Node19[locHAY, 1]))
 
-    plt.scatter(Node19[:,0],Node19[:,1], marker = 'o', label = 'Simplified nodes')
-    for i, node in enumerate(DictSimpNetwork.keys()):
-        plt.annotate(node, (Node19[i, 0], Node19[i, 1]), fontsize='large')
-    plt.annotate('B_star', (Node19[19, 0], Node19[19, 1]), fontsize='large')
+    plt.scatter(Node19[:,0],Node19[:,1], marker = 'o', label = 'Simplified network nodes')
+    for i, node in enumerate(Nodes):
+        plt.annotate(f'{i} : {node}', (Node19[i, 0], Node19[i, 1]), fontsize=fs)
 
     # plt.scatter(Sites.X.values, Sites.Y.values, marker = '.')
 
     ## Lines
-    srs = pd.Series(list(DictSimpNetwork.keys()))
+    srs = pd.Series(Nodes)
 
     # Referenced lines
     color ='b'
@@ -193,14 +201,14 @@ elif plottype == '19 Nodes':
     locHAY = srs[srs == 'HAY'].index.values.astype(int)[0]
     locTWZ = srs[srs == 'TWZ'].index.values.astype(int)[0]
 
-    Tlines[3 * (m-2)] = (Node19[locHAY, 0], Node19[-1, 0])
-    Tlines[3 * (m-2) + 1] = (Node19[locHAY, 1], Node19[-1, 1])
+    Tlines[3 * (m-2)] = (Node19[locHAY, 0], Node19[0, 0])
+    Tlines[3 * (m-2) + 1] = (Node19[locHAY, 1], Node19[0, 1])
     Tlines[3 * (m-2) + 2] = color
-    Tlines[3 * (m-1)] = (Node19[locTWZ, 0], Node19[-1, 0])
-    Tlines[3 * (m-1) + 1] = (Node19[locTWZ, 1], Node19[-1, 1])
+    Tlines[3 * (m-1)] = (Node19[locTWZ, 0], Node19[0, 0])
+    Tlines[3 * (m-1) + 1] = (Node19[locTWZ, 1], Node19[0, 1])
     Tlines[3 * (m-1) + 2] = color
 
-    plt.plot(*Tlines, 'g')
+    plt.plot(*Tlines)
 
     # Labels
     plt.xlabel('Longitude (X)', fontsize = fs)
