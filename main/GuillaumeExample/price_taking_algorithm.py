@@ -13,7 +13,7 @@ from main.Network.PriceBids.Load.Load import Load
 from main.Network.Topology.Topology import Topology as top
 
 L = 10000
-def run_program(lambdas, i_battery=1, max_capacity=None, final_s=None, cost_of_battery=1):
+def run_program(lambdas, i_battery=1, max_capacity=None, final_s=None, cost_of_battery=1, power_rate=1):
     """
     Defining spatial and temporal constants
     """
@@ -23,7 +23,7 @@ def run_program(lambdas, i_battery=1, max_capacity=None, final_s=None, cost_of_b
     Battery state equations
     """
     Battery_Horizon = Horizon_T + 1
-    A, z_bar, I_tilde, E = get_battery_matrices(Battery_Horizon, z_max=10, z_min=1)
+    A, z_bar, I_tilde, E = get_battery_matrices(Battery_Horizon, z_max=10, z_min=0)
     lambda_ = lambdas[i_battery]
 
     """
@@ -65,10 +65,10 @@ def run_program(lambdas, i_battery=1, max_capacity=None, final_s=None, cost_of_b
     model.initial_state = pyo.Constraint(rule=initial_state)
     model.final_state = pyo.Constraint(rule=lambda model : final_state(model, Battery_Horizon, final_state=final_s))
     model.capacity_constraint = pyo.Constraint(rule=battery_capacity_cstr)
-    # model.ramp_down = pyo.Constraint(model.time_index,
-    #                                              rule=ramp_down )
-    # model.ramp_up = pyo.Constraint(model.time_index,
-    #                                              rule=ramp_up)
+    model.ramp_down = pyo.Constraint(model.time_index,
+                                                 rule=lambda model, t: ramp_down(model, t, power_rate=power_rate) )
+    model.ramp_up = pyo.Constraint(model.time_index,
+                                                 rule=lambda model, t: ramp_up(model, t, power_rate=power_rate))
 
     """
     Solve and store
@@ -85,11 +85,11 @@ def battery_capacity_cstr(model):
     return model.z_cap <= 2000
 
 
-def ramp_up(model, t):
-    return model.u[t] <= model.z_cap/8
+def ramp_up(model, t, power_rate=1):
+    return model.u[t] <= model.z_cap/power_rate
 
-def ramp_down(model, t):
-    return model.u[t] >= -model.z_cap/8
+def ramp_down(model, t, power_rate=1):
+    return model.u[t] >= -model.z_cap/power_rate
 
 def battery_states_limits(model, a, Battery_Horizon, A, z_bar, z_cap=None):
     S = 0

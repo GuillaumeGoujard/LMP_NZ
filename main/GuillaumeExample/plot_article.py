@@ -230,6 +230,13 @@ def obj_f_linear():
     u = 1
     clearing_price = 50
 
+    b = np.array([20, 100])  # 4 generators
+    a = np.array([0, 0])  # 4 generators
+    P_max = np.array([5, 1])
+    d = 6
+    c_u = 50
+    u = 3
+    clearing_price = 50
 
     max_range = max(max(P_max), u)
     productor_bids = [[a[i] * x + b[i] if x < P_max[i] else np.nan for x in range(max_range)] for i in range(len(a))]
@@ -241,15 +248,20 @@ def obj_f_linear():
     df = pd.DataFrame(index=np.arange(0, len(sorted_bids)), data=sorted_bids, columns=["cumulated_bids"])
     df = df.dropna()
     df["clearing_price"] = clearing_price
+    df = df.iloc[1:]
 
-    plt.figure(figsize=(8, 5))
+    plt.figure(figsize=(7, 6))
     bars = ('A', 'B', 'C', 'D', 'E')
     # Choose the position of each barplots on the x-axis (space=1,4,3,1)
     y_pos = [0.5, 2, 3+1.5, 7, 8.5]
     width = [1, 2, 3, 2, 1]
     height = [0,20,40,50,50]
+
+    y_pos = [2.5, 5]
+    width = [3, 2]
+    height = [20, 50]
     # Create bars
-    plt.bar(y_pos, height, width=width, color=('grey', 'grey', 'grey', 'grey','red'),  edgecolor='blue')
+    plt.bar(y_pos, height, width=width, color=('grey', 'red'),  edgecolor='blue')
     # Create names on the x-axis
     # plt.xticks(y_pos, bars)
     # Show graphic
@@ -257,14 +269,15 @@ def obj_f_linear():
     plt.plot(df.index, df["cumulated_bids"], 'C0o', alpha=0.5)
     index_battery = [iu[0] for iu in place_battery_bids if iu[0] <= len(df.index)]
     to_plot = list(df["cumulated_bids"].iloc[index_battery])
-    plt.step([8,9], [to_plot[0]] + to_plot, color="red", label='battery bids')
+    plt.step([4, 5, 6], [50,50, 50], color="red", label='battery bids')
 
-    plt.plot(df.index, df["clearing_price"], label=r'$\lambda$', linestyle=(0, (1, 2)))
-    plt.axvline(x=d, color="red", label=r'$d$', linestyle=(0, (1, 2)))
+    plt.plot(df.index, df["clearing_price"], label=r'$\lambda$', linestyle=(0, (4, 2)),  color="black")
+    plt.axvline(x=d, color="orange", label=r'$d$', linestyle=(0, (4, 2)))
     plt.legend()
     plt.ylabel("USD/MWh")
     plt.title("Clearing price and bids for a trading period")
     plt.xlabel("Cumulated bids (MWh)")
+    plt.ylim([0,105])
 
     plt.show()
 

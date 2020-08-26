@@ -13,7 +13,7 @@ from main.Network.PriceBids.Load.Load import Load
 from main.Network.Topology.Topology import Topology as top
 
 L = 10000
-def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=1, max_capacity=None, cost_of_battery=1):
+def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=1, max_capacity=None, cost_of_battery=1, power_rate=1):
     """
     Defining spatial and temporal constants
     """
@@ -140,10 +140,10 @@ def run_program(d, b, P_max, P_min, H, h, Mn, i_battery=1, max_capacity=None, co
                                                  rule=lambda model, t : battery_states_update(model, t, Battery_Horizon, E, Horizon_T,
                                                                             I_tilde))
     model.battery_injection_constraint_up = pyo.Constraint(model.time_index,
-                                                 rule=lambda model, t: battery_injection_constraint_up(model, t, z_cap=max_capacity))
+                                                 rule=lambda model, t: battery_injection_constraint_up(model, t, z_cap=max_capacity, power_rate=power_rate))
     model.battery_injection_constraint_down = pyo.Constraint(model.time_index,
                                                              rule=lambda model, t: battery_injection_constraint_down(
-                                                                 model, t, z_cap=max_capacity))
+                                                                 model, t, z_cap=max_capacity, power_rate=power_rate))
     model.initial_state = pyo.Constraint(rule=initial_state)
     model.final_state = pyo.Constraint(rule=lambda model : final_state(model, Battery_Horizon))
     model.battery_bid_cstr = pyo.Constraint(model.time_index, rule=battery_bid_cstr)
@@ -313,17 +313,17 @@ def final_state(model, Battery_Horizon):
     return model.z[Battery_Horizon-1] == model.starting_z
 
 
-def battery_injection_constraint_up(model, t, z_cap=None):
+def battery_injection_constraint_up(model, t, z_cap=None, power_rate=1):
     if z_cap is not None:
-        return model.u[t] <= z_cap/6
+        return model.u[t] <= z_cap/power_rate
     else:
-        return model.u[t] <= model.z_cap/6
+        return model.u[t] <= model.z_cap/power_rate
 
-def battery_injection_constraint_down(model, t, z_cap=None):
+def battery_injection_constraint_down(model, t, z_cap=None, power_rate=1):
     if z_cap is not None:
-        return model.u[t] >= -z_cap/6
+        return model.u[t] >= -z_cap/power_rate
     else:
-        return model.u[t] >= -model.z_cap/6
+        return model.u[t] >= -model.z_cap/power_rate
 
 def get_battery_matrices(Battery_Horizon, z_max=10, z_min=0):
     A = np.zeros((2 * Battery_Horizon, Battery_Horizon))

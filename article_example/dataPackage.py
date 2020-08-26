@@ -19,8 +19,8 @@ def get_producers_matrices(AMB_network, day, Horizon_T, random_a=True):
     for node in AMB_network.generators.keys():
         for g in AMB_network.generators[node]:
             for i in range(Horizon_T):
-                if g.name == "diesel_gen":
-                    pmax, pmin, a = 200, 0, 100
+                if g.name == "swing_generator":
+                    pmax, pmin, a = g.Pmax, g.Pmin, g.a
                 else:
                     pmax, pmin, a = gen.get_P_min_a(g.name, day, i+1)
                 P_max[g.index, i] = pmax

@@ -14,4 +14,6 @@ def get_average_congestion_charge(node="HEN0331"):
     df["congestion"] = df.apply(congestion, axis=1)
 
     congestion_node = df.groupby("Node").mean()
-    return congestion_node.loc[node]["congestion"]
+
+    test = df[df["Node"]==node]
+    return congestion_node.loc[node]["congestion"], test
