@@ -65,6 +65,10 @@ def run_program(lambdas, i_battery=1, max_capacity=None, final_s=None, cost_of_b
     model.initial_state = pyo.Constraint(rule=initial_state)
     model.final_state = pyo.Constraint(rule=lambda model : final_state(model, Battery_Horizon, final_state=final_s))
     model.capacity_constraint = pyo.Constraint(rule=battery_capacity_cstr)
+    # model.ramp_down = pyo.Constraint(model.time_index,
+    #                                              rule=ramp_down )
+    # model.ramp_up = pyo.Constraint(model.time_index,
+    #                                              rule=ramp_up)
 
     """
     Solve and store
@@ -80,6 +84,12 @@ def run_program(lambdas, i_battery=1, max_capacity=None, final_s=None, cost_of_b
 def battery_capacity_cstr(model):
     return model.z_cap <= 2000
 
+
+def ramp_up(model, t):
+    return model.u[t] <= model.z_cap/8
+
+def ramp_down(model, t):
+    return model.u[t] >= -model.z_cap/8
 
 def battery_states_limits(model, a, Battery_Horizon, A, z_bar, z_cap=None):
     S = 0

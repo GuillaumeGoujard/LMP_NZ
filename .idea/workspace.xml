@@ -2,18 +2,134 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main/Network/Topology/animate_market_clearing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/Network/Topology/plot_pricemaker_pricetaker_profit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article_example/PMker_26September.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article_example/Wholesale_price_trends_20200825111248.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article_example/averagecongestion.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article_example/dataPackage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article_example/main_article.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article_example/map-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article_example/plotIntroduction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article_example/plotPrograms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drafts/SalomeCharles/Data/20190926_Offers.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/GuillaumeExample/plot_article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LMP_NZ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LMP_NZ.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/price_making_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/price_making_algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator bids.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_example/NZGridVizualization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/Network/Topology/Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/Topology.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/add_arrow.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/add_arrow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/Network/Topology/plot_profit_congestion_curves.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Network/Topology/plot_profit_congestion_curves.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main_for_Kieran.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main_for_Kieran.py" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/article_example/main_article.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="161" column="22" lean-forward="true" selection-start-line="161" selection-start-column="22" selection-end-line="161" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/article_example/averagecongestion.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="33" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/price_making_algorithm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="323" column="27" selection-end-line="357" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/article_example/Wholesale_price_trends_20200825111248.csv">
+          <provider selected="true" editor-type-id="csv-text-editor" />
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/article_example/dataPackage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/LMP.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="584">
+              <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/findLMPs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/plot_article.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1035">
+              <caret line="69" column="29" selection-end-line="329" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="825">
+              <caret line="67" column="4" selection-start-line="67" selection-start-column="6" selection-end-line="70" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -22,14 +138,123 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>model.Mu</find>
+      <find>prod_constraint_u</find>
+      <find>model.M_u</find>
+      <find>pt_defi</find>
+      <find>battery_price</find>
+      <find>battery_states_limits</find>
+      <find>battery_capacity_cstr</find>
+      <find>optimal_batter_progr</find>
+      <find>s</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" />
+        <option value="$PROJECT_DIR$/main/GuillaumeExample/clean_program.py" />
+        <option value="$PROJECT_DIR$/main/GuillaumeExample/clean_program2.py" />
+        <option value="$PROJECT_DIR$/main/GuillaumeExample/economic_dispatch.py" />
+        <option value="$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py" />
+        <option value="$PROJECT_DIR$/main/GuillaumeExample/plot_article.py" />
+        <option value="$PROJECT_DIR$/main/main_for_Kieran.py" />
+        <option value="$PROJECT_DIR$/article_example/PMker_26September.py" />
+        <option value="$PROJECT_DIR$/main/Network/Topology/Topology.py" />
+        <option value="$PROJECT_DIR$/article_example/main.py" />
+        <option value="$PROJECT_DIR$/article_example/New Zealand Topology.py" />
+        <option value="$PROJECT_DIR$/article_example/article_example.py" />
+        <option value="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" />
+        <option value="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py" />
+        <option value="$PROJECT_DIR$/article_example/NZGridVizualization.py" />
+        <option value="$PROJECT_DIR$/article_example/plotPrograms.py" />
+        <option value="$PROJECT_DIR$/article_example/Wholesale_price_trends_20200825111248.csv" />
+        <option value="$PROJECT_DIR$/article_example/dataPackage.py" />
+        <option value="$PROJECT_DIR$/main/GuillaumeExample/price_making_algorithm.py" />
+        <option value="$PROJECT_DIR$/article_example/averagecongestion.py" />
+        <option value="$PROJECT_DIR$/article_example/main_article.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectId" id="1aPfvm5nT4TgV1d8UpH7yC4AIyz" />
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
+              <item name="article_example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="historicaLMPs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="GuillaumeExample" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="MarketOperator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Network" type="462c0819:PsiDirectoryNode" />
+              <item name="Topology" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,23 +266,40 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/Network/PriceBids/Battery" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\data\ABM" />
-      <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\drafts\Kieran" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/article_example" />
+      <recent name="$PROJECT_DIR$/main/GuillaumeExample" />
       <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\main\Network\PriceBids\Battery" />
       <recent name="$PROJECT_DIR$/main/Network/PriceBids/Load" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/article_example" />
+      <recent name="$PROJECT_DIR$/drafts/SalomeCharles/Data" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\data\ABM" />
+      <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\drafts\Kieran" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.plot_pricemaker_pricetaker_profit">
-    <configuration name="New Zealand Topology" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.article_example">
+    <configuration name="LMP" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -65,11 +307,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main/GuillaumeExample" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Network/Topology/New Zealand Topology.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -78,7 +321,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="kieran_tests" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="New Zealand Topology" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -86,11 +329,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/article_example" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drafts/Kieran/kieran_tests.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/article_example/NZGridVizualization.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,43 +343,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="plot_market_clearing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LMP_NZ" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="plot_pricemaker_pricetaker_profit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LMP_NZ" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Network/Topology/plot_pricemaker_pricetaker_profit.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="plot_profit_congestion_curves" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="PMker_26September" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -143,11 +351,53 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/article_example" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/Network/Topology/plot_profit_congestion_curves.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/article_example/PMker_26September.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="article_example" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LMP_NZ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/article_example" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/article_example/main_article.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_for_Kieran" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LMP_NZ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/main_for_Kieran.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,19 +407,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main_for_Kieran" />
+      <item itemvalue="Python.LMP" />
+      <item itemvalue="Python.PMker_26September" />
       <item itemvalue="Python.New Zealand Topology" />
-      <item itemvalue="Python.kieran_tests" />
-      <item itemvalue="Python.plot_market_clearing" />
-      <item itemvalue="Python.plot_profit_congestion_curves" />
-      <item itemvalue="Python.plot_pricemaker_pricetaker_profit" />
+      <item itemvalue="Python.article_example" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.plot_pricemaker_pricetaker_profit" />
-        <item itemvalue="Python.plot_market_clearing" />
-        <item itemvalue="Python.plot_profit_congestion_curves" />
+        <item itemvalue="Python.article_example" />
         <item itemvalue="Python.New Zealand Topology" />
-        <item itemvalue="Python.kieran_tests" />
+        <item itemvalue="Python.PMker_26September" />
+        <item itemvalue="Python.main_for_Kieran" />
+        <item itemvalue="Python.LMP" />
       </list>
     </recent_temporary>
   </component>
@@ -186,6 +436,18 @@
       <workItem from="1585166554555" duration="1800000" />
       <workItem from="1585185800966" duration="507000" />
       <workItem from="1586358660724" duration="4887000" />
+      <workItem from="1588632356224" duration="2565000" />
+      <workItem from="1588897056774" duration="11033000" />
+      <workItem from="1588964092092" duration="6059000" />
+      <workItem from="1589069350739" duration="7471000" />
+      <workItem from="1592240695806" duration="5177000" />
+      <workItem from="1592779617646" duration="9326000" />
+      <workItem from="1592849763633" duration="17000" />
+      <workItem from="1592867642273" duration="2019000" />
+      <workItem from="1592956888115" duration="53000" />
+      <workItem from="1594344559212" duration="12745000" />
+      <workItem from="1594916140157" duration="1238000" />
+      <workItem from="1598307201118" duration="14055000" />
     </task>
     <task id="LOCAL-00001" summary="Adding H matrix creation">
       <created>1586642757848</created>
@@ -320,18 +582,84 @@
       <option name="project" value="LOCAL" />
       <updated>1588279027166</updated>
     </task>
-    <task id="LOCAL-00020" summary="Congestion and profit curves">
-      <created>1588302503086</created>
+    <task id="LOCAL-00020" summary="Merge branch 'master' of github.com:GuillaumeGoujard/LMP_NZ&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.">
+      <created>1588308089034</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1588302503086</updated>
+      <updated>1588308089034</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Work on plotting">
+      <created>1588916166052</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1588916166052</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7194000" />
+    <option name="totallyTimeSpent" value="79772000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Log Analyzer" />
+      <window_info anchor="bottom" id="SOQL Query" />
+      <window_info anchor="bottom" id="Anonymous Apex" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.29746193" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49840087" weight="0.328934" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.37766498" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4989339" weight="0.24873096" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.4989339" visible="true" weight="0.32284263" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.90672785" weight="0.336887" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Packages" order="5" />
+      <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" order="6" sideWeight="0.092987806" side_tool="true" weight="0.44722813" />
+      <window_info anchor="right" id="Database" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16257995" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.29746193" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49840087" weight="0.328934" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.37766498" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4989339" weight="0.21827412" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" sideWeight="0.4989339" visible="true" weight="0.3319797" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.49908924" weight="0.3022388" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Packages" order="5" />
+      <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" order="6" sideWeight="0.50091076" side_tool="true" weight="0.31130064" />
+      <window_info anchor="right" id="Database" order="7" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -346,6 +674,12 @@
           <value>
             <State>
               <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -364,13 +698,34 @@
                   </entry>
                 </map>
               </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
             </State>
           </value>
         </entry>
         <entry key="MAIN">
           <value>
             <State>
-              <option name="COLUMN_ORDER" />
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
             </State>
           </value>
         </entry>
@@ -412,19 +767,18 @@
     <MESSAGE value="- Plotting NZ nodes" />
     <MESSAGE value="More work on automatic generator dictionary for linear bid equation" />
     <MESSAGE value="Work on plotting" />
-    <MESSAGE value="Congestion and profit curves" />
-    <option name="LAST_COMMIT_MESSAGE" value="Congestion and profit curves" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on plotting" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1242" y="-332" key="#New_Zealand_Topology" timestamp="1588202071762">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1242" y="-332" key="#New_Zealand_Topology/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202071762" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588860399800">
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588296818444">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202534828" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588860399800" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588264492397" />
     <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1588296818444" />
     <state x="-1255" y="-240" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1587423549463">
       <screen x="-1920" y="-466" width="1920" height="1040" />
@@ -439,13 +793,13 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1242" y="-332" key="#nodes_on_map/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202103478" />
-    <state x="393" y="76" key="CommitChangelistDialog2" timestamp="1588302501208">
+    <state x="542" y="69" key="CommitChangelistDialog2" timestamp="1588279025532">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1056" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588174619287" />
     <state x="542" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588279025532" />
     <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
-    <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1588302501208" />
+    <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1588272434589" />
     <state x="72" y="85" width="1357" height="791" key="DiffContextDialog" timestamp="1588257340498">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -457,30 +811,30 @@
     </state>
     <state x="-1240" y="-210" key="FileChooserDialogImpl/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588095386482" />
     <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1586645662516" />
-    <state width="312" height="241" key="GridCell.Tab.0.bottom" timestamp="1588860405507">
+    <state width="293" height="241" key="GridCell.Tab.0.bottom" timestamp="1588296833229">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="312" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588860405507" />
-    <state width="293" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1588302534953" />
-    <state width="312" height="241" key="GridCell.Tab.0.center" timestamp="1588860405507">
+    <state width="245" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588272512943" />
+    <state width="293" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1588296833229" />
+    <state width="293" height="241" key="GridCell.Tab.0.center" timestamp="1588296833229">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="312" height="241" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588860405507" />
-    <state width="293" height="241" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1588302534953" />
-    <state width="312" height="241" key="GridCell.Tab.0.left" timestamp="1588860405506">
+    <state width="245" height="241" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588272512943" />
+    <state width="293" height="241" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1588296833229" />
+    <state width="293" height="241" key="GridCell.Tab.0.left" timestamp="1588296833229">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="312" height="241" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588860405506" />
-    <state width="293" height="241" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1588302534953" />
-    <state width="312" height="241" key="GridCell.Tab.0.right" timestamp="1588860405507">
+    <state width="245" height="241" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588272512942" />
+    <state width="293" height="241" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1588296833229" />
+    <state width="293" height="241" key="GridCell.Tab.0.right" timestamp="1588296833229">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state width="725" height="272" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="312" height="241" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588860405507" />
-    <state width="293" height="241" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1588302534953" />
+    <state width="245" height="241" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588272512943" />
+    <state width="293" height="241" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1588296833229" />
     <state x="462" y="196" key="MultipleFileMergeDialog" timestamp="1588293098038">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -504,13 +858,13 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1114" y="-30" key="VCS.ChangelistChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588091861306" />
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1588302506234">
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1588279031753">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1481" y="-234" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588174626012" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588279031753" />
     <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827599970" />
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1588302506234" />
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1586642787510" />
     <state x="-1813" y="298" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588093666344">
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
@@ -519,13 +873,13 @@
       <screen x="-1920" y="-466" width="1920" height="1040" />
     </state>
     <state x="-1828" y="-374" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588094391214" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1588858474532">
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1588231174128">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587716876183" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588858474532" />
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588231174128" />
     <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586879540903" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960@0.0.1500.960" timestamp="1588302593159" />
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960@0.0.1500.960" timestamp="1586643050763" />
     <state x="558" y="398" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586655829109">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
@@ -544,5 +898,320 @@
     <state x="-1390" y="-242" width="672" height="678" key="search.everywhere.popup/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092779747" />
     <state x="415" y="208" width="672" height="626" key="search.everywhere.popup/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588202843730" />
     <state x="414" y="207" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1586645604450" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LMP_NZ$clean_program.coverage" NAME="clean_program Coverage Results" MODIFIED="1588280019137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/GuillaumeExample" />
+    <SUITE FILE_PATH="coverage/LMP_NZ$LMP.coverage" NAME="LMP Coverage Results" MODIFIED="1592783508702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/GuillaumeExample" />
+    <SUITE FILE_PATH="coverage/LMP_NZ$plot_article.coverage" NAME="plot_article Coverage Results" MODIFIED="1592241913861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/GuillaumeExample" />
+    <SUITE FILE_PATH="coverage/LMP_NZ$clean_program2.coverage" NAME="clean_program2 Coverage Results" MODIFIED="1588640185903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/GuillaumeExample" />
+    <SUITE FILE_PATH="coverage/LMP_NZ$article_example.coverage" NAME="article_example Coverage Results" MODIFIED="1594583926895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/article_example" />
+    <SUITE FILE_PATH="coverage/LMP_NZ$PMker_26September.coverage" NAME="PMker_26September Coverage Results" MODIFIED="1592790573515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/article_example" />
+    <SUITE FILE_PATH="coverage/LMP_NZ$plot_market_clearing.coverage" NAME="plot_market_clearing Coverage Results" MODIFIED="1588279660909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/Network/Topology" />
+    <SUITE FILE_PATH="coverage/LMP_NZ$New_Zealand_Topology.coverage" NAME="New Zealand Topology Coverage Results" MODIFIED="1594581301899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/article_example" />
+    <SUITE FILE_PATH="coverage/LMP_NZ$MILP.coverage" NAME="MILP Coverage Results" MODIFIED="1592240825312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/GuillaumeExample" />
+    <SUITE FILE_PATH="coverage/LMP_NZ$main_for_Kieran.coverage" NAME="main_for_Kieran Coverage Results" MODIFIED="1588901387710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/data/results/test0/df_demand.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/results/test1/df_demand.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/results/test3/df_gamma.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/results/test3/df_lambda.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/Pyomo-5.6.1-py3.7.egg/pyomo/core/base/misc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/results/test4/df_z.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/results/test3/df_p_t.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/results/test3/df_z.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/results/test3/df_demand.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.7/site-packages/swifter/swifter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/clean_program2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5805">
+          <caret line="399" selection-start-line="399" selection-end-line="424" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/economic_dispatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3015">
+          <caret line="209" column="22" selection-start-line="209" selection-start-column="22" selection-end-line="209" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time_space.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/clean_program.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="522" column="4" selection-start-line="522" selection-start-column="4" selection-end-line="522" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/MILP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8150">
+          <caret line="557" column="7" selection-end-line="686" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/ABM/ABM_Network_details.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/map-2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator bids.py" />
+    <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/plotIntroduction.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Network/Topology/Topology.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/NZGridVizualization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="183" column="31" selection-start-line="174" selection-start-column="4" selection-end-line="183" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="90" column="53" selection-start-line="90" selection-start-column="53" selection-end-line="90" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/PMker_26September.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="134" column="32" selection-start-line="134" selection-start-column="3" selection-end-line="134" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/main_for_Kieran.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="295" column="4" lean-forward="true" selection-start-line="295" selection-start-column="4" selection-end-line="339" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/plotPrograms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/dataPackage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/Wholesale_price_trends_20200825111248.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/LMP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/findLMPs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/plot_article.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="69" column="29" selection-end-line="329" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="67" column="4" selection-start-line="67" selection-start-column="6" selection-end-line="70" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/historicaLMPs/201909_Final_prices.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/price_making_algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="323" column="27" selection-end-line="357" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/averagecongestion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/main_article.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="161" column="22" lean-forward="true" selection-start-line="161" selection-start-column="22" selection-end-line="161" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

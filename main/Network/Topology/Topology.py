@@ -2,6 +2,8 @@ from typing import Tuple
 
 import numpy as np
 import pandas as pd
+import json
+import math
 
 import main.Network.PriceBids.Load.Load as ld
 import stored_path
@@ -178,7 +180,8 @@ class Topology:
         return self.Au, self.xt, self.ct
 
 
-        # Other functions
+
+# Other functions
 
 def generate_nodes_2_names(f_names_2_nodes):
     output = dict([[k, []] for k in set(f_names_2_nodes.values())])
@@ -247,24 +250,6 @@ def create_H(I, y):
             Description:
 
     '''
-    # Initializing sizes
-
-    # Network = pd.read_csv(stored_path.main_path + '/data/ABM/ABM_Network_details.csv')
-    # Nodes = np.unique(np.concatenate((np.unique(Network.LEAVE), np.unique(Network.ENTER))))
-    # Nodes[0], Nodes[1] = Nodes[1], Nodes[0]
-    # m = Network.shape[0]
-    # Network['NLeave'] = np.array([np.where(Nodes == Network['LEAVE'][l])[0][0] for l in range(m)])
-    # Network['NEnter'] = np.array([np.where(Nodes == Network['ENTER'][l])[0][0] for l in range(m)])
-    #
-    # names_2_nodes = dict([[node, j] for j, node in enumerate(Nodes)])
-    # nodes_2_names = generate_nodes_2_names(names_2_nodes)
-    # I = create_incidence(Network.NLeave, Network.NEnter)
-    # A = create_adjacency(Network.NLeave, Network.NEnter)
-    #
-    # omega_NZ = 50 * (2 * np.pi)
-    # z = Network['Resistance (Ohms)'] + 1j * Network["Reactance (Ohms)"] * omega_NZ
-    # y = 1 / z
-    # y = np.imag(y)
 
     m = I.shape[1]
     Delta_y = np.diag(y)
@@ -343,66 +328,9 @@ def create_H_hat(I, y):
 
     return H_hat
 
-def Aq_matrix():
-    return
 
 
-def get_all_values(d):
-    if isinstance(d, dict):
-        for v in d.values():
-            yield from get_all_values(v)
-    elif isinstance(d, list):
-        for v in d:
-            yield from get_all_values(v)
-    else:
-        yield d
-
-
-################## Test code ##################
-
-if __name__ == '__main__':
-    """
-    Test : Custom network creation
-    """
-    test_node = {
-                     "AA1":0,
-                     "AA2":0,
-                     "AA3":0,
-                     "BB1":1,
-                     "BB2":1,
-                 }
-    top = Topology(f_names_2_nodes = test_node)
-
-    """
-    Test : One Node network
-    """
-    OneNode_network = Topology(network="One node")
-
-    """
-    Test : Two Node network
-    """
-    TwoNode_network = Topology(network='North-South node')
-
-    """
-    Test : AMB Network
-    """
-    AMB_network = Topology(network="ABM")
-
-    # AMB_network.names_2_nodes
-
-    """
-    Create two generators and add them to the network
-    """
-    # g = Generator("GuillaumeGenerator", "HEN", 0, "dummy", Pmax=20, Pmin=0, marginal_cost=[10,0])
-    # AMB_network.add_generator(g)
-    # a = Generator("AliceGenerator", "HEN", 2, "dummy", Pmax=200, Pmin=0, marginal_cost=[200,0])
-    # AMB_network.add_generator(a)
-    # k = Generator("KieranGenerator", "MAN", 1, "dummy", Pmax=100, Pmin=5, marginal_cost=[50,0])
-    # AMB_network.add_generator(k)
-
-    """
-    Create loads on each node
-    """
+def add_loads_to_topology(AMB_network):
     Existing_sub_nodes = ld.get_existing_subnodes()
     historical_loads = ld.get_historical_loads()
     Simp_nodes_dict = ld.get_nodes_to_subnodes()
@@ -415,42 +343,46 @@ if __name__ == '__main__':
         load = Load(node, node, index, type="real_load")
         load.add_load_data(historical_loads, Simp_nodes_dict, Existing_sub_nodes)
         AMB_network.add_load(load)
+    return AMB_network
 
-    """
-    get d_t for day 12 and trading period 1
-    """
-    d = []
-    for node in AMB_network.loads.keys():
-        d.append(AMB_network.loads[node][0].return_d(12,1))
-
-
-    """
-    Add generators
-    """
-    import json
-    import math
-    file_path = stored_path.main_path + '/data/generators/generator_adjacency_matrix_dict.json'
+def add_generators_to_topology(AMB_network):
+    file_path = stored_path.main_path + '/data/generators/generator_adjacency_matrix_dict1.json'
     with open(file_path) as f:
         data = json.loads(f.read())
 
     number_of_added_generators = 0
     for name_generator in data.keys():
-        L = data[name_generator]
+        L_ = data[name_generator]
         try:
-            if type(L[0]) != float:
-                if not math.isnan(L[-2]):
-                    g = Generator(name_generator, L[0], 0, L[-1], Pmax=L[-2], Pmin=L[-3], marginal_cost=L[1])
+            if type(L_[0]) != float:
+                if not math.isnan(L_[-2]):
+                    if L_[-1] == 'Hydro':
+                        P_min = L_[-2]
+                    else:
+                        P_min = 0
+
+                    g = Generator(name_generator, L_[0], 0, L_[-1], Pmax=L_[-2], Pmin=P_min,
+                                  marginal_cost=np.array(L_[1]))
                     AMB_network.add_generator(g)
-                    number_of_added_generators +=1
+                    number_of_added_generators += 1
         except:
             pass
 
-    """
-    Add topology specific characteristics
-    """
-    AMB_network.create_Pmin_Pmax()
-    AMB_network.create_Qt_at()
+    return AMB_network
 
+# def Aq_matrix():
+#     return
+#
+#
+# def get_all_values(d):
+#     if isinstance(d, dict):
+#         for v in d.values():
+#             yield from get_all_values(v)
+#     elif isinstance(d, list):
+#         for v in d:
+#             yield from get_all_values(v)
+#     else:
+#         yield d
 
 
 
