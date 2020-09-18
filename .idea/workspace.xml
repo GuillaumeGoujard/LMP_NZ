@@ -2,16 +2,97 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d896c8b2-40f9-4c03-ae23-8aeab27f0d0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/article_example/draft.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/article_example/tablescore.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/Guillaume/test_guillaumeexample.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/GuillaumeExample/price_making_algorithm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/GuillaumeExample/price_taking_algorithm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/map-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jupyter_notebook/main_article.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lmpnz/GuillaumeExample/economic_dispatch.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lmpnz/JupyterRessources/NZGridVizualization.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lmpnz/JupyterRessources/averagecongestion.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lmpnz/JupyterRessources/dataPackage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lmpnz/JupyterRessources/plotPrograms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lmpnz/JupyterRessources/tablescore.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lmpnz/Network/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lmpnz/stored_path.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article_example/averagecongestion.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_example/averagecongestion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictSimpNetwork.json" beforeDir="false" afterPath="$PROJECT_DIR$/archive/DictSimpNetwork.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article_example/NZGridVizualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_example/NZGridVizualization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article_example/PMker_26September.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_example/PMker_26September.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article_example/Wholesale_price_trends_20200825111248.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/historicaLMPs/Wholesale_price_trends_20200825111248.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/article_example/dataPackage.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_example/dataPackage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/article_example/main_article.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_example/main_article.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/article_example/plotPrograms.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_example/plotPrograms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/plot_article.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/plot_article.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/price_making_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/price_making_algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/article_example/tablescore.py" beforeDir="false" afterPath="$PROJECT_DIR$/article_example/tablescore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cum_prof.png" beforeDir="false" afterPath="$PROJECT_DIR$/archive/cum_prof.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cumulated_profits.png" beforeDir="false" afterPath="$PROJECT_DIR$/archive/cumulated_profits.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/Guillaume/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/Guillaume/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/Guillaume/test_guillaumeexample.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/Kieran/ABM_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/Kieran/ABM_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/Kieran/kieran_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/Kieran/kieran_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Data/20190901-07_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Data/20190901-07_Offers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Data/20190901_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Data/20190901_Offers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Data/20190902_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Data/20190902_Offers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Data/20190903_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Data/20190903_Offers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Data/20190904_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Data/20190904_Offers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Data/20190905_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Data/20190905_Offers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Data/20190906_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Data/20190906_Offers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Data/20190907_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Data/20190907_Offers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Data/20190926_Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Data/20190926_Offers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Data/generating_plant.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Data/generating_plant.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Maps/Nodes_NZ.csv" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Maps/Nodes_NZ.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Maps/locations.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Maps/locations.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Maps/nodes_on_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Maps/nodes_on_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Maps/nz.png" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Maps/nz.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/Offers_2019-09-01.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/Offers_2019-09-01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drafts/SalomeCharles/generator_adjacency_matrix_dict.json" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/generator_adjacency_matrix_dict.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generator_adjacency_matrix_dict1.json" beforeDir="false" afterPath="$PROJECT_DIR$/archive/generator_adjacency_matrix_dict1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/GuillaumeClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/GuillaumeClass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/LMP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/MILP.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/MILP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/SalomeCharles/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/battery_progr_time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time_space.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/battery_progr_time_space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/clean_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/clean_program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/clean_program2.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/clean_program2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/economic_dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/economic_dispatch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/findLMPs.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/findLMPs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/plot_article.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/GuillaumeExample/plot_article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/price_making_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/GuillaumeExample/price_making_algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/GuillaumeExample/price_taking_algorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/GuillaumeExample/utilities.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/MarketOperator/marketOperator.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/MarketOperator/marketOperator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/MarketOperator/marketOperator_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/MarketOperator/marketOperator_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Battery/Battery.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/PriceBids/Battery/Battery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Battery/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/GuillaumeExample/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/PriceBids/Generator/Generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Generator/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/PriceBids/Battery/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/PriceBids/Load/Load.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/Load/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/PriceBids/Generator/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/PriceBids/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/PriceBids/Load/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/Topology/Topology.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/Topology/Topology.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/Topology/Topology_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/Topology/Topology_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/Topology/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/PriceBids/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/Topology/add_arrow.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/Topology/add_arrow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/Topology/animate_market_clearing.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/Topology/animate_market_clearing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/Topology/plot_market_clearing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/Topology/plot_pricemaker_pricetaker_profit.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/Topology/plot_pricemaker_pricetaker_profit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/Topology/plot_profit_congestion_curves.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/Topology/plot_profit_congestion_curves.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Network/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/lmpnz/Network/Topology/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main_for_Kieran.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/main_for_Kieran.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/cas3earn240USD.png" beforeDir="false" afterPath="$PROJECT_DIR$/archive/presentation/CE295_Pres/cas3earn240USD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/case1.png" beforeDir="false" afterPath="$PROJECT_DIR$/archive/presentation/CE295_Pres/case1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/case2selfscheduleearn120USD.png" beforeDir="false" afterPath="$PROJECT_DIR$/archive/presentation/CE295_Pres/case2selfscheduleearn120USD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/case4earn150USD.png" beforeDir="false" afterPath="$PROJECT_DIR$/archive/presentation/CE295_Pres/case4earn150USD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/linearization.png" beforeDir="false" afterPath="$PROJECT_DIR$/archive/presentation/CE295_Pres/linearization.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/CE295_Pres/source/plotCe295/Aurecon-Hornsdale-Power-Reserve-Impact-Study-2018.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/archive/presentation/CE295_Pres/source/plotCe295/Aurecon-Hornsdale-Power-Reserve-Impact-Study-2018.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/proposition" beforeDir="false" afterPath="$PROJECT_DIR$/archive/presentation/proposition" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prices.png" beforeDir="false" afterPath="$PROJECT_DIR$/archive/prices.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pricetaker.png" beforeDir="false" afterPath="$PROJECT_DIR$/archive/pricetaker.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stored_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/archive/stored_path.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,11 +102,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/article_example/main_article.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jupyter_notebook/main_article.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="188" column="9" lean-forward="true" selection-start-line="188" selection-start-column="9" selection-end-line="188" selection-end-column="9" />
+            <state relative-caret-position="366">
+              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -33,104 +114,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article_example/plotPrograms.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="192" column="102" selection-start-line="192" selection-start-column="102" selection-end-line="192" selection-end-column="102" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article_example/tablescore.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="68" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="68" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article_example/dataPackage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article_example/draft.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="31" column="11" selection-start-line="31" selection-end-line="31" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/ABM/ABM_Network_details.csv">
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/LMP.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/plot_article.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="85" column="33" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/article_example/plotIntroduction.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="80" column="55" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="570">
+                <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -178,17 +178,30 @@
         <option value="$PROJECT_DIR$/article_example/article_example.py" />
         <option value="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" />
         <option value="$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py" />
-        <option value="$PROJECT_DIR$/article_example/NZGridVizualization.py" />
         <option value="$PROJECT_DIR$/article_example/Wholesale_price_trends_20200825111248.csv" />
         <option value="$PROJECT_DIR$/article_example/averagecongestion.py" />
         <option value="$PROJECT_DIR$/main/GuillaumeExample/price_making_algorithm.py" />
         <option value="$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py" />
         <option value="$PROJECT_DIR$/main/GuillaumeExample/plot_article.py" />
-        <option value="$PROJECT_DIR$/article_example/tablescore.py" />
         <option value="$PROJECT_DIR$/article_example/dataPackage.py" />
         <option value="$PROJECT_DIR$/article_example/draft.py" />
-        <option value="$PROJECT_DIR$/article_example/main_article.py" />
+        <option value="$PROJECT_DIR$/article_example/tablescore.py" />
         <option value="$PROJECT_DIR$/article_example/plotPrograms.py" />
+        <option value="$PROJECT_DIR$/lmpnz/GuillaumeExample/price_taking_algorithm.py" />
+        <option value="$PROJECT_DIR$/article_example/main_article.py" />
+        <option value="$PROJECT_DIR$/jupyter_notebook.py" />
+        <option value="$PROJECT_DIR$/lmpnz/stored_path.py" />
+        <option value="$PROJECT_DIR$/lmpnz/Network/PriceBids/Generator/Generator.py" />
+        <option value="$PROJECT_DIR$/lmpnz/Network/PriceBids/Load/Load.py" />
+        <option value="$PROJECT_DIR$/lmpnz/Network/Topology/Topology.py" />
+        <option value="$PROJECT_DIR$/lmpnz/GuillaumeExample/price_making_algorithm.py" />
+        <option value="$PROJECT_DIR$/article_example/NZGridVizualization.py" />
+        <option value="$PROJECT_DIR$/lmpnz/JupyterRessources/NZGridVizualization.py" />
+        <option value="$PROJECT_DIR$/jupyter_notebook/main_article.py" />
+        <option value="$PROJECT_DIR$/lmpnz/JupyterRessources/averagecongestion.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -228,43 +241,23 @@
               <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
               <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="ABM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="historicaLMPs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
               <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="jupyter_notebook" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
               <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="GuillaumeExample" type="462c0819:PsiDirectoryNode" />
+              <item name="lmpnz" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
               <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="MarketOperator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Network" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="LMP_NZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LMP_NZ" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Network" type="462c0819:PsiDirectoryNode" />
-              <item name="Topology" type="462c0819:PsiDirectoryNode" />
+              <item name="lmpnz" type="462c0819:PsiDirectoryNode" />
+              <item name="JupyterRessources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,24 +275,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lmpnz/JupyterRessources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/article_example" />
-      <recent name="$PROJECT_DIR$/main/GuillaumeExample" />
-      <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\main\Network\PriceBids\Battery" />
-      <recent name="$PROJECT_DIR$/main/Network/PriceBids/Load" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/article_example" />
-      <recent name="$PROJECT_DIR$/drafts/SalomeCharles/Data" />
+      <recent name="$PROJECT_DIR$/data/historicaLMPs" />
       <recent name="$PROJECT_DIR$/data" />
-      <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\data\ABM" />
-      <recent name="G:\My Drive\Berkeley\Courses\Spring 2020\295\Project\LMP_NZ\drafts\Kieran" />
+      <recent name="$PROJECT_DIR$/drafts" />
+      <recent name="$PROJECT_DIR$/lmpnz" />
+      <recent name="$PROJECT_DIR$/article_example" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lmpnz/JupyterRessources" />
+      <recent name="$PROJECT_DIR$/lmpnz" />
+      <recent name="$PROJECT_DIR$/jupyter_notebook" />
+      <recent name="$PROJECT_DIR$/archive" />
+      <recent name="$PROJECT_DIR$/article_example" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -314,29 +308,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.article_example">
-    <configuration name="LMP" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="LMP_NZ" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main/GuillaumeExample" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/GuillaumeExample/LMP.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.main_article">
     <configuration name="New Zealand Topology" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -400,6 +372,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_article" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LMP_NZ" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jupyter_notebook" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jupyter_notebook/main_article.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main_for_Kieran" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LMP_NZ" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -424,18 +415,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.main_for_Kieran" />
-      <item itemvalue="Python.LMP" />
       <item itemvalue="Python.PMker_26September" />
       <item itemvalue="Python.New Zealand Topology" />
       <item itemvalue="Python.article_example" />
+      <item itemvalue="Python.main_article" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main_article" />
         <item itemvalue="Python.article_example" />
         <item itemvalue="Python.New Zealand Topology" />
         <item itemvalue="Python.PMker_26September" />
         <item itemvalue="Python.main_for_Kieran" />
-        <item itemvalue="Python.LMP" />
       </list>
     </recent_temporary>
   </component>
@@ -464,7 +455,12 @@
       <workItem from="1594344559212" duration="12745000" />
       <workItem from="1594916140157" duration="1238000" />
       <workItem from="1598307201118" duration="25068000" />
-      <workItem from="1598458219438" duration="9731000" />
+      <workItem from="1598458219438" duration="9846000" />
+      <workItem from="1598490026453" duration="44000" />
+      <workItem from="1598490074549" duration="1941000" />
+      <workItem from="1598657580047" duration="3901000" />
+      <workItem from="1598977125213" duration="1830000" />
+      <workItem from="1600384602896" duration="2988000" />
     </task>
     <task id="LOCAL-00001" summary="Adding H matrix creation">
       <created>1586642757848</created>
@@ -617,38 +613,38 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100516000" />
+    <option name="totallyTimeSpent" value="111335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16044776" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16577825" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.29746193" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.4182741" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49840087" weight="0.328934" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49840087" weight="0.5045685" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.37766498" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4989339" weight="0.24873096" />
-      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4989339" visible="true" weight="0.25177664" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4989339" weight="0.24771574" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.4989339" visible="true" weight="0.3401015" />
       <window_info anchor="bottom" id="SOQL Query" order="13" />
       <window_info anchor="bottom" id="Log Analyzer" order="14" />
       <window_info anchor="bottom" id="Anonymous Apex" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="SciView" order="3" sideWeight="0.90672785" visible="true" weight="0.32569295" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.8834587" weight="0.36353946" />
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info anchor="right" id="R Packages" order="5" />
-      <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" order="6" sideWeight="0.092987806" side_tool="true" weight="0.44722813" />
+      <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" order="6" sideWeight="0.116541356" side_tool="true" weight="0.36353946" />
       <window_info anchor="right" id="Database" order="7" />
     </layout>
     <layout-to-restore>
@@ -787,134 +783,84 @@
     <option name="LAST_COMMIT_MESSAGE" value="Work on plotting" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1242" y="-332" key="#New_Zealand_Topology" timestamp="1588202071762">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1242" y="-332" key="#New_Zealand_Topology/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202071762" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588296818444">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202534828" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588264492397" />
-    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1588296818444" />
-    <state x="-1255" y="-240" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" timestamp="1587423549463">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1255" y="-240" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587423549463" />
-    <state x="-1272" y="-158" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587476655109">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1272" y="-158" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587476655109" />
-    <state x="506" y="284" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960@0.0.1500.960" timestamp="1586655872928" />
-    <state x="-1242" y="-332" key="#nodes_on_map" timestamp="1588202103478">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1242" y="-332" key="#nodes_on_map/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202103478" />
-    <state x="542" y="69" key="CommitChangelistDialog2" timestamp="1588279025532">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="-1056" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588174619287" />
-    <state x="542" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588279025532" />
-    <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827590745" />
-    <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" timestamp="1588272434589" />
-    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog" timestamp="1588257340498">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="-1828" y="-374" width="1736" height="856" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588201965749" />
-    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588257340498" />
-    <state x="144" y="85" width="1200" height="794" key="DiffContextDialog/0.0.1500.960@0.0.1500.960" timestamp="1586655915044" />
-    <state x="-1240" y="-210" key="FileChooserDialogImpl" timestamp="1588095386482">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1240" y="-210" key="FileChooserDialogImpl/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588095386482" />
-    <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1586645662516" />
-    <state width="293" height="241" key="GridCell.Tab.0.bottom" timestamp="1588296833229">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state width="725" height="272" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="245" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588272512943" />
-    <state width="293" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1588296833229" />
-    <state width="293" height="241" key="GridCell.Tab.0.center" timestamp="1588296833229">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state width="725" height="272" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="245" height="241" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588272512943" />
-    <state width="293" height="241" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1588296833229" />
-    <state width="293" height="241" key="GridCell.Tab.0.left" timestamp="1588296833229">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state width="725" height="272" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="245" height="241" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588272512942" />
-    <state width="293" height="241" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1588296833229" />
-    <state width="293" height="241" key="GridCell.Tab.0.right" timestamp="1588296833229">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state width="725" height="272" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588172117454" />
-    <state width="245" height="241" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588272512943" />
-    <state width="293" height="241" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1588296833229" />
-    <state x="462" y="196" key="MultipleFileMergeDialog" timestamp="1588293098038">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="462" y="196" key="MultipleFileMergeDialog/0.0.1500.960@0.0.1500.960" timestamp="1588293098038" />
-    <state x="-1222" y="-224" key="RollbackChangesDialog" timestamp="1588092213702">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1222" y="-224" key="RollbackChangesDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092213702" />
-    <state x="252" y="124" key="SettingsEditor" timestamp="1588293116011">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="-1597" y="-332" key="SettingsEditor/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588202350621" />
-    <state x="252" y="124" key="SettingsEditor/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588122056976" />
-    <state x="252" y="124" key="SettingsEditor/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586816665291" />
-    <state x="252" y="124" key="SettingsEditor/0.0.1500.960@0.0.1500.960" timestamp="1588293116011" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1586827460919">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827460919" />
-    <state x="-1114" y="-30" key="VCS.ChangelistChooser" timestamp="1588091861306">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1114" y="-30" key="VCS.ChangelistChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588091861306" />
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2" timestamp="1588279031753">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="-1481" y="-234" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588174626012" />
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588279031753" />
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586827599970" />
-    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" timestamp="1586642787510" />
-    <state x="-1813" y="298" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1588093666344">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1813" y="298" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588093666344" />
-    <state x="-1828" y="-374" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588094391214">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1828" y="-374" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588094391214" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1588231174128">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587716876183" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588231174128" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" timestamp="1586879540903" />
-    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960@0.0.1500.960" timestamp="1586643050763" />
-    <state x="558" y="398" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586655829109">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="558" y="398" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" timestamp="1586655829109" />
-    <state x="-1202" y="-82" key="git4idea.rebase.GitRebaseDialog" timestamp="1587648742869">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1202" y="-82" key="git4idea.rebase.GitRebaseDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587648742869" />
-    <state x="-1410" y="-128" width="709" height="307" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1587423803538">
-      <screen x="-1920" y="-466" width="1920" height="1040" />
-    </state>
-    <state x="-1410" y="-128" width="709" height="307" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1587423803538" />
-    <state x="415" y="208" width="672" height="626" key="search.everywhere.popup" timestamp="1588202843730">
-      <screen x="0" y="0" width="1500" height="960" />
-    </state>
-    <state x="-1390" y="-242" width="672" height="678" key="search.everywhere.popup/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" timestamp="1588092779747" />
-    <state x="415" y="208" width="672" height="626" key="search.everywhere.popup/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" timestamp="1588202843730" />
-    <state x="414" y="207" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" timestamp="1586645604450" />
+    <state x="-1242" y="-332" key="#New_Zealand_Topology" />
+    <state x="-1242" y="-332" key="#New_Zealand_Topology/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="-1506" y="-290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state x="323" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" />
+    <state x="-1255" y="-240" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog" />
+    <state x="-1255" y="-240" key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="-1272" y="-158" key="#com.intellij.fileTypes.FileTypeChooser" />
+    <state x="-1272" y="-158" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="506" y="284" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1500.960@0.0.1500.960" />
+    <state x="-1242" y="-332" key="#nodes_on_map" />
+    <state x="-1242" y="-332" key="#nodes_on_map/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="542" y="69" key="CommitChangelistDialog2" />
+    <state x="-1056" y="-391" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="542" y="69" key="CommitChangelistDialog2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" />
+    <state x="393" y="76" key="CommitChangelistDialog2/0.0.1500.960@0.0.1500.960" />
+    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog" />
+    <state x="-1828" y="-374" width="1736" height="856" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="72" y="85" width="1357" height="791" key="DiffContextDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state x="144" y="85" width="1200" height="794" key="DiffContextDialog/0.0.1500.960@0.0.1500.960" />
+    <state x="-1240" y="-210" key="FileChooserDialogImpl" />
+    <state x="-1240" y="-210" key="FileChooserDialogImpl/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="531" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" />
+    <state width="293" height="241" key="GridCell.Tab.0.bottom" />
+    <state width="725" height="272" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state width="245" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state width="293" height="241" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" />
+    <state width="293" height="241" key="GridCell.Tab.0.center" />
+    <state width="725" height="272" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state width="245" height="241" key="GridCell.Tab.0.center/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state width="293" height="241" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" />
+    <state width="293" height="241" key="GridCell.Tab.0.left" />
+    <state width="725" height="272" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state width="245" height="241" key="GridCell.Tab.0.left/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state width="293" height="241" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" />
+    <state width="293" height="241" key="GridCell.Tab.0.right" />
+    <state width="725" height="272" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state width="245" height="241" key="GridCell.Tab.0.right/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state width="293" height="241" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" />
+    <state x="462" y="196" key="MultipleFileMergeDialog" />
+    <state x="462" y="196" key="MultipleFileMergeDialog/0.0.1500.960@0.0.1500.960" />
+    <state x="-1222" y="-224" key="RollbackChangesDialog" />
+    <state x="-1222" y="-224" key="RollbackChangesDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="252" y="124" key="SettingsEditor" />
+    <state x="-1597" y="-332" key="SettingsEditor/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="252" y="124" key="SettingsEditor/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state x="252" y="124" key="SettingsEditor/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" />
+    <state x="252" y="124" key="SettingsEditor/0.0.1500.960@0.0.1500.960" />
+    <state width="498" height="446" key="SwitcherDM" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" />
+    <state x="-1114" y="-30" key="VCS.ChangelistChooser" />
+    <state x="-1114" y="-30" key="VCS.ChangelistChooser/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2" />
+    <state x="-1481" y="-234" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" />
+    <state x="343" y="214" key="Vcs.Push.Dialog.v2/0.0.1500.960@0.0.1500.960" />
+    <state x="-1813" y="298" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" />
+    <state x="-1813" y="298" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="-1828" y="-374" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" />
+    <state x="-1828" y="-374" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog" />
+    <state x="-1349" y="-134" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960/-1920.-467.1920.1040@0.0.1500.960" />
+    <state x="446" y="306" key="com.intellij.ide.util.TipDialog/0.0.1500.960@0.0.1500.960" />
+    <state x="558" y="398" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
+    <state x="558" y="398" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1500.960@0.0.1500.960" />
+    <state x="-1202" y="-82" key="git4idea.rebase.GitRebaseDialog" />
+    <state x="-1202" y="-82" key="git4idea.rebase.GitRebaseDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="-1410" y="-128" width="709" height="307" key="org.intellij.images.editor.actions.BackgroundImageDialog" />
+    <state x="-1410" y="-128" width="709" height="307" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="415" y="208" width="672" height="626" key="search.everywhere.popup" />
+    <state x="-1390" y="-242" width="672" height="678" key="search.everywhere.popup/0.0.1500.960/-1920.-466.1920.1040@-1920.-466.1920.1040" />
+    <state x="415" y="208" width="672" height="626" key="search.everywhere.popup/0.0.1500.960/-1920.-466.1920.1040@0.0.1500.960" />
+    <state x="414" y="207" key="search.everywhere.popup/0.0.1500.960@0.0.1500.960" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LMP_NZ$clean_program.coverage" NAME="clean_program Coverage Results" MODIFIED="1588280019137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/GuillaumeExample" />
@@ -922,6 +868,7 @@
     <SUITE FILE_PATH="coverage/LMP_NZ$plot_article.coverage" NAME="plot_article Coverage Results" MODIFIED="1592241913861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/GuillaumeExample" />
     <SUITE FILE_PATH="coverage/LMP_NZ$clean_program2.coverage" NAME="clean_program2 Coverage Results" MODIFIED="1588640185903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/GuillaumeExample" />
     <SUITE FILE_PATH="coverage/LMP_NZ$article_example.coverage" NAME="article_example Coverage Results" MODIFIED="1594583926895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/article_example" />
+    <SUITE FILE_PATH="coverage/LMP_NZ$main_article.coverage" NAME="main_article Coverage Results" MODIFIED="1600387075109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jupyter_notebook" />
     <SUITE FILE_PATH="coverage/LMP_NZ$PMker_26September.coverage" NAME="PMker_26September Coverage Results" MODIFIED="1592790573515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/article_example" />
     <SUITE FILE_PATH="coverage/LMP_NZ$plot_market_clearing.coverage" NAME="plot_market_clearing Coverage Results" MODIFIED="1588279660909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main/Network/Topology" />
     <SUITE FILE_PATH="coverage/LMP_NZ$New_Zealand_Topology.coverage" NAME="New Zealand Topology Coverage Results" MODIFIED="1594581301899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/article_example" />
@@ -929,51 +876,6 @@
     <SUITE FILE_PATH="coverage/LMP_NZ$main_for_Kieran.coverage" NAME="main_for_Kieran Coverage Results" MODIFIED="1588901387710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/results/test0/df_demand.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/results/test1/df_demand.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/results/test3/df_gamma.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/results/test3/df_lambda.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.7/site-packages/Pyomo-5.6.1-py3.7.egg/pyomo/core/base/misc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/results/test4/df_z.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/results/test3/df_p_t.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
@@ -1003,7 +905,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/clean_program2.py">
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/clean_program2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5805">
           <caret line="399" selection-start-line="399" selection-end-line="424" selection-end-column="15" />
@@ -1013,14 +915,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/economic_dispatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/Network/Topology/plot_market_clearing.py">
+    <entry file="file://$PROJECT_DIR$/lmpnz/Network/Topology/plot_market_clearing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3015">
           <caret line="209" column="22" selection-start-line="209" selection-start-column="22" selection-end-line="209" selection-end-column="22" />
@@ -1030,25 +925,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/battery_progr_time_space.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/battery_progr_time_space.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/clean_program.py">
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/clean_program.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1606">
           <caret line="522" column="4" selection-start-line="522" selection-start-column="4" selection-end-line="522" selection-end-column="33" />
@@ -1058,57 +938,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/article_example/map-2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator bids.py" />
-    <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/Load/Load.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/Network/Topology/Topology.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/article_example/NZGridVizualization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="183" column="31" selection-start-line="174" selection-start-column="4" selection-end-line="183" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/Network/PriceBids/Generator/Generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="90" column="53" selection-start-line="90" selection-start-column="53" selection-end-line="90" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/article_example/PMker_26September.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="134" column="32" selection-start-line="134" selection-start-column="3" selection-end-line="134" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/findLMPs.py">
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/findLMPs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -1120,7 +951,7 @@
     <entry file="file://$PROJECT_DIR$/data/historicaLMPs/201909_Final_prices.csv">
       <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/article_example/Wholesale_price_trends_20200825111248.csv">
+    <entry file="file://$PROJECT_DIR$/data/historicaLMPs/Wholesale_price_trends_20200825111248.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
@@ -1138,7 +969,7 @@
       </provider>
       <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/main_for_Kieran.py">
+    <entry file="file://$PROJECT_DIR$/archive/main_for_Kieran.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="106" column="14" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="106" selection-end-column="14" />
@@ -1155,40 +986,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/price_making_algorithm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1641">
-          <caret line="15" column="71" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/MILP.py">
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/MILP.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7185">
           <caret line="482" column="14" selection-start-line="482" selection-start-column="14" selection-end-line="482" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/dataPackage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/article_example/plotIntroduction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="80" column="55" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/article_example/map-2.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/price_taking_algorithm.py">
+    <entry file="file://$PROJECT_DIR$/article_example/draft.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="465">
+          <caret line="31" column="11" selection-start-line="31" selection-end-line="31" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1202,9 +1023,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/LMP.py">
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/LMP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
+        <state relative-caret-position="525">
           <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -1212,47 +1033,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/GuillaumeExample/plot_article.py">
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/plot_article.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="85" column="33" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="33" />
+        <state relative-caret-position="1230">
+          <caret line="85" column="33" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="33" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/article_example/draft.py">
+    <entry file="file://$PROJECT_DIR$/article_example/plotIntroduction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="31" column="11" selection-start-line="31" selection-end-line="31" selection-end-column="11" />
+        <state relative-caret-position="1155">
+          <caret line="80" column="55" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/article_example/dataPackage.py">
+    <entry file="file://$PROJECT_DIR$/lmpnz/JupyterRessources/dataPackage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        <state>
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/article_example/tablescore.py">
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/economic_dispatch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="68" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="68" />
+        <state relative-caret-position="1380">
+          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
           <folding>
-            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/price_taking_algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/article_example/plotPrograms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="192" column="102" selection-start-line="192" selection-start-column="102" selection-end-line="192" selection-end-column="102" />
+        <state relative-caret-position="164">
+          <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -1261,11 +1090,171 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/article_example/main_article.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="188" column="9" lean-forward="true" selection-start-line="188" selection-start-column="9" selection-end-line="188" selection-end-column="9" />
+        <state relative-caret-position="1845">
+          <caret line="123" column="11" lean-forward="true" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/PMker_26September.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1965">
+          <caret line="134" column="32" selection-start-line="134" selection-start-column="3" selection-end-line="134" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/tablescore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="48" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/utilities.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/JupyterRessources/tablescore.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/battery_progr_time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jupyter_notebook.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/archive/GuillaumeExample/LMP.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/stored_path.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="54" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/Network/PriceBids/Load/Load.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/Network/Topology/Topology.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/GuillaumeExample/price_making_algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.5/lib/python3.7/site-packages/PIL/ImageFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/3.7.5/lib/python3.7/site-packages/matplotlib/image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="1475" selection-start-line="1475" selection-end-line="1475" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/JupyterRessources/plotPrograms.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/Network/PriceBids/Generator/Generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article_example/NZGridVizualization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="121" column="4" selection-end-line="225" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/JupyterRessources/NZGridVizualization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="225" column="14" selection-start-line="225" selection-start-column="14" selection-end-line="225" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="570">
+            <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lmpnz/JupyterRessources/averagecongestion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="75" selection-start-line="8" selection-start-column="75" selection-end-line="8" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jupyter_notebook/main_article.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>

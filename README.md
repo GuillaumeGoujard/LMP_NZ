@@ -1,12 +1,42 @@
-# LMP_NZ
+******
+README
+******
 
-Salut tout le monde, j'ai mis à jour le git avec notamment la création d'un squelette de projet : dans data toute la
-data organisée sous des dossiers parlant, dans drafts, mettez y vos propres tests et fichiers brouillon.
-Enfin le dossier main est censé contenir un working code et non pas un brouillon (vous testez dans draft
-puis vous mettez dans main et quand vous testez vous appeler depuis le draft).
+Introduction
+############
 
-Je vous ai fait un exemple de code avec une working class dans main/GuillaumeExample que
-j'appelle depuis drafts/Guillaume/test_...
+Temporary README for Kieran.
 
-TIP : si vous utilisez Pycharm, clickez droit sur le root folder LMP_NZ et faîtes
-"mark directory as " puis "Root" ça vous permettra d'appeler tous les modules depuis le root
+Do the following:
+
+1. Run the setup,
+
+
+    python3 setup.py develop
+    
+2. Become aware of the structure of the repo
+
+- In archive: all the junk py files we used in the past,
+- Data is at the root since it can be considered as an input 
+to the repo
+- then you have the jupyter_notebook folder, in which you can 
+write your .pyinb file
+- finally you have the package in itself: lmpnz.
+    - you can note that you will mainly call functions that I
+    coded recently and saved in JupyterRessources
+
+
+2. open and try to run main_article.py in jupyter_notebook
+
+You should see:
+
+   - a lot of  stuff in the terminal
+   - the beautiful map of NZ
+   - the loads
+   - the scenario prices
+   - the pricemaker/taker comparision graph
+   - the results table written in latex in the terminal
+   - finally the plot of the norm 1 deviation in function of capacity.
+   
+   
+   If All works That's great! Otherwise tell me!

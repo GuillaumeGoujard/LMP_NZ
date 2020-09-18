@@ -1,0 +1,226 @@
+﻿Station_Name;Operators_Name;Connection_Type;Generation_Type;Operating_Capacity;Fuel_Name;Installed_Capacity;Max_Unit_Size;Typical_Annual_GWh;Hydro_Max_m3_Storage;Node_Name;Region_Name;Island_Name
+Huntly;Genesis Energy;Grid Connected;Thermal;500;Coal_NI;1000;250 MW;2850;0;HLY2201;WTO - Waikato;NI - North Island
+Manapouri;Meridian Energy;Grid Connected;Hydro;850;Hydro;850;120 MW;5100;382;MAN2201;OTG - Otago/Southland;SI - South Island
+Benmore;Meridian Energy;Grid Connected;Hydro;540;Hydro;540;94 MW;2500;74;BEN2202;SCN - South Canterbury;SI - South Island
+Clyde;Contact Energy;Grid Connected;Hydro;432;Hydro;432;108 MW;2050;24;CYD2201;OTG - Otago/Southland;SI - South Island
+Huntly e3p;Genesis Energy;Grid Connected;Thermal;400;Gas;400;400 MW;2410;0;HLY2202;WTO - Waikato;NI - North Island
+TCC - Taranaki Combined Cycle;Contact Energy;Grid Connected;Thermal;385;Gas;385;385 MW;2200;0;SFD2201;TRN - Taranaki;NI - North Island
+Otahuhu B;Contact Energy;Grid Connected;Thermal;0;Gas;380;380 MW;0;0;OTA2202;AKL - Auckland;NI - North Island
+Maraetai;Mighty River Power;Grid Connected;Hydro;360;Hydro;360;36 MW;885;0;MTI2201;WTO - Waikato;NI - North Island
+New Plymouth;Contact Energy;Grid Connected;Thermal;0;Gas;360;105 MW;0;0;NPL1101;TRN - Taranaki;NI - North Island
+Roxburgh;Contact Energy;Grid Connected;Hydro;320;Hydro;320;40 MW;1610;0;ROX1101;OTG - Otago/Southland;SI - South Island
+Ohau A;Meridian Energy;Grid Connected;Hydro;264;Hydro;264;66 MW;1150;0;OHA2201;SCN - South Canterbury;SI - South Island
+Tokaanu;Genesis Energy;Grid Connected;Hydro;240;Hydro;240;60 MW;763;0;TKU0331;CEN - Central;NI - North Island
+Marsden B;Mighty River Power;Grid Connected;Thermal;0;Coal_NI;236;236 MW;0;0;MDN1101;NIS - North Isthmus;NI - North Island
+Aviemore;Meridian Energy;Grid Connected;Hydro;220;Hydro;220;55 MW;930;17;AVI2201;SCN - South Canterbury;SI - South Island
+Ohau B;Meridian Energy;Grid Connected;Hydro;212;Hydro;212;53 MW;970;0;OHB2201;SCN - South Canterbury;SI - South Island
+Ohau C;Meridian Energy;Grid Connected;Hydro;212;Hydro;212;53 MW;970;0;OHC2201;SCN - South Canterbury;SI - South Island
+Stratford Peaker;Contact Energy;Grid Connected;Thermal;200;Gas;200;100 MW;350;0;SFD2201;TRN - Taranaki;NI - North Island
+Arapuni;Mighty River Power;Grid Connected;Hydro;196,7;Hydro;196,7;26.7 MW;805;10;ARI1101;WTO - Waikato;NI - North Island
+Southdown;Mighty River Power;Grid Connected;Thermal;140;Gas;175;45 MW;400;0;SWN2201;AKL - Auckland;NI - North Island
+Wairakei;Contact Energy;Grid Connected;Geothermal;161;Geothermal;175;30 MW;1310;0;WRK2201;WTO - Waikato;NI - North Island
+Te Mihi;Contact Energy;Grid Connected;Geothermal;166;Geothermal;166;83 MW;1300;0;THI2201;WTO - Waikato;NI - North Island
+Tekapo B;Genesis Energy;Grid Connected;Hydro;160;Hydro;160;80 MW;800;0;TKB2201;SCN - South Canterbury;SI - South Island
+Whirinaki;Contact Energy;Grid Connected;Thermal;155;Diesel;155;52 MW;9;0;WHI2201;HBY - Hawkes Bay;NI - North Island
+West Wind;Meridian Energy;Grid Connected;Wind;143;Wind;143;2.3 MW;550;0;WWD1102, WWD1103;WEL - Wellington;NI - North Island
+Nga Awa Purua;Mighty River Power;Grid Connected;Geothermal;140;Geothermal;140;140 MW;1100;0;NAP2201;WTO - Waikato;NI - North Island
+Rangipo;Genesis Energy;Grid Connected;Hydro;120;Hydro;120;60 MW;580;0;RPO2201;CEN - Central;NI - North Island
+Ohaaki;Contact Energy;Grid Connected;Geothermal;70;Geothermal;116;58 MW;300;0;OKI2201;WTO - Waikato;NI - North Island
+Glenbrook;Alinta Energy;Grid Connected Cogen;Cogeneration;112;Gas;112;74 MW;550;0;GLN0332;AKL - Auckland;NI - North Island
+Mokai I,II & III;Mighty River Power;Grid Connected;Geothermal;112;Geothermal;112;35 MW;900;0;WKM2201;WTO - Waikato;NI - North Island
+Ohakuri;Mighty River Power;Grid Connected;Hydro;112;Hydro;112;28 MW;400;14;OHK2201;WTO - Waikato;NI - North Island
+Waitaki;Meridian Energy;Grid Connected;Hydro;90;Hydro;105;15 MW;500;12;WTK0111;OTG - Otago/Southland;SI - South Island
+McKee;Todd Energy;Grid Connected;Thermal;102;Gas;102;50 MW;300;0;MKE1101;TRN - Taranaki;NI - North Island
+Kawerau Geothermal;Mighty River Power;Grid Connected;Geothermal;100;Geothermal;100;100 MW;800;0;KAW1101;BOP - Bay Of Plenty;NI - North Island
+Whakamaru;Mighty River Power;Grid Connected;Hydro;100;Hydro;100;25 MW;494;11;WKM2201;WTO - Waikato;NI - North Island
+Tararua Stage 3;Trustpower;Grid Connected;Wind;93;Wind;93;3 MW;375;0;TWC2201;CEN - Central;NI - North Island
+Te Apiti;Meridian Energy;Grid Connected;Wind;90,75;Wind;90,75;1.65 MW;258;0;WDV1101;CEN - Central;NI - North Island
+Aratiatia;Mighty River Power;Grid Connected;Hydro;78;Hydro;90;30 MW;330;0;ARA2201;WTO - Waikato;NI - North Island
+Karapiro;Mighty River Power;Grid Connected;Hydro;90;Hydro;90;30 MW;525;14;KPO1101;WTO - Waikato;NI - North Island
+Atiamuri;Mighty River Power;Grid Connected;Hydro;84;Hydro;84;21 MW;289;0;ATI2201;BOP - Bay Of Plenty;NI - North Island
+Waipori;Trustpower;Combination, Grid Connected/Embedded;Hydro;84;Hydro;84;19 MW;178;0;BWK1101;OTG - Otago/Southland;SI - South Island
+Ngatamariki;Mighty River Power;Grid Connected;Geothermal;82;Geothermal;82;21 MW;670;0;NAP2202;WTO - Waikato;NI - North Island
+Matahina;Trustpower;Grid Connected;Hydro;72;Hydro;72;36 MW;280;7;MAT1101;BOP - Bay Of Plenty;NI - North Island
+Kiwi Dairy, Hawera (Whareroa);Todd Energy;Grid Connected Cogen;Cogeneration;69,6;Gas;69,6;26 MW;180;0;HWA1102;TRN - Taranaki;NI - North Island
+Te Uku;Meridian Energy;Embedded;Wind;64,4;Wind;64,4;2.3 MW;225;0;TWH0331;WTO - Waikato;NI - North Island
+Tuai;Genesis Energy;Grid Connected;Hydro;60;Hydro;60;20 MW;218;0;TUI1101;HBY - Hawkes Bay;NI - North Island
+Mill Creek;Meridian Energy;Embedded;Wind;71,3;Wind;59,8;2.3 MW;235;0;WIL0331;WEL - Wellington;NI - North Island
+White Hill;Meridian Energy;Embedded;Wind;58;Wind;58;2 MW;200;0;NMA0331;OTG - Otago/Southland;SI - South Island
+Otahuhu A;Contact Energy;Grid Connected;Thermal;0;Gas;55;55 MW;0;0;OTA1101;AKL - Auckland;NI - North Island
+Poihipi Rd;Contact Energy;Grid Connected;Geothermal;55;Geothermal;55;55 MW;350;0;PPI2201;WTO - Waikato;NI - North Island
+Te Awamutu - Anchor Products;Genesis Energy;Grid Connected Cogen;Cogeneration;0;Gas;54;54 MW;0;0;TMU1101;WTO - Waikato;NI - North Island
+Waipapa;Mighty River Power;Grid Connected;Hydro;51;Hydro;51;17 MW;242;0;WPA2201;WTO - Waikato;NI - North Island
+Te Rere Hau;New Zealand Wind Farms;Partially Embedded;Wind;48,5;Wind;48,5;0.5 MW;160;0;TWC2201;CEN - Central;NI - North Island
+Huntly p40;Genesis Energy;Grid Connected;Thermal;48;Gas;48;48 MW;335;0;HLY2202;WTO - Waikato;NI - North Island
+Coleridge;Trustpower;Grid Connected;Hydro;45;Hydro;45;9.5 MW;300;138;COL0661;CAN - Canterbury;SI - South Island
+Te Rapa;Contact Energy;Partially Embedded;Cogeneration;44;Gas;44;44 MW;200;0;TWH0331;WTO - Waikato;NI - North Island
+Mangahao;Todd Energy;Grid Connected;Hydro;42;Hydro;42;26 MW;136;5;MHO0331;CEN - Central;NI - North Island
+Piripaua;Genesis Energy;Grid Connected;Hydro;42;Hydro;42;21 MW;133;0;TUI1101;HBY - Hawkes Bay;NI - North Island
+Kawerau - TPP;Norske Skog Tasman;Grid Connected Cogen;Cogeneration;37;Gas;37;18.7 MW;271;0;KAW0112;BOP - Bay Of Plenty;NI - North Island
+Tararua Stage 2;Trustpower;Embedded;Wind;36,3;Wind;36,3;0.66 MW;147;0;BPE0331;CEN - Central;NI - North Island
+Kaitawa;Genesis Energy;Grid Connected;Hydro;36;Hydro;36;18 MW;91;0;TUI1101;HBY - Hawkes Bay;NI - North Island
+Mahinerangi;Trustpower;Embedded;Wind;36;Wind;36;3 MW;112;0;HWB0331;OTG - Otago/Southland;SI - South Island
+Cobb;Trustpower;Grid Connected;Hydro;32;Hydro;34,3;10.45 MW;190;24;COB0661;NEL - Nelson/Marlbourough;SI - South Island
+Rotokawa;Mighty River Power;Embedded;Geothermal;33;Geothermal;34;16 MW;210;0;WRK0331;WTO - Waikato;NI - North Island
+Tararua Stage 1;Trustpower;Embedded;Wind;31,7;Wind;31,7;0.66 MW;128;0;LTN0331;CEN - Central;NI - North Island
+Patea;Trustpower;Grid Connected;Hydro;30,7;Hydro;30,7;10 MW;118;0;HWA1101;TRN - Taranaki;NI - North Island
+Kinleith;Carter Holt Harvey;Grid Connected Cogen;Cogeneration;28;Wood_waste;28;28 MW;250;0;KIN0112;WTO - Waikato;NI - North Island
+Kawerau - CHH;Carter Holt Harvey;Embedded;Cogeneration;27;Wood_waste;27;27 MW;118;0;KAW0111;BOP - Bay Of Plenty;NI - North Island
+Highbank;Trustpower;Partially Embedded;Hydro;25,2;Hydro;25,2;25.2 MW;94;0;ASB0661;CAN - Canterbury;SI - South Island
+Aniwhenua;Todd Energy;Partially Embedded;Hydro;25;Hydro;25;12.5 MW;105;0;MAT1101;BOP - Bay Of Plenty;NI - North Island
+Kapuni;Bay of Plenty Energy;Grid Connected Cogen;Cogeneration;25;Gas;25;10.3 MW;130;0;KPA1101;TRN - Taranaki;NI - North Island
+Kawerau - TOPP 1;Norske Skog Tasman;Embedded;Geothermal;25;Geothermal;25;25 MW;210;0;KAW0112;BOP - Bay Of Plenty;NI - North Island
+Ngawha;Top Energy;Embedded;Geothermal;25;Geothermal;25;12 MW;200;0;KOE0331;NIS - North Isthmus;NI - North Island
+Tekapo A;Genesis Energy;Grid Connected;Hydro;25;Hydro;25;25 MW;160;0;TKA0111;SCN - South Canterbury;SI - South Island
+Wheao and Flaxy Scheme;Trustpower;Grid Connected;Hydro;24;Hydro;24;12 MW;115;0;ROT0111;BOP - Bay Of Plenty;NI - North Island
+Te Huka;Contact Energy;Embedded;Geothermal;23;Geothermal;23;23 MW;190;0;WRK0331;WTO - Waikato;NI - North Island
+Ruahihi;Trustpower;Embedded;Hydro;20;Hydro;20;10 MW;76;0;TGA0331;BOP - Bay Of Plenty;NI - North Island
+Lloyd Mandeno;Trustpower;Embedded;Hydro;15,6;Hydro;15,6;7.8 MW;70;0;TGA0331;BOP - Bay Of Plenty;NI - North Island
+Pan Pac;Pan Pac Forest Products;Embedded;Cogeneration;12,8;Wood_waste;12,8;12.8 MW;48;0;WHI0111;HBY - Hawkes Bay;NI - North Island
+Teviot;Trustpower;Partially Embedded;Hydro;10,5;Hydro;10,5;6.8 MW;55;0;CYD0331;OTG - Otago/Southland;SI - South Island
+Bay Milk Edgecumbe;Todd Energy;Embedded;Cogeneration;10;Gas;10;5 MW;54;0;EDG0331;BOP - Bay Of Plenty;NI - North Island
+Paerau;Trustpower;Embedded;Hydro;10;Hydro;10;5 MW;48;0;NSY0331;OTG - Otago/Southland;SI - South Island
+Wellington Hospital;Meridian Energy;Embedded;Cogeneration;8;Gas;10;2 MW;0;0;CPK0331;WEL - Wellington;NI - North Island
+Mangahewa;Todd Energy;Embedded;Thermal;9;Gas;9;9 MW;50;0;HUI0331;TRN - Taranaki;NI - North Island
+Marlborough Lines Diesel;Trustpower;Embedded;Thermal;9;Diesel;9;9 MW;0;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+Marsden Diesel;Trustpower;Embedded;Thermal;9;Diesel;9;1.8 MW;0;0;BRB0331;NIS - North Isthmus;NI - North Island
+Hau Nui;Genesis Energy;Embedded;Wind;8,45;Wind;8,45;0.6 MW;22;0;GYT0331;WEL - Wellington;NI - North Island
+Kawerau - KA24;Geothermal Developments;Embedded;Geothermal;8,3;Geothermal;8,3;8.3 MW;70;0;KAW0111;BOP - Bay Of Plenty;NI - North Island
+Ravensdown;Meridian Energy;Embedded;Cogeneration;8;Unknown;8;8 MW;32;0;RDF0331;HBY - Hawkes Bay;NI - North Island
+Mount Stuart;Pioneer Generation;Embedded;Wind;7,65;Wind;7,65;0.85 MW;25,6;0;BAL0331;OTG - Otago/Southland;SI - South Island
+Opuha;Contact Energy;Partially Embedded;Hydro;7,5;Hydro;7,5;7.5 MW;21;0;ABY0111;SCN - South Canterbury;SI - South Island
+Wairau;Trustpower;Grid Connected;Hydro;7,2;Hydro;7,2;7.2 MW;31;0;ARG1101;NEL - Nelson/Marlbourough;SI - South Island
+Redvale Landfill;Trustpower;Embedded;Other;7;Biogas;7;1 MW;50;0;SVL0331;NIS - North Isthmus;NI - North Island
+Watercare Mangere;Mighty River Power;Embedded;Cogeneration;7;Biogas;7;7 MW;0,1;0;MNG0331;AKL - Auckland;NI - North Island
+Flat Hill;Trustpower;Embedded;Wind;6,8;Wind;6,8;0.85 MW;24;0;INV0331;OTG - Otago/Southland;SI - South Island
+Monowai;Trustpower;Embedded;Hydro;6,6;Hydro;6,6;2.2 MW;40;0;NMA0331;OTG - Otago/Southland;SI - South Island
+Ballance Agri;Trustpower;Embedded;Cogeneration;6,5;Unknown;6,5;6.5 MW;11;0;MTM0111;BOP - Bay Of Plenty;NI - North Island
+Kumara;Trustpower;Embedded;Hydro;6,5;Hydro;6,5;6.5 MW;30;0;KUM0661;WEC - West Coast;SI - South Island
+Kawerau - BOP;Todd Energy;Partially Embedded;Geothermal;6,4;Geothermal;6,4;3.8 MW;35;0;KAW0111;BOP - Bay Of Plenty;NI - North Island
+Amethyst;Westpower;Embedded;Hydro;6;Hydro;6;6 MW;30;0;ARA2201;WEC - West Coast;SI - South Island
+Kuratau;King Country Energy;Embedded;Hydro;6;Hydro;6;3 MW;30;0;ONG0331;CEN - Central;NI - North Island
+Lower Mangapapa;Trustpower;Embedded;Hydro;6;Hydro;6;6 MW;17;0;TGA0331;BOP - Bay Of Plenty;NI - North Island
+Greenmount Landfill;Mighty River Power;Embedded;Other;5,5;Biogas;5,5;0.92 MW;38;0;OTA0221;AKL - Auckland;NI - North Island
+Deep Stream;Trustpower;Embedded;Hydro;5;Hydro;5;2.5 MW;25;0;HWB0331;OTG - Otago/Southland;SI - South Island
+Wairua Falls;Meridian Energy;Embedded;Hydro;5;Hydro;5;3 MW;22;0;MPE0331;NIS - North Isthmus;NI - North Island
+Wairere Falls;King Country Energy;Embedded;Hydro;4,9;Hydro;4,9;3.3 MW;18;0;ONG0331;CEN - Central;NI - North Island
+Motukawa;Trustpower;Embedded;Hydro;4,5;Hydro;4,8;1.5 MW;26;0;HUI0331;TRN - Taranaki;NI - North Island
+Waihi Station;Trustpower;Embedded;Hydro;4,7;Hydro;4,7;2.35 MW;10,4;0;WRA0111;HBY - Hawkes Bay;NI - North Island
+Gisborne;Contact Energy;Embedded;Unknown;4;Unknown;4,5;4.5 MW;1,2;0;GIS0501;HBY - Hawkes Bay;NI - North Island
+Mangorei;Trustpower;Embedded;Hydro;4,5;Hydro;4,5;1.3 MW;21;0;CST0331;TRN - Taranaki;NI - North Island
+Horseshoe Bend;Trustpower;Partially Embedded;Hydro;4,3;Hydro;4,3;4.3 MW;23;0;CYD0331;OTG - Otago/Southland;SI - South Island
+Esk;Trustpower;Embedded;Hydro;4;Hydro;4,2;2.8 MW;15;0;RDF0331;HBY - Hawkes Bay;NI - North Island
+Roaring Meg;Trustpower;Embedded;Hydro;4,2;Hydro;4,2;1.5 MW;29;0;CML0331;OTG - Otago/Southland;SI - South Island
+Rochfort ;Kawatiri Energy;Embedded;Hydro;4,2;Hydro;4,2;4.2 MW;20;0;ORO1101;WEC - West Coast;SI - South Island
+Hampton Downs Landfill;Mighty River Power;Embedded;Other;4;Biogas;4;1 MW;28;0;MER0331;WTO - Waikato;NI - North Island
+Anchor Products;Trustpower;Embedded;Thermal;3,9;Unknown;3,9;3.9 MW;3,3;0;TMU0111;WTO - Waikato;NI - North Island
+Argyle;Trustpower;Grid Connected;Hydro;3,8;Hydro;3,8;3.8 MW;17;0;ARG1101;NEL - Nelson/Marlbourough;SI - South Island
+Auckland District Hospital;Meridian Energy;Embedded;Cogeneration;3,6;Gas;3,6;1.8 MW;7;0;PEN0331;AKL - Auckland;NI - North Island
+Dillmans;Trustpower;Embedded;Hydro;3,5;Hydro;3,5;3.5 MW;16;0;KUM0661;WEC - West Coast;SI - South Island
+Fletcher Forests;Trustpower;Embedded;Thermal;3,5;Wood_waste;3,5;3.5 MW;26;0;ROT0111;BOP - Bay Of Plenty;NI - North Island
+Hokitika Diesel;Trustpower;Embedded;Thermal;3,3;Diesel;3,3;3.3 MW;0,3;0;KUM0661;WEC - West Coast;SI - South Island
+Christchurch City Wastewater;Meridian Energy;Embedded;Other;3,2;Biogas;3,2;3.2 MW;2;0;BRY0111;CAN - Canterbury;SI - South Island
+Arnold;Trustpower;Embedded;Hydro;3,1;Hydro;3,1;3.1 MW;20;0;DOB0331;WEC - West Coast;SI - South Island
+Wahapo (Okarito Forks);Trustpower;Partially Embedded;Hydro;3,1;Hydro;3,1;3.1 MW;14,5;0;HKK0661;WEC - West Coast;SI - South Island
+Whitford Landfill;Trustpower;Embedded;Other;3;Biogas;3;1 MW;20;0;TAK0331;AKL - Auckland;NI - North Island
+Hinemaiaia C;Trustpower;Embedded;Hydro;2,85;Hydro;2,85;2.85 MW;13;0;WRK0331;WTO - Waikato;NI - North Island
+Fraser;Trustpower;Embedded;Hydro;2,8;Hydro;2,8;2.8 MW;19;0;CYD0331;OTG - Otago/Southland;SI - South Island
+Rosedale Landfill;Mighty River Power;Embedded;Other;2,8;Biogas;2,8;0.92 MW;22;0;ALB0331;NIS - North Isthmus;NI - North Island
+Silverstream Landfill;Mighty River Power;Embedded;Other;2,7;Biogas;2,7;0.9 MW;13;0;HAY0331;WEL - Wellington;NI - North Island
+Waihopai;Trustpower;Embedded;Hydro;2,5;Hydro;2,5;2 MW;11,8;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+Hinemaiaia A;Trustpower;Embedded;Hydro;2,4;Hydro;2,4;2.4 MW;10;0;WRK0331;WTO - Waikato;NI - North Island
+Bombay;Contact Energy;Embedded;Unknown;2,3;Unknown;2,3;2.3 MW;0;0;BOB1101;AKL - Auckland;NI - North Island
+Horseshoe Bend Wind;Pioneer Generation;Embedded;Wind;2,25;Wind;2,25;0.75 MW;8;0;CYD0331;OTG - Otago/Southland;SI - South Island
+Patearoa;Trustpower;Embedded;Hydro;2,25;Hydro;2,25;2.25 MW;8;0;NSY0331;OTG - Otago/Southland;NI - North Island
+Talla Burn;Talla Burn Generation;Embedded;Hydro;2,6;Hydro;2,15;2.15 MW;10;0;CYD0331;OTG - Otago/Southland;SI - South Island
+Matawai;The Lines Compnay;Embedded;Hydro;2;Hydro;2;1 MW;10;0;GIS0501;HBY - Hawkes Bay;NI - North Island
+Kowhai;Pioneer Generation;Partially Embedded;Hydro;1,9;Hydro;1,9;1.9 MW;5,5;0;CYD0331;OTG - Otago/Southland;SI - South Island
+Mokauiti;King Country Energy;Embedded;Hydro;1,9;Hydro;1,9;1.3 MW;7;0;ONG0331;CEN - Central;NI - North Island
+Montalto;Trustpower;Partially Embedded;Hydro;1,8;Hydro;1,8;1.8 MW;12;0;ASB0331;CAN - Canterbury;SI - South Island
+Piriaka;King Country Energy;Embedded;Hydro;1,8;Hydro;1,8;1.2 MW;7;0;HTI0331;CEN - Central;NI - North Island
+Mangapehi;Mighty River Power;Embedded;Hydro;1,6;Hydro;1,6;0.8 MW;5;0;HTI0331;WTO - Waikato;NI - North Island
+Blue Mountain Lumber;Meridian Energy;Embedded;Cogeneration;1,4;Wood_waste;1,4;1.4 MW;1,9;0;GOR0331;OTG - Otago/Southland;SI - South Island
+Hinemaiaia B;Trustpower;Embedded;Hydro;1,35;Hydro;1,35;1.35 MW;6;0;WRK0331;WTO - Waikato;NI - North Island
+Wye Creek;Trustpower;Embedded;Hydro;0;Hydro;1,35;1.35 MW;0;0;FKN0331;OTG - Otago/Southland;SI - South Island
+Falls Dam;Trustpower;Embedded;Hydro;1,3;Hydro;1,3;1.3 MW;9;0;NSY0331;OTG - Otago/Southland;SI - South Island
+McKays Creek;Trustpower;Embedded;Hydro;1,1;Hydro;1,1;1.1 MW;8;0;HKK0661;WEC - West Coast;SI - South Island
+Southern Landfill;Todd Energy;Embedded;Other;1,1;Biogas;1,1;1.1 MW;6;0;CPK0331;WEL - Wellington;NI - North Island
+Lulworth Wind;Meridian Energy;Embedded;Wind;1;Wind;1;0.25 MW;3,2;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+Onekaka;Onekaka Energy;Embedded;Hydro;1;Hydro;1;1 MW;3,2;0;MPI0661;NEL - Nelson/Marlbourough;SI - South Island
+Stratford Austral Pacific;Genesis Energy;Embedded;Unknown;1;Unknown;1;1 MW;5;0;SFD0331;TRN - Taranaki;NI - North Island
+Tirohia Landfill;Mighty River Power;Embedded;Other;1;Biogas;1;1 MW;7,5;0;WKO0331;WTO - Waikato;NI - North Island
+Kourarau;Genesis Energy;Partially Embedded;Hydro;0,95;Hydro;0,95;0.7 MW;2;0;MST0331;WEL - Wellington;NI - North Island
+Cleardale;MainPower;Embedded;Hydro;0,9;Hydro;0,9;0.9 MW;4;0;ASB0661;CAN - Canterbury;SI - South Island
+Horotiu Landfill;WEL Networks;Embedded;Other;0,9;Biogas;0,9;0.9 MW;7;0;TWH0331;WTO - Waikato;NI - North Island
+Mataura;Simply Energy;Embedded;Hydro;0,9;Hydro;0,9;0.9 MW;4,5;0;GOR0331;OTG - Otago/Southland;SI - South Island
+Totara Road;Mighty River Power;Embedded;Thermal;0,8;Unknown;0,8;0.8 MW;2,3;0;LTN0331;CEN - Central;NI - North Island
+Wairoa;Contact Energy;Embedded;Unknown;0,8;Unknown;0,8;0.8 MW;0,2;0;WRA0111;HBY - Hawkes Bay;NI - North Island
+Weld Cone Wind;Meridian Energy;Embedded;Wind;0,75;Wind;0,75;0.25 MW;3;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+Hornby, Christchurch;Meridian Energy;Embedded;Thermal;0,7;Unknown;0,7;0.7 MW;1;0;ISL0331;CAN - Canterbury;SI - South Island
+Simeon Quay;Orion;Embedded;Backup generation;0,7;Unknown;0,7;0.7 MW;0;0;BRY0111;CAN - Canterbury;SI - South Island
+Lake Grassmere;Meridian Energy;Embedded;Wind;0,66;Wind;0,66;0.66 MW;6;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+Mangatangi Dam;Mighty River Power;Partially Embedded;Hydro;0,6;Hydro;0,6;0.6 MW;5;0;BOB0331;AKL - Auckland;NI - North Island
+Christchurch Wind Turbine;Meridian Energy;Embedded;Wind;0,5;Wind;0,5;0.5 MW;0,8;0;SPN0331;CAN - Canterbury;SI - South Island
+Duffers;Trustpower;Embedded;Hydro;0,5;Hydro;0,5;0.5 MW;2;0;KUM0662;WEC - West Coast;SI - South Island
+Maungatapere;Trustpower;Embedded;Thermal;0,5;Unknown;0,5;0.5 MW;0,3;0;MPE0331;NIS - North Isthmus;NI - North Island
+Ravensbourne;Meridian Energy;Embedded;Cogeneration;0,5;Unknown;0,5;0.5 MW;1,1;0;HWB0332;OTG - Otago/Southland;SI - South Island
+Chathams Wind;CBDEnergy;Embedded;Wind;0,45;Wind;0,45;0.225 MW;1,4;0;OFFGRID;OTH - Other;OT - Other
+Kaniere Forks;Trustpower;Embedded;Hydro;0,43;Hydro;0,43;0.43 MW;4;0;HKK0661;WEC - West Coast;SI - South Island
+Addington;Meridian Energy;Embedded;Unknown;0,4;Unknown;0,4;0.4 MW;0;0;ADD0111;CAN - Canterbury;SI - South Island
+Oxburn/Glenorchy;Pioneer Generation;Embedded;Hydro;0,4;Hydro;0,4;0.4 MW;2;0;FKN0331;OTG - Otago/Southland;SI - South Island
+Kaimai 5;Trustpower;Embedded;Hydro;0,35;Hydro;0,35;0.35 MW;2;0;TGA0331;BOP - Bay Of Plenty;NI - North Island
+Christchurch Hospital Campus;Meridian Energy;Embedded;Backup generation;0,3;Unknown;0,3;0.3 MW;0;0;ADD0661;CAN - Canterbury;SI - South Island
+Forest Research;Todd Energy;Embedded;Thermal;0,3;Gas;0,3;0.3 MW;0;0;ROT0111;BOP - Bay Of Plenty;NI - North Island
+Iwitahi;Trustpower;Embedded;Unknown;0,3;Unknown;0,3;0.3 MW;0;0;WRK0331;WTO - Waikato;NI - North Island
+Opunake;Trustpower;Embedded;Hydro;0,3;Hydro;0,3;0.3 MW;1,2;0;OPK0331;TRN - Taranaki;NI - North Island
+Orion Diesel;Orion;Embedded;Thermal;0,3;Diesel;0,3;0.3 MW;0,1;0;ADD0661;CAN - Canterbury;SI - South Island
+Pupu Hydro;Contact Energy;Embedded;Hydro;0,3;Hydro;0,3;0.3 MW;1,7;0;MPI0661;NEL - Nelson/Marlbourough;SI - South Island
+Raetihi;Trustpower;Embedded;Hydro;0,3;Hydro;0,3;0.3 MW;1,3;0;OKN0111;CEN - Central;NI - North Island
+Aluminium Diecasting Ltd;Meridian Energy;Embedded;Unknown;0,2;Unknown;0,2;0.2 MW;0;0;BRY0111;CAN - Canterbury;SI - South Island
+Brooklyn Power Station;Lloyd Wensley;Embedded;Hydro;0,2;Hydro;0,2;0.2 MW;1;0;MOT0111;NEL - Nelson/Marlbourough;SI - South Island
+Burwood Hospital;Meridian Energy;Embedded;Unknown;0,2;Unknown;0,2;0.2 MW;0;0;BRY0661;CAN - Canterbury;SI - South Island
+Fox;Trustpower;Embedded;Hydro;0,2;Hydro;0,2;0.2 MW;1,9;0;HKK0661;WEC - West Coast;SI - South Island
+Jackson Estate;Trustpower;Embedded;Backup generation;0,2;Diesel;0,2;0.2 MW;0;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+Mangatawhiri;Mighty River Power;Embedded;Hydro;0,2;Hydro;0,2;0.2 MW;0,3;0;BOB0331;AKL - Auckland;NI - North Island
+Middleton;Meridian Energy;Embedded;Unknown;0,2;Unknown;0,2;0.2 MW;0;0;ISL0331;CAN - Canterbury;SI - South Island
+Mokoia Road, Hawera;Genesis Energy;Embedded;Thermal;0,2;Unknown;0,2;0.2 MW;0,4;0;HWA0331;TRN - Taranaki;NI - North Island
+Mud House;Trustpower;Embedded;Backup generation;0,2;Diesel;0,2;0.2 MW;0;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+Orion Diesel II;Orion;Embedded;Thermal;0,2;Diesel;0,2;0.2 MW;0;0;ADD0661;CAN - Canterbury;SI - South Island
+Pacific Steel;Trustpower;Embedded;Backup generation;0,2;Unknown;0,2;0.2 MW;0;0;MNG0331;AKL - Auckland;NI - North Island
+South Pacific Cellars;Trustpower;Embedded;Backup generation;0,2;Diesel;0,2;0.2 MW;0;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+St Albans, Christchurch;Meridian Energy;Embedded;Unknown;0,2;Unknown;0,2;0.2 MW;0;0;PAP0661;CAN - Canterbury;SI - South Island
+Wellington Wind Turbine;Meridian Energy;Embedded;Wind;0,2;Wind;0,2;0.2 MW;0,8;0;CPK0331;WEL - Wellington;NI - North Island
+Ascot Ave;Mighty River Power;Embedded;Unknown;0,1;Unknown;0,1;0.1 MW;0;0;PEN0331;AKL - Auckland;NI - North Island
+Christchurch Airport (Harewood);Meridian Energy;Embedded;Backup generation;0,1;Unknown;0,1;0.1 MW;0;0;ISL0661;CAN - Canterbury;SI - South Island
+Crowne Plaza;Meridian Energy;Embedded;Unknown;0;Unknown;0,1;0.1 MW;0;0;ADD0661;CAN - Canterbury;SI - South Island
+Darfield;Meridian Energy;Embedded;Thermal;0,1;Diesel;0,1;0.1 MW;0;0;HOR0331;CAN - Canterbury;SI - South Island
+Drysdale;Mighty River Power;Embedded;Hydro;0,1;Hydro;0,1;0.1 MW;0,3;0;MTN0331;CEN - Central;NI - North Island
+Maraetai Embedded;Mighty River Power;Embedded;Hydro;0,1;Hydro;0,1;0.1 MW;0;0;WKM2201;WTO - Waikato;NI - North Island
+Marokopa Power Station;Contact Energy;Embedded;Hydro;0,1;Hydro;0,1;0.1 MW;0,6;0;HTI0331;WTO - Waikato;NI - North Island
+Ngahere;Mighty River Power;Embedded;Hydro;0,1;Hydro;0,1;0.1 MW;0,2;0;DOB0331;WEC - West Coast;SI - South Island
+Southbridge Wind;Meridian Energy;Embedded;Wind;0,1;Wind;0,1;0.1 MW;0,4;0;SPN0331;CAN - Canterbury;SI - South Island
+Templeton;Meridian Energy;Embedded;Thermal;0,1;Unknown;0,1;0.1 MW;0;0;ISL0331;CAN - Canterbury;SI - South Island
+Turitea Hydro;Mighty River Power;Embedded;Hydro;0,1;Hydro;0,1;0.1 MW;0,5;0;LTN0331;CEN - Central;NI - North Island
+Belfast;Meridian Energy;Embedded;Unknown;0;Unknown;0;0 MW;0;0;PAP0111;CAN - Canterbury;SI - South Island
+Cloudy Bay;Trustpower;Embedded;Unknown;0;Unknown;0;0 MW;0;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+Enfield;Meridian Energy;Embedded;Unknown;0;Unknown;0;0 MW;0;0;OAM0331;OTG - Otago/Southland;SI - South Island
+FoodStuffs Hickory Place;Meridian Energy;Embedded;Unknown;0;Unknown;0;0 MW;0;0;ISL0331;CAN - Canterbury;SI - South Island
+Government Communications Satellite;Trustpower;Embedded;Backup generation;0;Diesel;0;0 MW;0;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+Indevin;Trustpower;Embedded;Backup generation;0;Diesel;0;0 MW;0;0;BLN0331;NEL - Nelson/Marlbourough;SI - South Island
+Kew Hospital;Trustpower;Embedded;Unknown;0;Unknown;0;0 MW;0;0;INV0331;OTG - Otago/Southland;SI - South Island
+Kongahu;Simply Energy;Embedded;Unknown;0;Unknown;0;0 MW;0;0;ORO1101;WEC - West Coast;SI - South Island
+Mansons Developments;Mighty River Power;Embedded;Unknown;0;Unknown;0;0.002 MW;0;0;PEN1101;AKL - Auckland;NI - North Island
+Marlborough Lines Diesel II;Trustpower;Embedded;Thermal;0;Diesel;0;0 MW;0;0;BLN0332;NEL - Nelson/Marlbourough;SI - South Island
+Milburn;Meridian Energy;Embedded;Thermal;0;Unknown;0;0 MW;0;0;BAL0331;OTG - Otago/Southland;SI - South Island
+Omarama;Meridian Energy;Embedded;Unknown;0;Unknown;0;0 MW;0;0;WTK0331;OTG - Otago/Southland;SI - South Island
+Otematata;Meridian Energy;Embedded;Unknown;0;Unknown;0;0 MW;0;0;OTT0011;OTG - Otago/Southland;SI - South Island
+Palmerston Nth Mini Hydro;Mighty River Power;Embedded;Hydro;0;Hydro;0;0.02 MW;0;0;BPE0331;CEN - Central;NI - North Island
+Plimmerton;Meridian Energy;Embedded;Unknown;0;Unknown;0;0 MW;0;0;PNI0331;WEL - Wellington;NI - North Island
+Port Chalmers;Meridian Energy;Embedded;Unknown;0;Unknown;0;0.01 MW;0;0;HWB0331;OTG - Otago/Southland;SI - South Island
+PukePine;Trustpower;Embedded;Thermal;0;Diesel;0;0 MW;0;0;TMI0331;BOP - Bay Of Plenty;NI - North Island
+Watercare Clevedon;Meridian Energy;Embedded;Thermal;0;Unknown;0;0 MW;0;0;TAK0331;AKL - Auckland;NI - North Island
+Watercare Cossey's Dam;Mighty River Power;Embedded;Hydro;0;Hydro;0;0 MW;0;0;BOB0331;AKL - Auckland;NI - North Island
+Watercare Wairoa Dam;Mighty River Power;Embedded;Hydro;0;Hydro;0;0 MW;0;0;BOB0331;AKL - Auckland;NI - North Island
+Watercare Waitakere;Mighty River Power;Embedded;Hydro;0;Hydro;0;0.03 MW;0,1;0;HEN0331;NIS - North Isthmus;NI - North Island
+Whangarei;Meridian Energy;Embedded;Thermal;0;Unknown;0;0 MW;0;0;MPE0331;NIS - North Isthmus;NI - North Island
+Whisper Tech;Meridian Energy;Embedded;Thermal;0;Unknown;0;0.002 MW;0;0;SBK0331;CAN - Canterbury;SI - South Island
