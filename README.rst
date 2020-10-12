@@ -7,7 +7,7 @@ Introduction
 
 This package can be used to compare a price-maker and price-taker program with actual bidding[1] and topological[2] data from the
 New Zealand market. The second objective of this repo is to provide the reader of "Optimal Siting, Sizing and Bid Scheduling of a Price-Maker Battery on a Nodal Wholesale Market" with the program and code that
-were used to produce the results. In this regard, please check out and follow the [jupyter notebook](https://github.com/GuillaumeGoujard/LMP_NZ/blob/master/jupyter_notebook/notebook.ipynb) located in the jupyter_notebook folder.
+were used to produce the results. In this regard, please check out and follow the `jupyter notebook <https://github.com/GuillaumeGoujard/LMP_NZ/blob/master/jupyter_notebook/notebook.ipynb>`_ located in the jupyter_notebook folder.
 
 Setup
 ########################
