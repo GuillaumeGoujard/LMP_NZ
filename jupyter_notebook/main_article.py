@@ -9,8 +9,7 @@ from lmpnz.Network.Topology.Topology import Topology as topology
 import lmpnz.Network.Topology.Topology as Topology
 from lmpnz.JupyterRessources import averagecongestion
 from lmpnz.JupyterRessources import tablescore
-
-import article_example.plotPrograms as plotprog
+from lmpnz.JupyterRessources import plotPrograms as plotprog
 
 
 def baseline_prices(day, Horizon_T,  H, h, Mn, b, P_max, P_min, d):

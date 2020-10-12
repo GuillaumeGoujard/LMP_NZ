@@ -30,8 +30,12 @@ def plot_lambdas_gammas(lambdas, gammas):
     # axs[0].grid()
 
     for i in range(1, 20):
-        if i in [3, 4, 12, 11, 16, 19]:
-            axs[1].plot(lambdas[i] - gammas, label=f'Node {i}', alpha=0.5)
+        if i in [3, 4, 16, 19]:
+            if i ==3:
+                label = f'Node {i} and Node {12}'
+            else:
+                label = f'Node {i}'
+            axs[1].plot(lambdas[i] - gammas, label=label, alpha=0.5)
         elif i ==10:
             axs[1].plot(lambdas[i] - gammas, label=f'Node {i}', color="black", linewidth=3)
         elif i == 1:
@@ -40,8 +44,16 @@ def plot_lambdas_gammas(lambdas, gammas):
     axs[1].legend()
     axs[1].set_ylabel('$\lambda - \gamma$ [\$/MW]', fontsize=fs)
     axs[1].set_xlabel('Time [h]', fontsize=fs)
-    plt.xticks(range(0, 48, 2), range(24))
+    plt.xticks(range(0, 48, 2), range(24), fontsize=fs)
+    # axs[1].set_yticks(fontsize=fs)
     axs[1].set_xlim([0, 48])
+    fs=17
+    axs[1].tick_params(axis="y", labelsize=fs)
+    axs[0].tick_params(axis="y", labelsize=fs)
+
+    # plt.yticks(fontsize=fs)
+
+
 
     axs[1].axvspan(14, 17, alpha=0.1, color='black', label="congestion episodes")
     axs[1].axvspan(20, 23, alpha=0.1, color='black')
@@ -123,7 +135,7 @@ def plot_cum_prof(battery_index, lambdas, z_cap, *args):
     axs[0].plot(df["cumulated profits"], color="black", marker="x", label=r'Revenue PM')
     axs[0].plot(df_pt["cumulated e profits"], color="green", marker="o", label="Expected revenue PT")
     axs[0].plot(df_pt["cumulated a profits"], color="red", marker="*",
-                label="Actual revenue PM")
+                label="Actual revenue PT")
     axs[0].set_ylabel('\$', fontsize=fs)
     # axs[0].set_title('Cumulated profits,  SOC, Maker vs Taker',
     #                  fontsize=fs)
@@ -170,7 +182,9 @@ def plot_cum_prof(battery_index, lambdas, z_cap, *args):
     axs[3].axvspan(14, 17, alpha=0.1, color='black')
     axs[3].axvspan(20, 23, alpha=0.1, color='black')
     axs[3].axvspan(31, 41, alpha=0.1, color='black')
-
+    for ax in axs:
+        ax.tick_params(axis="y", labelsize=17)
+    plt.xticks(fontsize=16)
     # axs[1].grid()
     plt.show()
 
@@ -202,7 +216,7 @@ def plot_norm_2(*args, z_caps = np.linspace(1, 100, 11)):
     lambdas_cap = []
     # = [5, 10] + list(np.linspace(15, 200, 5))
     for z_cap in z_caps:
-        print(z_cap)
+        # print(z_cap)
         i_Battery = 10
         model = price_taking_algorithm.run_program(lambdas, i_battery=i_Battery, cost_of_battery=0, max_capacity=z_cap,
                                                    power_rate=2)
@@ -229,7 +243,7 @@ def plot_norm_2(*args, z_caps = np.linspace(1, 100, 11)):
     # z_caps_pm = np.linspace(1, 500, 10)
     z_caps_pm = z_caps
     for z_cap in z_caps_pm:
-        print(z_cap)
+        # print(z_cap)
         i_Battery = 10
         model = price_making_algorithm.run_program(d, b, P_max, P_min, H, h, Mn, i_battery=i_Battery,
                                                    max_capacity=z_cap, cost_of_battery=0, power_rate=2)
@@ -250,11 +264,14 @@ def plot_norm_2(*args, z_caps = np.linspace(1, 100, 11)):
 
     plt.figure(figsize=(10, 6))
     plt.plot(z_caps, norm, # linestyle="dashed",
-             label=r'pt : $|\lambda^{bl}_{10} - \lambda^{pt}_{10}|$')
-    plt.plot(z_caps_pm, norm_pm, label=r'pm : $|\lambda^{bl}_{10} - \lambda^{pm}_{10}|$')
+             label=r'PT : $|\lambda^{BL}_{10} - \lambda^{PT}_{10}|$')
+    plt.plot(z_caps_pm, norm_pm, label=r'PM : $|\lambda^{BL}_{10} - \lambda^{PM}_{10}|$')
     # plt.title("Price taker vs maker strategy influence on LMP at node 10 in function of installed capacity")
-    plt.xlabel(r'$z_{cap}$', fontsize=17)
+    plt.xlabel(r'$z_{cap}$ (in MWh)', fontsize=17)
+    plt.ylabel(r'Average of absolute difference (in \$)', fontsize=17)
     # plt.axhline(y=0, label="no difference in prices", color="black", linestyle="dotted")
     # plt.ylabel("Norm 2 Difference between lmp without and with battery")
-    plt.legend(fontsize=17)
+    plt.legend(fontsize=20)
+    plt.yticks(fontsize=17)
+    plt.xticks(fontsize=16)
     plt.show()

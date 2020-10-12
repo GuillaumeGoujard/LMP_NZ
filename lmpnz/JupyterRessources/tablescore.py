@@ -13,7 +13,7 @@ def compute_table_score(lambdas, capacity_cost, *args, power_rate=2, list_of_nod
     d, b, P_max, P_min, H, h, Mn = args
     list_of_nodes = list_of_nodes if list_of_nodes is not None else list(range(1, n))
     for i_battery in list_of_nodes:
-        print(i_battery)
+        print("Price taker/maker program computed for Node ", i_battery)
         model = price_making_algorithm.run_program(*args, i_battery=i_battery,
                                                    max_capacity=None, cost_of_battery=capacity_cost, power_rate=power_rate)
         z_cap_store = pyo.value(model.z_cap)
