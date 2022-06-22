@@ -1,4 +1,4 @@
-numpy==1.19.1
+numpy==1.22.0
 statsmodels==0.11.1
 pandas==1.0.5
 Pyomo==5.7
