@@ -4,4 +4,4 @@ pandas==1.0.5
 Pyomo==5.7
 matplotlib==3.3.0
 swifter==1.0.3
-scikit_learn==0.23.2
+scikit_learn==1.0.1
